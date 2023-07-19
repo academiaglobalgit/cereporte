@@ -1,0 +1,723 @@
+<?xml version="1.0"?>
+<presentation title="IT_B_MAT1_B5" width="1080.0000000" height="810.0000000" thmbWidth="78.0000000" thmbHeight="58.0000000" frameRate="24.0000000" looping="0" startingSlideShow="" pptVersion="2013" type="compound" hasExternalAudio="0" uid="{3045A5E3-9AA6-41A5-8699-E7E059B57238}">
+	<presenters/>
+	<company logoAssetId="" webSite="" webSiteTarget="_blank"/>
+	<references/>
+	<soundAssets/>
+	<sharedAssetsLibrary src="assets.swf"/>
+	<graphicAssets>
+		<graphicAsset id="imgAsset0" src="thmb1.swf" embedded="0"/>
+		<graphicAsset id="imgAsset1" src="thmb2.swf" embedded="0"/>
+		<graphicAsset id="imgAsset2" src="thmb3.swf" embedded="0"/>
+		<graphicAsset id="imgAsset3" src="thmb4.swf" embedded="0"/>
+		<graphicAsset id="imgAsset4" src="thmb5.swf" embedded="0"/>
+		<graphicAsset id="imgAsset5" src="thmb6.swf" embedded="0"/>
+		<graphicAsset id="imgAsset6" src="thmb7.swf" embedded="0"/>
+		<graphicAsset id="imgAsset7" src="thmb8.swf" embedded="0"/>
+		<graphicAsset id="imgAsset8" src="thmb9.swf" embedded="0"/>
+		<graphicAsset id="imgAsset9" src="thmb10.swf" embedded="0"/>
+		<graphicAsset id="imgAsset10" src="thmb11.swf" embedded="0"/>
+		<graphicAsset id="imgAsset11" src="thmb12.swf" embedded="0"/>
+		<graphicAsset id="imgAsset12" src="thmb13.swf" embedded="0"/>
+		<graphicAsset id="imgAsset13" src="thmb14.swf" embedded="0"/>
+		<graphicAsset id="imgAsset14" src="thmb15.swf" embedded="0"/>
+		<graphicAsset id="imgAsset15" src="thmb16.swf" embedded="0"/>
+		<graphicAsset id="imgAsset16" src="thmb17.swf" embedded="0"/>
+		<graphicAsset id="imgAsset17" src="thmb18.swf" embedded="0"/>
+		<graphicAsset id="imgAsset18" src="thmb19.swf" embedded="0"/>
+		<graphicAsset id="imgAsset19" src="thmb20.swf" embedded="0"/>
+		<graphicAsset id="imgAsset20" src="thmb21.swf" embedded="0"/>
+		<graphicAsset id="imgAsset21" src="thmb22.swf" embedded="0"/>
+	</graphicAssets>
+	<backgroundSound soundAssetId="" looping="0" volume="1.0000000"/>
+	<narration/>
+	<settings>
+		<navigation>
+			<keyboard enabled="1">
+				<actions>
+					<action name="playPause">
+						<shortcut code="32" control="0" shift="0"/>
+					</action>
+					<action name="nextSlide">
+						<shortcut code="34" control="0" shift="0"/>
+					</action>
+					<action name="previousSlide">
+						<shortcut code="33" control="0" shift="0"/>
+					</action>
+					<action name="nextStep">
+						<shortcut code="13" control="0" shift="0"/>
+					</action>
+					<action name="previousStep">
+						<shortcut code="13" control="0" shift="1"/>
+					</action>
+					<action name="firstSlide">
+						<shortcut code="36" control="1" shift="0"/>
+					</action>
+					<action name="lastSlide">
+						<shortcut code="35" control="1" shift="0"/>
+					</action>
+					<action name="lastViewedSlide">
+						<shortcut code="8" control="0" shift="0"/>
+					</action>
+					<action name="slideStart">
+						<shortcut code="36" control="0" shift="0"/>
+					</action>
+					<action name="slideEnd">
+						<shortcut code="35" control="0" shift="0"/>
+					</action>
+					<action name="seekForward">
+						<shortcut code="39" control="0" shift="0"/>
+					</action>
+					<action name="seekBackward">
+						<shortcut code="37" control="0" shift="0"/>
+					</action>
+					<action name="volumeUp">
+						<shortcut code="38" control="0" shift="0"/>
+					</action>
+					<action name="volumeDown">
+						<shortcut code="40" control="0" shift="0"/>
+					</action>
+					<action name="toggleFullscreen">
+						<shortcut code="70" control="1" shift="0"/>
+					</action>
+				</actions>
+			</keyboard>
+			<mouse enabled="1" target="step"/>
+			<gesture zoom="1"/>
+		</navigation>
+		<skin>
+			<colorSettings>
+				<color id="button.content.normal">#FFFFFF</color>
+				<color id="button.content.over">#FFFFFF</color>
+				<color id="button.face.normal">#000000</color>
+				<color id="button.face.over">#000000</color>
+				<color id="companyLogo.background">#FFFFFF</color>
+				<color id="hyperlink">#AFAFAF</color>
+				<color id="listItem.face.over">#F3EDDC</color>
+				<color id="listItem.face.pressed">#F07E30</color>
+				<color id="listItem.label.over">#000000</color>
+				<color id="listItem.label.pressed">#FFFFFF</color>
+				<color id="listItem.label.visited">#4D4F53</color>
+				<color id="page.background">#B2C4B2</color>
+				<color id="panel.background">#FFFFFF</color>
+				<color id="panel.text">#727272</color>
+				<color id="player.background">#E2EBE2</color>
+				<color id="popup.background">#FFFFFF</color>
+				<color id="progress.background">#6E6E6E</color>
+				<color id="progress.loading">#BDFFA4</color>
+				<color id="progress.playback">#2AD01A</color>
+				<color id="text">#000000</color>
+			</colorSettings>
+			<controlPanelSettings>
+				<visible>true</visible>
+				<showOutline>false</showOutline>
+				<showPlayPause>false</showPlayPause>
+				<showRewind>false</showRewind>
+				<showVolumeControl>false</showVolumeControl>
+				<showCCButton>false</showCCButton>
+				<showPrevButton>true</showPrevButton>
+				<showNextButton>true</showNextButton>
+				<showSlideOnlyButton>true</showSlideOnlyButton>
+				<progressBar>
+					<visible>false</visible>
+					<enabled>true</enabled>
+					<showLabels>true</showLabels>
+					<mode>slideTimeline</mode>
+				</progressBar>
+				<navigationMode>bySteps</navigationMode>
+			</controlPanelSettings>
+			<titlePanelSettings>
+				<showLogo>true</showLogo>
+				<visible>true</visible>
+				<buttons>
+					<button type="attachments" visible="false"/>
+					<button type="presenterInfo" visible="false"/>
+					<button type="markerTools" visible="true"/>
+					<button type="notes" visible="false"/>
+					<button type="outline" visible="false"/>
+				</buttons>
+			</titlePanelSettings>
+			<outlinePanelSettings>
+				<numberEntries>true</numberEntries>
+				<highlightViewedEntries>false</highlightViewedEntries>
+				<thumbnails>true</thumbnails>
+				<search>true</search>
+				<multilevel>true</multilevel>
+			</outlinePanelSettings>
+			<sidePanelSettings>
+				<showAtLeft>false</showAtLeft>
+				<showLogo>false</showLogo>
+				<showPresenterInfo>false</showPresenterInfo>
+				<showPresenterVideo>false</showPresenterVideo>
+				<visible>true</visible>
+				<tabsPanel>
+					<showOutline>true</showOutline>
+					<showNotes>false</showNotes>
+				</tabsPanel>
+			</sidePanelSettings>
+		</skin>
+		<appearance fullScreen="1" showSlidePreloader="1"/>
+		<playback autoStart="1" syncWithVideoNarration="1" enableVideoControl="1" resumePresentationPlayback="always"/>
+	</settings>
+	<slides embedded="0">
+		<slide index="0" title="" titleNormalized="" src="slide1.swf" size="36664" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset0">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Matemáticas I</text>
+		</slide>
+		<slide index="1" title="" titleNormalized="" src="slide2.swf" size="26166" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset1">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Bloque V
+Ecuaciones de Primer Grado con una Variable</text>
+		</slide>
+		<slide index="2" title="" titleNormalized="" src="slide3.swf" size="132489" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset2">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Introducción
+La importancia de la igualdad
+
+En todas partes escuchamos que se exige igualdad y las mismas oportunidades para todos, pero, ¿es la igualdad un concepto social o un concepto matemático?
+
+En este bloque se abordará el concepto de la igualdad de una manera numérica, pero relacionando fenómenos que acontecen a nuestro alrededor.
+En los negocios, todo mundo quiere ganar; sin embargo, debe haber un equilibrio entre la oferta y la demanda. Incluso, hasta en tu casa, si necesitas un permiso, debes aportar algo a cambio para obtenerlo.</text>
+		</slide>
+		<slide index="3" title="" titleNormalized="" src="slide4.swf" size="317805" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset3">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>En el trabajo, el salario va de acuerdo con el trabajo realizado. 
+
+
+En la escuela, tu calificación debe ser justa según tu esfuerzo.
+Introducción
+En el medio ambiente, el hábitat debe estar en equilibrio para que los seres vivos garanticen su existencia, además hay niveles de contaminación que no se deben rebasar para tener una mejor condición de vida.
+Por otra parte, es importante que todo esté en equilibrio para poder tener una sana convivencia en la sociedad.</text>
+		</slide>
+		<slide index="4" title="" titleNormalized="" src="slide5.swf" size="41877" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset4">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>La ecuación y sus propiedades
+Una ecuación es una igualdad en la que participan cantidades conocidas y desconocidas, así como operaciones que las relacionan. 
+𝑥 − 8 = 2
+Primer
+miembro
+Segundo
+miembro
+Cantidades conocidas
+Cantidad desconocida
+Observa que en el primer miembro la operación que relaciona la cantidad desconocida con la cantidad conocida, es una resta.
+Se encuentra formada por dos partes fundamentales: la parte izquierda del signo igual recibe el nombre de primer miembro y la parte derecha se le conoce como segundo miembro.
+Los miembros de una ecuación se encuentran a su vez compuestos por diferentes partes como se muestra a continuación:</text>
+		</slide>
+		<slide index="5" title="" titleNormalized="" src="slide6.swf" size="40919" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset5">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>La ecuación y sus propiedades
+Ejemplo de igualdad ilustrada mediante el uso de una báscula.
+Esta es una de las propiedades de la igualdad o ecuación. En la siguiente diapositiva se presentan las diferentes propiedades que debes tener en cuenta al momento de resolver una ecuación.
+Observa que si se agrega un peso a un lado de la báscula, debe agregarse el mismo peso al otro lado para mantener el equilibrio o la igualdad.</text>
+		</slide>
+		<slide index="6" title="" titleNormalized="" src="slide7.swf" size="30188" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset6">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>La ecuación y sus propiedades
+Nombre
+Representación algebraica
+Significado
+ejemplo
+Propiedad de la suma
+Si a = b, entonces
+
+a+c = b+c
+Podemos sumar el mismo número a los miembros de una igualdad y ésta no se altera.
+Si 5 +1 = 4 + 2, entonces
+5 + 1+ 3 = 4 +2 + 3
+9=9
+Propiedad de la resta
+Si a = b, entonces
+
+a – c = b - c
+Podemos restar el mismo número a los miembros de una igualdad y ésta no se altera.
+Si 5 + 1 = 4 + 2, entonces
+5 +1 -2 = 4 + 2 -2
+4=4
+Propiedad
+de la multiplicación 
+Si a = b, entonces
+
+ac = bc
+Podemos multiplicar el mismo número a los miembros de una igualdad y ésta no se altera.
+Si 5 + 1 = 4 + 2,
+entonces
+(5+1)3 = (4+2) 3
+18 = 18
+Propiedad de la división
+Si a = b, entonces
+
+ 𝑎 𝑏 = 𝑏 𝑐 𝑐≠0
+Podemos dividir los miembros de una igualdad entre el mismo número y ésta no se altera.
+Si 5 + 1 = 4 + 2,
+entonces 
+ 5+1 2 = 4+2 2 
+3 = 3</text>
+		</slide>
+		<slide index="7" title="" titleNormalized="" src="slide8.swf" size="13293" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset7">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Métodos de solución de ecuaciones de primer grado con una variable
+Método algebraico
+
+Con este Método es posible encontrar el valor de la variable “x” con menos pasos de los que tiene el Método Formal.
+
+Primero, se determina qué operación realiza cada uno de los números que participan en la ecuación, luego se observa en qué miembro se encuentran y posteriormente, se define lo que pasará con ellos si utilizamos las propiedades de la igualdad.
+Ejemplo
+
+Determinar el valor literal en la ecuación:
+𝟒𝒙−𝟗=𝟕
+
+4𝑥=7+9
+4𝑥=16
+𝑥= 16 4 
+
+𝒙=𝟒
+Comprobación
+
+4𝑥−9=7
+4 4 −9=7
+16−9=7
+7=7</text>
+		</slide>
+		<slide index="8" title="" titleNormalized="" src="slide9.swf" size="105513" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset8">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Situaciones que generan ecuaciones de primer grado con una variable
+Hay una innumerable cantidad de situaciones que se pueden modelar a través de las ecuaciones de primer grado, todas provenientes de distintas áreas del pensamiento humano; podemos contar la matemática misma, la química, la física, situaciones geográficas y muchas otras, todas ellas expresadas como problemas que requieren una solución en la que aparecen cantidades conocidas y desconocidas.
+Para resolver un problema, lo primero que debe quedarnos claro es lo que se busca encontrar de éste y determinar cuáles son los datos que nos proporciona para, a partir de ello, establecer algún tipo de estrategia que nos permita encontrar lo que buscamos.</text>
+		</slide>
+		<slide index="9" title="" titleNormalized="" src="slide10.swf" size="56428" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset9">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Ya que la introducción de este tema trató sobre el equilibrio, se presenta el siguiente ejercicio referente a este tema. 
+Situaciones que generan ecuaciones de primer grado con una variable
+Para resolver este problema se debe seguir una metodología que nos lleve a un modelo matemático que represente la expresión y que posteriormente nos dé una solución al problema.
+Una balanza está en equilibrio si se pone una pastilla de jabón en uno de sus platillos y en el otro se ponen ¾ de una pastilla igual y una pesa de ¾ de kilo. ¿Cuánto pesa la pastilla de jabón entera?</text>
+		</slide>
+		<slide index="10" title="" titleNormalized="" src="slide11.swf" size="3812" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset10">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Metodología
+
+Paso 1. Leer cuidadosamente el enunciado del problema para determinar las variables que están incluidas.
+
+Paso 2. Establecer una relación entre variables, de tal forma que se pueda proponer una expresión matemática de una sola variable.
+
+Paso 3. Identificar las operaciones matemáticas que relacionen a las variables y establecer cuáles pueden tener una relación de igualdad.
+
+Paso 4. Proponer una igualdad, también llamada ecuación.
+
+Paso 5. Resolver y comprobar los resultados obtenidos aplicando la metodología anterior a nuestro problema.
+En la siguiente diapositiva se aplican estos pasos para resolver el problema de la balanza que está en equilibrio.
+Situaciones que generan ecuaciones de primer grado con una variable</text>
+		</slide>
+		<slide index="11" title="" titleNormalized="" src="slide12.swf" size="58617" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset11">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Paso 1. El problema menciona una balanza en equilibrio con las siguientes variables: 
+
+Una barra de jabón representada por la variable x.
+ 3 4 de una barra igual a la entera representada por 3 4 x.
+Una pesa de 3 4 kg.
+Paso 2. La relación de igualdad se establece colocando la barra en el platillo izquierdo de la balanza y los 3 4 de barra junto con la pesa de 3 4 kg en el platillo derecho.
+x
+ 3 4 x
+ 3 4 𝑘𝑔 
+Situaciones que generan ecuaciones de primer grado con una variable</text>
+		</slide>
+		<slide index="12" title="" titleNormalized="" src="slide13.swf" size="75251" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset12">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Paso 3. Del lado izquierdo sólo se coloca la variable x, ya que es la barra completa, y en el lado derecho se coloca 3 4 x + 3 4 ya que juntas equilibran a la balanza.
+
+Paso 4. Ahora, se procede a establecer la relación matemática, también llamada ecuación, quedando de la siguiente manera:
+
+x= 3 4 x + 3 4 
+
+La expresión anterior es una igualdad o ecuación de primer grado, ya que el exponente máximo de la variable es de grado 1.
+Paso 5. En este paso se resuelve y comprueba la ecuación del paso 4. Recuerda que la ecuación es como una balanza en equilibrio, por lo tanto, si realizas una operación en un lado, debes realizar lo mismo o su equivalente en el otro lado de la balanza para mantener el equilibrio. 
+Situaciones que generan ecuaciones de primer grado con una variable</text>
+		</slide>
+		<slide index="13" title="" titleNormalized="" src="slide14.swf" size="71922" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset13">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Ejemplo
+
+Determinar el valor de dos números naturales consecutivos que sumen 71.
+La primera tarea es entender el problema, las partes que los forman, la información que nos proporciona y cómo se relacionan las cantidades conocidas y desconocidas.
+Situaciones que generan ecuaciones de primer grado con una variable</text>
+		</slide>
+		<slide index="14" title="" titleNormalized="" src="slide15.swf" size="2876" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset14">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Continuando con el ejemplo anterior, ahora se puede representar la relación entre los números con una operación e involucrar el dato que nos proporcionaron: 
+
+x + y = 71
+Si consideramos que el primer número es x, entonces el segundo número es x más 1:
+
+y = x + 1
+Si utilizamos el principio de sustitución en la primera ecuación, obtendremos una ecuación de primer grado con una variable:
+
+x + x + 1 = 71
+Situaciones que generan ecuaciones de primer grado con una variable</text>
+		</slide>
+		<slide index="15" title="" titleNormalized="" src="slide16.swf" size="22556" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset15">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>La última expresión de la diapositiva anterior, puede ser resuelta utilizando los métodos estudiados en este bloque de aprendizaje:
+
+x + x + 1 = 71
+
+2x + 1 = 71
+
+2x = 71 - 1
+
+2x = 70
+
+x = 70 2 
+
+x = 35
+	
+Por lo tanto, si x=35 y el otro número es y=x+1, entonces y = 35 + 1 = 36.
+
+De esta manera, los números que buscamos son 35 y 36.
+Situaciones que generan ecuaciones de primer grado con una variable</text>
+		</slide>
+		<slide index="16" title="" titleNormalized="" src="slide17.swf" size="3332" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset16">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Problema 1. Irene y Alejandro tienen 73 DVD´s de música. Irene tiene el doble que Alejandro más 1. ¿Cuántos DVD´s tiene cada uno? 
+Importante: Se debe llamar “x” al número de DVD´s que tiene Irene o Alejandro. Como el número de discos de Irene está en función de los discos que tenga Alejandro, llamaremos “x” al número de DVD´s que tiene él.
+Número de DVD´s de Alejandro: x
+
+Número de DVD´s de Irene: 2x + 1
+
+Datos 
+Situaciones que generan ecuaciones de primer grado con una variable</text>
+		</slide>
+		<slide index="17" title="" titleNormalized="" src="slide18.swf" size="12459" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset17">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Planteamos la ecuación: x + (2x + 1) = 73 
+ 
+ 
+
+
+Resolvemos la ecuación:
+
+ x + 2x + 1 = 73 
+ 3 x = 73 – 1 
+ 𝑥= 72 3 
+ 𝒙=𝟐𝟒
+Problema 1 (continuación).
+Traducimos a lenguaje algebraico: la suma de los DVD´s de Irene y Alejandro es igual a 73.
+Método de resolución de ecuaciones
+Solución:
+
+Alejandro
+x = 24 DVD´s
+
+Irene
+2x+1 = 2(24)+1 = 49 DVD´s
+
+Suma de discos
+24 + 49 = 73 DVD´s
+Situaciones que generan ecuaciones de primer grado con una variable</text>
+		</slide>
+		<slide index="18" title="" titleNormalized="" src="slide19.swf" size="3965" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset18">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Problema 2. En una ferretería se venden tornillos en cajas de tres tamaños: pequeña, mediana y grande. La caja grande contiene el doble que la mediana y la mediana 25 tornillos más que la pequeña. Si se compra una caja de cada tamaño y en total hay 375 tornillos, ¿cuántos tornillos hay en cada caja?
+Importante: Se debe llamar “x” a una de las tres cajas. Como la caja grande está en función de la mediana y la caja mediana en función de la pequeña, llamaremos “x” a la caja pequeña.
+Caja pequeña: x
+
+Caja mediana: x + 25 
+
+Caja grande: 2( x + 25 ) 
+ Datos 
+Situaciones que generan ecuaciones de primer grado con una variable</text>
+		</slide>
+		<slide index="19" title="" titleNormalized="" src="slide20.swf" size="15930" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset19">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Planteamos la ecuación: x + ( x + 25 ) + 2( x + 25 ) = 375 
+ 
+
+
+
+Resolvemos la ecuación:
+
+ x + x + 25 + 2x + 50 = 375
+ x + x + 2x = 375 – 25 – 50
+ 4x = 300
+ 𝑥= 300 4 
+ 𝒙=𝟕𝟓
+Problema 2 (continuación).
+Traducimos a lenguaje algebraico: la suma de los tornillos de las tres cajas es igual a 375.
+Método de resolución de ecuaciones
+Solución:
+
+Caja pequeña
+x = 75 tornillos
+
+Caja mediana
+x+25 = 75+25 = 100 tornillos
+
+Caja grande
+2(x+25) = 2(75+25) = 2(100) = 200 tornillos
+Situaciones que generan ecuaciones de primer grado con una variable</text>
+		</slide>
+		<slide index="20" title="" titleNormalized="" src="slide21.swf" size="10942" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset20">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Problema 3. Pedro, que actualmente tiene 42 años, tiene 8 años más que el doble de la edad de Antonio, ¿qué edad tiene Antonio? 
+
+Solución:
+
+
+
+
+
+
+
+
+
+
+A la edad de Antonio la llamamos:
+x
+Podemos plantear la siguiente ecuación:
+2x + 8 = 42
+
+Agrupamos:
+
+2x = 42 - 8
+
+2x = 34
+
+Solucionamos:
+
+𝑥= 34 2 
+
+x = 17
+La edad de Antonio es: 17 años
+Situaciones que generan ecuaciones de primer grado con una variable</text>
+		</slide>
+		<slide index="21" title="Conclusión" titleNormalized="conclusión" src="slide22.swf" size="2957" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset21">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Conclusión
+En este bloque revisamos las ecuaciones de primer grado, donde se analizó el proceso de solución por medio del método algebraico y así mismo, se aplicó la transformación de lenguaje común a lenguaje algebraico en el desarrollo de problemáticas situadas para establecer modelos matemáticos que se les conoce como ecuación.
+
+Como pudiste observar, el uso de las ecuaciones te permitieron resolver problemas cuando desconoces la variable principal de una problemática planteada.
+
+
+</text>
+		</slide>
+	</slides>
+</presentation>

@@ -1,0 +1,127 @@
+                
+                <div class="row" >
+                <br>
+                </div>
+                <div class="row" ng-init="GetColumns(2)" >
+                    <div class="col-lg-12">
+                        <!--<h1 class="page-header">
+                           Seguimientos de ayuda <small></small>
+                        </h1> -->
+                        <div class="panel panel-{{colorPannel[bd]}}">
+            						  <div class="panel-heading">
+            						    <h3 class="panel-title"><strong>Filtros</strong><span class="glyphicon glyphicon-filter" aria-hidden="true"></span> <small>
+                              <strong>Nota:</strong> Para filtro multiple, ingresa los datos separados por espacios. Ejem: Id: "43 62 18"</small></h3>
+            						  </div>
+            						  <div class="panel-body">
+                              <div class="row col-md-12">
+      						                <div ng-if="columns[cols].isFilter"  ng-repeat="cols in columnsFilter" class="col-md-3" >
+                                    <div class="form-group">
+                                      <div class="input-group" >  <span class="input-group-addon" id="basic-addon1" ng-bind="columns[cols].desc" >Filtro: </span><input ng-model="filters[$index]" class="form-control"  type="text" id="filter" name="filter" value="" placeholder="{{columns[cols].desc}}" ></div>
+                                    </div>
+                                  </div>
+                              </div>
+            						  </div>
+            						</div>
+                    </div>
+                </div>
+                <!-- Page Heading -->
+                <div class="row"  >
+                    <div class="col-lg-12">
+                        <!--<h1 class="page-header">
+                           Seguimientos de ayuda <small></small>
+                        </h1> -->
+                        <div class="panel panel-{{colorPannel[bd]}}">
+                          <div class="panel-heading">
+                            <h3 class="panel-title"><strong>Columnas Seleccionadas</strong>  <small>
+                              <strong>Nota:</strong> Haz click en la columna que quieras remover.</small> </h3> 
+                          </div>
+                          <div class="panel-body">
+                              <div class="row col-md-12">
+                                  <div ng-repeat="cols in columnsSelect" class="col-md-2" >
+                                       <label class="label label-lg label-{{colorPannel[bd]}}" style="cursor: pointer;" ng-click="UnSelectColumn($index)" type="button" > {{columns[cols].desc}} <span ng-if="columns[cols].isFilter" class="glyphicon glyphicon-filter" aria-hidden="true"></span>
+                                      </label>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <div  class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-{{colorPannel[bd]}}">
+                            <div class="panel-heading" >
+                                <h3 class="panel-title"><i class="fa fa-fw fa-bar-chart-o"></i> <strong >Reporte</strong> 
+                                  <button class="btn btn-default" ng-click="GenerateReport()" type="button" >Vista Previa <span class="glyphicon glyphicon-play" aria-hidden="true"></span> </button>  
+                                  <button class="btn btn-{{colorPannel[bd]}}" ng-click="GenerateReportExcel()" type="button" >Descargar Excel <span class="glyphicon glyphicon-save-file" aria-hidden="true"></span> </button> 
+                                <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#modal_mensajes"> <span class=" glyphicon glyphicon-menu-left" aria-hidden="true"><small></small></span>Query<span class=" glyphicon glyphicon-menu-right" aria-hidden="true"></span> </button>
+                                </h3> 
+                            </div>  
+                            <div class="panel-body">
+                                <!--<div class="row col-md-12  text-center">
+                                    <dir-pagination-controls boundary-links="true" template-url="assets/dirpagination.tpl.html"></dir-pagination-controls>
+                                </div> -->
+                                <div  style="overflow-x:scroll; overflow-y: hidden;"  class="row">
+                                    <table class="table"ng-hide="cargando">
+                                        
+                                        <!-- <tbody>
+                                             <tr dir-paginate="segui in seguimientos | itemsPerPage:50 | filter:s " >
+                                                <td >1</td>
+                                                <td >Fulanito</td>
+                                                <td>
+                                                    <label ng-if="segui.status==0" class="label label-success">
+                                                        Activo
+                                                    </label>
+                                                    <label  ng-if="segui.status==1" class="label label-danger">
+                                                        Baja
+                                                    </label>
+                                                    <label ng-if="segui.status>1" class="label label-warning">
+                                                        Suspendido
+                                                    </label>
+                                                </td>
+                                            </tr>  
+                                        <tbody> -->
+                                        <tbody ng-repeat="rep in report" >
+                                            <tr ng-if="$first">
+                                                <th ng-repeat="re in rep track by $index"  >{{re}}</th>
+                                            </tr>
+                                            <tr ng-if="!$first">
+                                                <td ng-repeat="re in rep track by $index "  >{{re}}</td>
+                                            </tr>
+
+                                           
+                                         
+                                        </tbody> 
+
+                                    </table>
+
+                                    <div class="progress col-md-12" ng-show="cargando" >
+                                      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                        <span class="sr-only">100% Complete</span>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal mensajes-->
+                <div class="modal fade" id="modal_mensajes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel" >Query SQL Generado</h4>
+                      </div>
+                      <div class="modal-body">
+                          <textarea  rows="6" cols="80" >
+                            {{sqlquery}}                          
+                          </textarea>
+                           
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default"  data-dismiss="modal">Cerrar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>

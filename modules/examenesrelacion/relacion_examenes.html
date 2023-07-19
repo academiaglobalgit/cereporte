@@ -1,0 +1,152 @@
+<modalexamenrelacion title="Confirmación" visible="showEliminarRelacionExamen" >
+    <modal-body>
+        <center>
+			<h1>¿Seguro que desea eliminar la relación?</h1>
+		</center>
+    </modal-body>
+    <modal-footer>
+        <button class="btn btn-default" type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="btnHideEliminarRelacionExamen_click()">NO</button>
+        <button class="btn btn-primary" type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="btnDelItemRelacionExamen_click()">SI</button>
+    </modal-footer>
+</modalexamenrelacion>
+
+<div class="row">
+<div class="row">
+    <div class="col-md-offset-1 col-xs-5">
+      	<label for="cmbplanestudio">Plan de estudios:</label>
+		<select class="form-control" id="cmbplanestudio" name="cmbplanestudio" ng-model="planestudio_item" ng-change="cancelar_relacion_change_examen1(planestudio_item)" ng-options="planestudio_item as planestudio_item.nombre for planestudio_item in plan_estudios | filter:{id_corporacion:'!5'}:true">
+		</select>
+
+    </div>
+    <div class="col-md-offset-1 col-xs-5">
+		<h5 ng-hide="planestudio_item.id > 0">** Por favor, selecciona el plan de estudios de la relación de materias</h5>
+
+
+    </div>
+</div>
+<br>
+<div >
+    <div class="row">
+    	<div class="col-md-offset-1 col-xs-5">
+    	<label for="txtautoridadnew">Autoridad:</label>
+		<select ng-disabled="planestudio_item.id <= 0"  class="form-control" id="txtautoridadnew" name="txtautoridadnew" ng-model="item_autoridad" ng-change="cancelar_relacion_change_examen3(item_autoridad)" ng-options="item_plan_estudios_autoridades as item_plan_estudios_autoridades.nombre for item_plan_estudios_autoridades in plan_estudios_autoridades"></select>
+    		
+    	</div>
+		<div class="col-md-offset-1 col-xs-5">
+			<h5 ng-show="planestudio_item.id > 0 && item_autoridad.id <= 0">** Por favor, selecciona la autoridad educativa de la relación de materias</h5>
+		</div>
+    </div>
+    <br>
+    
+    <div class="row">
+
+
+     
+    	<div class="col-md-offset-1 col-xs-5">
+    	<label for="txtrelacion_materias">Relación de materias:</label>
+		<select ng-disabled="item_autoridad.id <= 0" class="form-control" id="txtrelacion_materias" name="txtrelacion_materias" ng-model="relacion_materia" ng-change="cancelar_relacion_change_examen2(relacion_materia)" ng-options="item_materias_relacion as (item_materias_relacion.materia_autoridad.nombre+' - '+item_materias_relacion.materia_corporacion.nombre)  for item_materias_relacion in materias_relacion |filter:filtro_corporacion"></select>
+    		
+    	</div>
+    	<div class="col-md-offset-1 col-xs-5" ng-hide="relacion_materia.id > 0">
+    		<h5 ng-show="planestudio_item.id > 0 && item_autoridad.id > 0">** Por favor, selecciona la autoridad educativa de la relación de materias</h5>
+
+    	</div>
+
+    </div>
+    <br>
+    <div class="row">
+    <div class="col-md-offset-1 col-xs-5">
+		
+	
+	<!-- Materias corporacion -->
+	<div ng-hide="mostrarexamenescorporacion">
+
+	<h5 ng-show="planestudio_item.id > 0 && item_autoridad.id > 0 && relacion_materia.id > 0">** Seleccione un examen de la corporación para relacionar</h5>
+	<table class="table table-bordered">
+	  <thead>
+	    <tr>
+	      <th>nombre</th>
+	      <th>bloque</th>
+	      <th>Opción</th>
+	    </tr>
+	  </thead>
+	  <tbody ng-show="mostrarexamenes">
+	    <tr ng-repeat="examen_item in examenes | filter: {id_materia: relacion_materia.materia_corporacion.id }:true | orderBy: bloque">
+	      <td scope="row" ng-bind="examen_item.nombre"></td>
+	      <td ng-bind="examen_item.bloque" class="tabletext_center"></td>
+	      <td><button class="btn btn-primary" ng-click="btnGuardarExamenRelacion_click(examen_item)">Seleccionar</button></td>
+	    </tr>
+	    
+	  </tbody>
+	</table>
+
+
+	</div>	
+	<!-- Materias corporacion -->
+
+	<!-- Materias autoridad -->
+	<div ng-show="mostrarexamenescorporacion">
+	<h5>** Presione el boton relacionar para guardar la relación del examen</h5>
+	<table class="table table-bordered">
+	  <thead>
+	    <tr>
+	      <th>nombre</th>
+	      <th>bloque</th>
+	      <th>Opción</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr ng-repeat="examen_item in examenes | filter: { id_materia: relacion_materia.materia_autoridad.id }:true | orderBy: bloque">
+	      <td scope="row" ng-bind="examen_item.nombre"></td>
+	      <td ng-bind="examen_item.bloque" class="tabletext_center"></td>
+	      <td><button class="btn btn-success" ng-click="btnGuardarExamenRelacion_click(examen_item)">Relación</button></td>
+	    </tr>
+	    
+	  </tbody>
+	</table>
+	
+	</div>
+	<!-- Materias autoridad -->
+
+
+
+	</div>
+
+
+	<div class="col-md-offset-1 col-xs-5">
+
+
+
+	<table class="table">
+	  
+	  <thead class="thead-inverse">
+	    <tr>
+	      <th>Examen corporación</th>
+	      <th>Examen autoridad</th>
+	      <th>Opción</th>
+	    </tr>
+	  </thead>
+
+	  <tbody>
+	 
+	  <tr ng-repeat="relacion_item in examenes_relacion | filter:{'id_materia_corporacion':relacion_materia.materia_corporacion.id }:true" class="{{ relacion_item.id > 0 ? '':'text_resplandor' }}">
+	 
+
+	    <td scope="row" >
+	    <label ng-repeat=" examen_item in examenes | filter:{'id':relacion_item.id_examen }:true" ng-bind="examen_item.nombre"></label>
+	    </td>
+	    <td><label ng-repeat=" examen_item in examenes | filter:{'id':relacion_item.id_examen_autoridad }:true" ng-bind="examen_item.nombre"></label></td>
+
+	    <td><button class="btn btn-danger" ng-click="btnShowEliminarRelacionExamen_click(relacion_item)" ng-bind=" relacion_item.id > 0 ? 'X':'Cancelar'"></button></td>
+	  </tr>    
+	  </tbody>
+	
+	</table>
+
+
+	</div>
+
+	</div>
+      
+    </div>
+</div>

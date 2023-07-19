@@ -1,0 +1,273 @@
+                <!-- Page Heading -->
+                <div class="row" >
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                          Alumnos inscritos DGB <small></small>
+                        </h1>
+                    </div>
+                </div>
+                <!--<div  class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading" style="background-color: #024699; color:white;" >
+                                <h4 class="panel-title"><i class="fa fa-question-filter fa-fw"></i>Nuevo Alumno DGB</h4>
+                              
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12" >
+                                        <div class="row">
+                                          <form ng-init='d' name='importa' method='post' action='' enctype='multipart/form-data' id='excelform'>
+                                              
+                                                <div class="col-md-3" >
+                                                 <div class="form-group">
+                                                        <label for=''>Corporación</label>
+                                                        <select class="form-control" ng-model="d.corporacion" name="corporacion" id="corporacion" ng-init="d.corporacion=2;" >
+                                                            <option value="2" selected>Prepacoppel</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>Matricula</label>
+                                                          <input class="form-control" ng-init="d.matricula='';" ng-model="d.matricula" type="text" value="" name="matricula" id="matricula" placeholder="50000123">
+                                                    </div>
+                                                </div>
+                                                 <div class="col-md-3" >
+                                                     <div class="form-group">
+                                                            <label for=''>Ciclo Escolar</label>
+                                                            <select class="form-control" ng-init="d.ciclo_escolar="";" ng-model="d.ciclo_escolar" name="ciclo_escolar" id="ciclo_escolar" >
+                                                                <option value="" selected>Selecciona Ciclo Escolar</option>
+                                                                <option value="2015" >2015</option>
+                                                                <option value="2016" >2016</option>
+                                                                <option value="2017" >2017</option>
+                                                                <option value="2018" >2018</option>
+                                                                <option value="2019" >2019</option>
+                                                                <option value="2020" >2020</option>
+                                                            </select>           
+                                                     </div>
+                                                </div>
+                                                <div class="col-md-3" >
+                                                     <div class="form-group">
+                                                            <label for=''>SubCiclo Escolar</label>
+                                                            <select class="form-control" ng-model="d.subciclo_escolar"  name="subciclo_escolar" ng-init="d.subciclo_escolar='';" id="subciclo_escolar" >
+                                                            <option value="" selected>Selecciona un tipo</option>
+                                                                <option value="1" >1</option>
+                                                                <option value="2" >2</option>
+                                                                <option value="3" >3</option>
+                                                            </select>           
+                                                     </div>
+                                                </div>
+                                                <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>Grado</label>
+                                                          <select class="form-control" ng-init="d.grado='';" ng-model="d.grado" name="grado" id="grado" >
+                                                           <option value="" selected>Selecciona un grado</option>
+                                                            <option value="1" >Grado 1</option>
+                                                            <option value="2" >Grado 2</option>
+                                                            <option value="3" >Grado 3</option>
+                                                            <option value="4" >Grado 4</option>
+                                                            <option value="5" >Grado 5</option>
+                                                            <option value="6" >Grado 6</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>Fecha de Inscripcion</label>
+                                                          <input class="form-control" ng-init="d.fecha_evaluacion='';" ng-model="d.fecha_evaluacion" type="text" value="" name="fecha_evaluacion" id="fecha_evaluacion" placeholder="0000-12-30">
+                                                     
+                                                    </div>
+                                                </div>
+                                                 <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>Tipo de Movimiento</label>
+                                                            <select class="form-control"  ng-init="d.tipo_movimiento='';" ng-model="d.tipo_movimiento"  name="tipo_movimiento" id="tipo_movimiento" >
+                                                          	<option value="" selected>Selecciona el tipo</option>
+                                                            <option value="1" selected>ALTA</option>
+                                                            <option value="2" >BAJA</option>
+                                                            <option value="3" >CAMBIO</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                          
+                                              
+                                                
+                                                <div class="col-md-2" >
+                                                    <button class="btn btn-primary" ng-click="HistorialActas(d)"  type='button' >Guardar</button>
+                                                </div>
+                                            </form>
+                                        <div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+ 				<div  class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading" style="background-color: #024699; color:white;" >
+                                <h4 class="panel-title"><i class="fa fa-question-filter fa-fw"></i>Filtros</h4>                            
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12" >
+                                        <div class="row">
+                                          <form ng-init='d' name='importa' method='post' action='' enctype='multipart/form-data' id='excelform'>
+                                              
+                                                <div class="col-md-3" >
+                                                 	<div class="form-group">
+                                                        <label for=''>Corporación</label>
+                                                        <select class="form-control" ng-model="d.corporacion" name="corporacion" id="corporacion" ng-init="d.corporacion=2;" >
+                                                            <option value="2" selected>Prepacoppel</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>Matricula</label>
+                                                          <input class="form-control" ng-init="d.matricula='';" ng-model="d.matricula" type="text" value="" name="matricula" id="matricula" placeholder="50000123">
+                                                    </div>
+                                                </div>
+
+
+                                                 <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>ID Moodle</label>
+                                                          <input class="form-control" ng-init="d.idmoodle='';" ng-model="d.idmoodle" type="text" value="" name="idmoodle" id="idmoodle" placeholder="0101">
+                                                    </div>
+                                                </div>
+                                                 <div class="col-md-3" >
+                                                     <div class="form-group">
+                                                            <label for=''>Ciclo Escolar</label>
+                                                            <select class="form-control" ng-init="d.ciclo_escolar="";" ng-model="d.ciclo_escolar" name="ciclo_escolar" id="ciclo_escolar" >
+                                                                <option value="" selected>Selecciona Ciclo Escolar</option>
+                                                                <option value="2015" >2015</option>
+                                                                <option value="2016" >2016</option>
+                                                                <option value="2017" >2017</option>
+                                                                <option value="2018" >2018</option>
+                                                                <option value="2019" >2019</option>
+                                                                <option value="2020" >2020</option>
+                                                            </select>           
+                                                     </div>
+                                                </div>
+                                                <div class="col-md-3" >
+                                                     <div class="form-group">
+                                                            <label for=''>SubCiclo Escolar</label>
+                                                            <select class="form-control" ng-model="d.subciclo_escolar"  name="subciclo_escolar" ng-init="d.subciclo_escolar='';" id="subciclo_escolar" >
+                                                            <option value="" selected>Selecciona un tipo</option>
+                                                                <option value="1" >1</option>
+                                                                <option value="2" >2</option>
+                                                                <option value="3" >3</option>
+                                                            </select>           
+                                                     </div>
+                                                </div>
+                                                <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>Grado</label>
+                                                          <select class="form-control" ng-init="d.grado='';" ng-model="d.grado" name="grado" id="grado" >
+                                                           <option value="" selected>Selecciona un grado</option>
+                                                            <option value="1" >Grado 1</option>
+                                                            <option value="2" >Grado 2</option>
+                                                            <option value="3" >Grado 3</option>
+                                                            <option value="4" >Grado 4</option>
+                                                            <option value="5" >Grado 5</option>
+                                                            <option value="6" >Grado 6</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>Fecha de Inscripcion</label>
+                                                          <input class="form-control" ng-init="d.fecha_inscripcion='';" ng-model="d.fecha_inscripcion" type="text" value="" name="fecha_inscripcion" id="fecha_inscripcion" placeholder="2000-12-30">
+                                                    </div>
+                                                </div>
+               
+                                                <div class="col-md-2" >
+                                                    <button class="btn btn-primary" ng-click="AlumnosDGB(d)"  type='button' >Buscar</button>
+                                                </div>
+                                            </form>
+                                        <div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div  class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading" >
+                                <h3 class="panel-title"><i class="fa fa-fw fa-bar-chart-o"></i> <strong >Alumnos</strong>  <button type="button" class="btn btn-default pull-right" data-toggle="modal" data-target="#modal_mensajes"> <span class=" glyphicon glyphicon-menu-left" aria-hidden="true"><small></small></span>Query<span class=" glyphicon glyphicon-menu-right" aria-hidden="true"></span> </button>
+                                </h3> 
+                            </div>  
+                            <div class="panel-body">
+                                <!--<div class="row col-md-12  text-center">
+                                    <dir-pagination-controls boundary-links="true" template-url="assets/dirpagination.tpl.html"></dir-pagination-controls>
+                                </div> -->
+                                <div  style="overflow-x:scroll; overflow-y: hidden;"  class="row">
+                                    <table class="table"ng-hide="cargando">
+                                        
+                                        <!-- <tbody>
+                                             <tr dir-paginate="segui in seguimientos | itemsPerPage:50 | filter:s " >
+                                                <td >1</td>
+                                                <td >Fulanito</td>
+                                                <td>
+                                                    <label ng-if="segui.status==0" class="label label-success">
+                                                        Activo
+                                                    </label>
+                                                    <label  ng-if="segui.status==1" class="label label-danger">
+                                                        Baja
+                                                    </label>
+                                                    <label ng-if="segui.status>1" class="label label-warning">
+                                                        Suspendido
+                                                    </label>
+                                                </td>
+                                            </tr>  
+                                        <tbody> -->
+                                        <tbody ng-repeat="alumno in alumnos_reportes" >
+                                                <tr ng-if="$first">
+                                                    <th ng-repeat="al in alumno track by $index"  >{{al}}</th>
+                                                </tr>
+                                                <tr ng-if="!$first">
+                                                    <td ng-repeat="alu in alumno track by $index "  >{{alu}}</td>
+                                                </tr>
+                                        </tbody> 
+
+                                    </table>
+
+                                    <div class="progress col-md-12" ng-show="cargando" >
+                                      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                        <span class="sr-only">100% Complete</span>
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                 <!-- Modal mensajes-->
+                <div class="modal fade" id="modal_mensajes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel" >Query SQL Generado</h4>
+                      </div>
+                      <div class="modal-body">
+                          <textarea  rows="6" cols="80" >
+                            {{sqlquery}}                          
+                          </textarea>
+                           
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default"  data-dismiss="modal">Cerrar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>

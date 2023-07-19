@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link type="text/css" href="materialize/css/fonts.css" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+      <script type="text/javascript" src="angularjs/js/angular.min.js"></script>
+
+      <script type="text/javascript" src="chart/js/chart.min.js"></script>
+
+      <script type="text/javascript" src="angularjs/js/angular-chart.min.js"></script>
+      
+      <script type="text/javascript" src="bower_components/file-saver/FileSaver.min.js"></script>
+      <script type="text/javascript" src="bower_components/json-export-excel/src/json-export-excel.js"></script>
+      
+      
+
+
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="materialize/js/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+      
+
+
+      <script type="text/javascript" src="js/ctrl.js"></script>
+      
+      <meta charset="utf-8"/>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+
+
+    <body >
+    <div ng-app="appReporte" ng-controller="ctlReporte" >
+
+
+<div class="container">
+
+   <div class="col s2"></div>
+  <div class="col s10">
+
+  <div class="section">
+    <h3>Cambios en el estatus del alumno</h3>
+    <label>Desde:</label>
+     <input type="text" class="datepicker" ng-model="consulta.fecha1" placeholder="2017-01-01" > 
+    <label>Hasta:</label>
+    <input type="text" class="datepickers" ng-model="consulta.fecha2" placeholder='2017-01-01'>
+    
+  </div>
+
+  <div class="row">
+  
+
+  <div class="col s3" ng-repeat="item_empresa in consulta.empresas">
+      <input type="checkbox" class="filled-in" ng-model="item_empresa.ver" id="{{item_empresa.id}}" checked="{{item_empresa.ver}}" />
+      <label for="{{item_empresa.id}}" ng-bind="item_empresa.nombre"></label>
+  </div>
+  
+
+
+
+  </div>
+</div>
+
+<a ng-hide="loading" class="waves-effect waves-light btn" ng-click="btnConsultar_click()"><i class="material-icons right">search</i>Consultar</a>
+<div ng-show="loading" class="preloader-wrapper small active">
+    <div class="spinner-layer spinner-green-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+
+<br><br>
+<a ng-show="btnExcel.visible" id="id_excel" ng-json-export-excel data="reporte" report-fields="{id_alumno: 'id_alumno',empresa:'Empresa',numero_empleado:'número de empleado',nombre:'Nombre completo',apellido1:'Apellido paterno', apellido2:'Apellido materno',estatus_cambio:'Cambio de estatus', fecha:'fecha'}"  filename =" 'Cambios_estatus_alumnos' " separator="," class="waves-effect waves-light btn"><i class="material-icons right">view_list</i>Descargar Excel</a>
+
+
+
+
+</div>
+   
+
+<div class="col s12">
+  <table>
+  <tr>
+    <td>Id_alumno</td>
+
+    <td>Empresa</td>
+    <td>Numero de empleado</td>
+    <td>Nombre</td>
+    <td>apellido paterno</td>
+    <td>apellido materno</td>
+    <td>cambio de estatus</td>
+    <td>fecha</td>
+
+  </tr>
+  <tr ng-repeat="item_alumno in reporte">
+      <td ng-bind="item_alumno.id_alumno"></td>
+      
+      <td ng-bind="item_alumno.empresa"></td>
+      <td ng-bind="item_alumno.numero_empleado"></td>
+      <td ng-bind="item_alumno.nombre"></td>
+      <td ng-bind="item_alumno.apellido1"></td>
+      <td ng-bind="item_alumno.apellido2"></td>
+      <td ng-bind="item_alumno.estatus_cambio"></td>
+      <td ng-bind="item_alumno.fecha"></td>
+      
+  </tr>
+
+
+</table>
+
+</div>
+
+
+
+</div><!-- app -->
+
+
+ 
+
+
+
+    
+
+
+
+    </body>
+  </html>

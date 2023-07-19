@@ -1,0 +1,248 @@
+                <!-- Page Heading -->
+                <div class="row" >
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                           Generar Excel Avance de Examenes Scorms <small></small>
+                        </h1>
+                    </div>
+                </div>
+                <div  class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading" style="background-color: orange; color:white;" >
+                                <h4 class="panel-title"><i class="fa fa-download fa-fw"></i>AVANCE  TOKS</h4>
+                              
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12" >
+                                        <div class="row">
+                                          <form name='importa' method='get' action='datos/ReporteAvanceExcel.php' enctype='multipart/form-data' id='excelform'>
+
+                                              <div class="col-md-3" >
+                                                 <div class="form-group">
+                                                        <label for=''>Plataforma</label>
+                                                        <select class="form-control" name="id_plan_estudio" id="id_plan_estudio" >
+                                                            <option value="9" selected>Prepatoks</option>
+                                                            <option value="10" >Licenciatura Toks</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+   
+                                                
+                                                <div class="col-md-2" >
+
+                                                <input class="btn btn-warning" id="excelenviar" type='submit' name='enviar'  value="GENERAR"  />
+                                                </div>
+                                                <input type="hidden" value="upload" name="action" />
+                                            </form>
+                                        <div>
+                                    </div>
+                                </div>
+                                <div class="row col-md-12  text-center">
+                                    <dir-pagination-controls boundary-links="true" template-url="assets/dirpagination.tpl.html"></dir-pagination-controls>
+                                </div>
+                                <div class="row">
+                                   <!-- <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th># ID</th>
+                                                <th>Fecha</th>
+                                                <th>Usuario</th>
+                                                <th>Telefono</th>
+                                                <th>Asunto</th>
+                                                <th>Estado</th>
+                                                <th></th>
+                                                <th></th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+                                        <tbody>
+                                    </table>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div  class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading" style="background-color: red; color:white;" >
+                                <h4 class="panel-title"><i class="fa fa-download fa-fw"></i>AVANCE PREPALEY</h4>
+                              
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12" >
+                                        <div class="row">
+                                          <form name='importa' method='get' action='datos/ReporteAvanceExcel.php' enctype='multipart/form-data' id='excelform'>
+
+                                              <div class="col-md-3" >
+                                                 <div class="form-group">
+                                                        <label for=''>Plataforma</label>
+                                                        <select class="form-control" name="id_plan_estudio" id="id_plan_estudio" >
+                                                            <option value="4" selected>PrepaLey</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+   
+                                                
+                                                <div class="col-md-2" >
+
+                                                <input class="btn btn-danger" id="excelenviar" type='submit' name='enviar'  value="GENERAR"  />
+                                                </div>
+                                                <input type="hidden" value="upload" name="action" />
+                                            </form>
+                                        <div>
+                                    </div>
+                                </div>
+                                <div class="row col-md-12  text-center">
+                                    <dir-pagination-controls boundary-links="true" template-url="assets/dirpagination.tpl.html"></dir-pagination-controls>
+                                </div>
+                                <div class="row">
+                                   <!-- <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th># ID</th>
+                                                <th>Fecha</th>
+                                                <th>Usuario</th>
+                                                <th>Telefono</th>
+                                                <th>Asunto</th>
+                                                <th>Estado</th>
+                                                <th></th>
+                                                <th></th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+                                        <tbody>
+                                    </table>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div  class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading"  >
+                                <h4 class="panel-title"><i class="fa fa-download fa-fw"></i>AVANCE SUMATE</h4>
+                              
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12" >
+                                        <div class="row">
+                                          <form name='importa' method='get' action='datos/ReporteAvanceExcel.php' enctype='multipart/form-data' id='excelform'>
+
+                                              <div class="col-md-3" >
+                                                 <div class="form-group">
+                                                        <label for=''>Plataforma</label>
+                                                        <select class="form-control" name="id_plan_estudio" id="id_plan_estudio" >
+                                                            <option value="13" selected>Prepa Sumate</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+   
+                                                
+                                                <div class="col-md-2" >
+
+                                                <a class="btn btn-info" target="_blank" href="https://prepasumate.mx/cereporte/datos/ReporteAvanceExcel.php"> GENERAR </a>
+                                                </div>
+                                             
+                                            </form>
+                                        <div>
+                                    </div>
+                                </div>
+                                <div class="row col-md-12  text-center">
+                                    <dir-pagination-controls boundary-links="true" template-url="assets/dirpagination.tpl.html"></dir-pagination-controls>
+                                </div>
+                                <div class="row">
+                                   <!-- <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th># ID</th>
+                                                <th>Fecha</th>
+                                                <th>Usuario</th>
+                                                <th>Telefono</th>
+                                                <th>Asunto</th>
+                                                <th>Estado</th>
+                                                <th></th>
+                                                <th></th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+                                        <tbody>
+                                    </table>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+    <div  class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading"  >
+                                <h4 class="panel-title"><i class="fa fa-download fa-fw"></i>AVANCE MAESTRIA UMI</h4>
+                              
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12" >
+                                        <div class="row">
+                                          <form name='importa' method='get' action='datos/ReporteAvanceExcel.php' enctype='multipart/form-data' id='excelform'>
+
+                                              <div class="col-md-3" >
+                                                 <div class="form-group">
+                                                        <label for=''>Plataforma</label>
+                                                        <select class="form-control" name="id_plan_estudio" id="id_plan_estudio" >
+                                                            <option value="12" selected>MAESTRIA UMI</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+   
+                                                
+                                                <div class="col-md-2" >
+
+                                                <a class="btn btn-primary" target="_blank" href="https://umi.edu.mx/cereporte/datos/ReporteAvanceExcel.php"> GENERAR </a>
+                                                </div>
+                                             
+                                            </form>
+                                        <div>
+                                    </div>
+                                </div>
+                                <div class="row col-md-12  text-center">
+                                    <dir-pagination-controls boundary-links="true" template-url="assets/dirpagination.tpl.html"></dir-pagination-controls>
+                                </div>
+                                <div class="row">
+                                   <!-- <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th># ID</th>
+                                                <th>Fecha</th>
+                                                <th>Usuario</th>
+                                                <th>Telefono</th>
+                                                <th>Asunto</th>
+                                                <th>Estado</th>
+                                                <th></th>
+                                                <th></th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+                                        <tbody>
+                                    </table>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>

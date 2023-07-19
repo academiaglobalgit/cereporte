@@ -1,0 +1,172 @@
+ <!--<div class="embed-responsive embed-responsive-4by3">-->
+<div id="divContenedorAdmin" style="max-width: 10000px;">
+
+ 	<div class="screenLoader loading" style="display:none;">
+		<div class="loader"></div>
+	</div>
+
+ 	<div id="divListadoTickets" name="divListadoTickets" class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1" style="margin-top: 20px; overflow-x: auto !important;">
+		
+		<div class="col-12" style="padding-bottom: 20px; margin-bottom: 20px;">
+	 		<h3><span class="label label-primary pull-left">Listado de solicitudes de ayuda</span></h3>
+	 		<h3 id="lblManual" name="lblManual"><span class="label label-info pull-right" style="cursor: pointer;"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;Manual de Usuario</span></h3>
+ 		</div>
+
+		<table id="tickets_listado" name="tickets_listado" class="table table-condensed table-bordered">
+			<tr>
+				<th>No. solicitud</th>
+				<th>Titulo</th>
+				<th>Fecha Inicio</th>
+				<th>Fecha Ultima Modificación</th>
+				<th>Plan de Estudio</th>
+				<th>Departamento</th>
+				<th>Asesor</th>		
+				<th>Estatus</th>
+			</tr>
+			<tbody id="tickets_listado_body" name="tickets_listado_body"></tbody>
+		</table>
+
+		<div id="listadoTicketsPaginado" class="text-right"></div>
+	</div>
+
+	<!-- PANTALLA EDITAR -->			
+	<div id="divEditarTickets" name="divEditarTickets" class="col-lg-6 col-lg-offset-3" style="display:none; margin-top:20px;">
+		<div class="panel panel-default">
+	 		<div class="panel-heading" style="background-color: #265BA7; color:#FFFFFF;">Detalle Solicitud</div>
+			<div class="panel-body">
+
+				<div class="form-group">						
+					<div>
+						<h3 id="lblPlanEstudio" name="lblPlanEstudio" style="margin-top: 0px;"></h3>
+					</div>
+					
+					<div class="col-12 col-lg-12" style="margin-top: 10px !important;">
+						<table border="0" class="col-12 col-lg-12">
+							<tr>
+								<td align="right" style="width:130px !important;"><label for="" class="control-label">No. Solicitud:&nbsp;</label></td>
+								<td align="left"><label for="" class="control-label" id="id_titulo" name="id_titulo" style="font-weight: normal !important;"></label></td>								
+							</tr>
+
+							<tr>
+								<td style="width: auto !important;" align="right"><label for="" class="control-label">No. Titulo:&nbsp;</label></td>
+								<td align="left"><label for="" class="control-label" id="de_titulo" name="de_titulo" style="font-weight: normal !important;"></label></td>
+							</tr>
+
+							<tr>
+								<td style="width: auto !important;" align="right"><label for="" class="control-label">No. Empleado:&nbsp;</label></td>
+								<td align="left"><label for="" class="control-label" id="nu_empleado" name="nu_empleado" style="font-weight: normal !important;"></label></td>								
+							</tr>
+
+							<tr>
+								<td style="width: auto !important;" align="right"><label for="" class="control-label">No. Telefóno:&nbsp;</label></td>
+								<td align="left"><label for="" class="control-label" id="nu_telefono" name="nu_telefono" style="font-weight: normal !important;"></label></td>
+							</tr>
+
+							<tr>
+								<td style="width: auto !important;" align="right"><label for="" class="control-label">Cliente:&nbsp;</label></td>
+								<td align="left"><label for="" class="control-label" id="nb_cliente" name="nb_cliente" style="font-weight: normal !important;"></label></td>								
+							</tr>
+
+							<tr>
+								<td style="width: auto !important;" align="right"><label for="" class="control-label">Plan de estudio:&nbsp;</label></td>
+								<td align="left"><label for="" class="control-label" id="nb_planestudio" name="nb_planestudio" style="font-weight: normal !important;"></label></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-12 col-lg-12" style="margin-top: 10px !important;">
+						<div class="panel panel-info" style="min-height: 1px !important; max-height: 400px !important; overflow-y: auto !important;">
+							<div class="panel-heading" style="background-color: #337ab7; color:#fafafa;">Mensajes</div>
+							<div id="divChats" name="divChats" class="panel-body"></div>
+						</div>
+					</div>
+				</div>					 			
+
+				<div id="divMensajeEditar" class="form-group">
+					<div class="col-12 col-lg-12" style="margin-top: 10px; margin-bottom: 0px;">
+						<label for="de_mensaje">Mensaje</label>
+						<textarea id="de_mensajeEditar" name="de_mensajeEditar" class="form-control form-control-sm" rows="3" autocomplete="off" 
+							maxlength="1000" style="resize: none;"></textarea>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-12 col-lg-12" style="margin-top: 10px;">
+						<button type="button" id="btnFinalizarEditarTicket" name="btnFinalizarEditarTicket" class="btn btn-success pull-left" style="margin-right: 10px;">Finalizar</button>
+						<button type="button" id="btnEnProcesoTicket" name="btnEnProcesoTicket" class="btn btn btn-warning pull-left" style="margin-right: 10px;">Asignar en proceso</button>
+						<button type="button" id="btnGuardarEditarTicket" name="btnGuardarEditarTicket" class="btn button-coppelColors pull-right">Guardar</button>
+						<!--<button type="button" id="btnCancelarTicketEditarTicket" name="btnCancelarTicketEditarTicket" class="btn btn-danger pull-right" style="margin-right: 10px;">Cancelar</button>-->
+						<button type="button" id="btnCancelarEditarTicket" name="btnCancelarEditarTicket" class="btn btn-default pull-right" style="margin-right: 10px;">Regresar</button>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>	
+
+	<div id="modalConfirmarFinalizar" class="modal fade" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Confirmación</h4>
+				</div>
+				
+				<div class="modal-body">
+					<p>¿Desea finalizar la solicitud de ayuda?</p>
+				</div>
+				
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" id="btnCancelarFinalizar" name="btnCancelarFinalizar">Cancelar</button>
+					<button type="button" id="btnAceptarFinalizar" name="btnAceptarFinalizar" class="btn btn-primary">Aceptar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="modalConfirmarEnProceso" class="modal fade" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Confirmación</h4>
+				</div>
+				
+				<div class="modal-body">
+					<p>¿Desea poner en proceso la solicitud de ayuda?</p>
+				</div>
+				
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" id="btnCancelarProceso" name="btnCancelarProceso">Cancelar</button>
+					<button type="button" id="btnAceptarProceso" name="btnAceptarProceso" class="btn btn-primary">Aceptar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--<div id="modalConfirmarCancelar" class="modal fade" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Confirmación</h4>
+				</div>
+				
+				<div class="modal-body">
+					<p>¿Desea cancelar la solicitud de ayuda?</p>
+				</div>
+				
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" id="btnCancelarCancelar" name="btnCancelarCancelar">Cancelar</button>
+					<button type="button" class="btn btn-primary" id="btnAceptarCancelar" name="btnAceptarCancelar">Aceptar</button>
+				</div>
+			</div>
+		</div>
+	</div>-->
+ </div>
+
+ <input type="hidden" id="id_titulo" name="id_titulo" />
+
+<script src="views/controllers/ayudaalumnos_asesor.js"></script>

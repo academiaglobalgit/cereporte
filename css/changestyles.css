@@ -1,0 +1,37 @@
+.change {
+    background-color: #d9edf7;
+}
+.change-add,.change-remove {
+  background-color: white;
+  transition: all 1s;
+  -webkit-transition: all 1s ease-in-out;
+}
+.change-add-active {
+  background-color: #d9edf7;
+}
+.change-remove {
+    background-color: #d9edf7;
+
+}
+.change-remove-active {
+  background-color: white;
+}
+
+.change-up {
+    background-color: #d9edf7;
+}
+.change-up-add,.change-up-remove {
+  background-color: white;
+  transition: all 1s;
+  -webkit-transition: all 1s ease-in-out;
+}
+.change-up-add-active {
+  background-color: #d9edf7;
+}
+.change-up-remove {
+    background-color: #d9edf7;
+
+}
+.change-up-remove-active {
+  background-color: white;
+}

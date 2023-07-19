@@ -1,0 +1,299 @@
+                <!-- Page Heading -->
+                <div class="row" ng-init="GetSeguimientos(' '); GetRegiones();"  >
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                          <i class="fa fa-question-circle fa-fw"></i>  Chat de ayuda <small></small>
+
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="row" >
+                    <div style=" width:350px; white-space: normal; " class="col-md-4" ng-repeat="chat in seguimientos" ng-if="showSeguimientos[chat.id]" >
+                    
+                        <div class="panel panel-info" style="height:280px; white-space: normal;"  >
+                            <div class="panel-heading"  >
+                                {{chat.nombre}} <button type="button" ng-click="StopAutoUpdate(chat.id,$index)" class="close" aria-label="Close"><span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                          <div class="panel-body">
+                                <div ng-animate=" 'animate' " animate-on-change="chat.chat.length" id="id_chat" class="col-md-12" style=" height:150px; overflow: scroll; overflow-x: hidden;" scroll-glue> 
+                                    <!-- DIV CHAT-->
+                                    <div ng-repeat="msg in chat.chat" class="row"> <!-- LINEA DE CHAT por mensaje-->
+                                        <div class="col-md-12 ">
+                                            <div class="row"> <!-- linea nombre y fecha-->
+                                                <div class="col-md-6" style="color: rgb(32, 93, 176); font-size: 10px;" >
+                                                    <strong ng-bind="msg.nombre">
+                                                        Roberto vega
+                                                    </strong>
+                                                    :
+                                                </div> 
+                                                <div class="col-md-6" style="color: #95a5a6; font-size: 10px;">
+                                                    <strong  ng-bind="msg.fecha">
+                                                        2015-01-02 22:30:04
+                                                    </strong>
+                                                </div> 
+                                            </div>
+                                            <div class="row"> <!-- linea nombre y fecha mensaje-->
+                                                <div  ng-bind="msg.mensaje" class="col-md-12 panel panel-info" style="font-size: 10px; word-wrap: break-word;">
+                                                    Donec in augue odio. Sed vel ultrices odio. Aliquam vel sollicitudin urna. Aenean nec sem hendrerit, consectetur felis feugiat, ornare libero. Maecenas tempus condimentum egestas.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          <div class="panel-footer"  >
+                            <form class="form-inline" role="form">
+                                <div class="form-group">
+                                  <input ng-attr-id="{{'chat_msg'+chat.id}}" onfocus="this.selectionStart = this.selectionEnd = this.value.length;"  ng-focus="SetCurrentFocus(chat.id)" custom-autofocus="funcFocus[chat.id]" ng-enter="funcSetMensajes[chat.id](chat.id,$index)" ng-model="MsgSeguimientos[chat.id]" name="chat_msg" type="text" class="form-control" cols="40" placeholder="Escribe un comentario...">
+                                 <button type="submit" ng-click="funcSetMensajes[chat.id](chat.id,$index)" class="btn btn-default">
+                                 Enviar
+                                </button>
+                                </div>
+                            </form>
+                          </div>
+                          
+                        </div>
+                    </div>
+                </div>
+                <!--<div  class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading" style="background-color: #024699; color:white;" >
+                                <h3 class="panel-title"><i  class="fa fa-question-circle fa-fw"></i> Todos los chat de ayuda</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12" >
+                                        <div class="row">
+                                             <div class="col-md-2" >
+                                                <img  ng-show="cargando" src="img/loader.gif" height="30px" >
+                                               <img  ng-show="cargando && easteregg1 && easteregg2"  src="img/pinki.gif" height="30px" >
+
+                                            </div>
+                                             <div class="col-md-3" >
+                                                <div class="input-group" >  <span class="input-group-addon" id="basic-addon1">Estatus</span>
+                                                <select ng-init="s.status=''" class="form-control" name="status" ng-model="s.status" >
+                                                <option value="" selected>Todos</option>
+
+                                                <option value="0" >En línea</option>
+                                                <option value="1" >Desconectados</option>
+
+                                                </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4" >
+                                                <div class="input-group" >  <span class="input-group-addon" id="basic-addon1">Búsqueda rápida: </span><input ng-model="s.$" class="form-control"   type="txt" id="texto" name="texto" value="" placeholder="Ingrese la busqueda" ></div>
+                                            </div> 
+
+                                          <div class="col-md-3" >
+                                                <div class="input-group" ><span class="input-group-addon" id="basic-addon1">Región</span>
+                                                    <select class="form-control" ng-model="region" name="region" id="region">
+                                                    <option value="" selected>Todos</option>
+                                                    <option ng-repeat="reg in regiones" value="{{regiones[$index]['nombre']}}">{{regiones[$index]['nombre']}}</option>
+                                                    </select>
+                                                </div>
+                                            </div> 
+
+                                         
+                                            <div class="col-md-2" >
+                                                <button type="button" ng-click="GetSeguimientos(region);" class="btn btn-primary" >Filtrar</button>
+                                            </div>
+                                        <div>
+                                    </div>
+                                </div>
+                                <div class="row col-md-12  text-center">
+                                    <dir-pagination-controls boundary-links="true" template-url="assets/dirpagination.tpl.html"></dir-pagination-controls>
+                                </div>
+                                <div class="row">
+                                    <table class="table">
+                                       <thead>
+                                            <tr>
+                                                <th ng-click="easterEgg();" ># ID Moodle</th>
+                                                <th  ng-click="easteregg1=!easteregg1;"  >Usuario</th>
+                                                <th></th>
+
+                                                <th  ng-click="easterEgg();" >Ultima conexión</th>
+
+                                                <th>Telefono</th>
+                                                <th>Asunto</th>
+                                                <th>Estado</th>
+                                                <th></th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-class="classSeguimiento[segui.id]" dir-paginate="segui in seguimientos | itemsPerPage:50 | filter:s " >
+                                                <td ng-bind="segui.id_usuario" ></td>
+                                                <td ng-bind="segui.nombre">Sin Chats</td>
+                                                <td><label ng-class="segui.online==1 ? 'label label-success' : 'label label-default'" >{{ Estatus[segui.online] }}</label></td>
+
+                                                <td ng-bind="segui.fecha">No disponible</td>
+    
+                                                <td>
+                                                   
+                                                    <button  ng-class="segui.notif>0 ? 'btn btn-primary' : 'btn btn-default'  " type="button" ng-click="SetAutoUpdate(segui.id,$index,segui.asunto)" style="z-index: 9999 !important;"  >
+                                                         <i style="font-size: 20px;"class="fa fa-comments-o fa-2">
+                                                        </i>
+                                                        <span ng-if="segui.notif>0" ng-bind="segui.notif" class="badge"></span>
+                                                    </button>
+                                                        <img ng-if="segui.notif>0" height="20px" src="img/ball4.gif"  >
+
+
+
+
+                                                    <button style="z-index: 2;" class="btn btn-danger" type="button" data-toggle="modal" data-target="#modal_delete" ng-click="SetCurrent(segui.id,$index)">
+                                                        <i class="fa fa-times">
+                                                        </i>
+                                                    </button> 
+                                                </td>
+                                            </tr>
+                                        <tbody>
+                                    </table> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Modal mensajes-->
+                <div class="modal fade" id="modal_mensajes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" ng-click="StopAutoUpdate()" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel" ng-bind="currentAsunto">Seguimiento de ayuda</h4>
+                      </div>
+                      <div class="modal-body">
+                            <div ng-animate=" 'animate' " animate-on-change="currentChat" id="id_chat" class="col-md-12" style=" height:250px; overflow: scroll; overflow-x: hidden;" scroll-glue> 
+                                <!-- DIV CHAT-->
+                                <div ng-repeat="msg in currentChat" class="row"> <!-- LINEA DE CHAT por mensaje-->
+                                    <div class="col-md-12 ">
+                                        <div class="row"> <!-- linea nombre y fecha-->
+                                            <div class="col-md-6" style="color: rgb(32, 93, 176);" >
+                                                <strong ng-bind="msg.nombre">
+                                                    Roberto vega
+                                                </strong>
+                                                :
+                                            </div>
+                                            <div class="col-md-6" style="color: #95a5a6;" >
+                                                <strong  ng-bind="msg.fecha">
+                                                    2015-01-02 22:30:04
+                                                </strong>
+                                            </div> 
+                                        </div>
+                                        <div class="row"> <!-- linea nombre y fecha mensaje-->
+                                            <div  ng-bind="msg.mensaje" class="col-md-12 panel panel-info">
+                                                Donec in augue odio. Sed vel ultrices odio. Aliquam vel sollicitudin urna. Aenean nec sem hendrerit, consectetur felis feugiat, ornare libero. Maecenas tempus condimentum egestas.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div  class="panel-footer">
+                                <form class="form-inline" role="form">
+                                    <div class="form-group">
+                                     Mensaje:
+                                      <input id="chat_msg" name="chat_msg" type="text" class="form-control" cols="40" placeholder="Introdusca un mensaje..">
+                                    </div>
+
+                                    <button type="submit" ng-click="funcSetMensajes[ID](ID,IDX)" class="btn btn-default">Enviar
+                                    </button>
+                                </form>
+                            </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" ng-click="StopAutoUpdate()" data-dismiss="modal">Cerrar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Modal eliminar-->
+                <div class="modal fade" id="modal_delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Eliminar seguimiento</h4>
+                      </div>
+                      <div class="modal-body">
+                        ¿Està seguro que desea eliminar este seguimiento?
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="DelSeguimiento()">Eliminar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Modal IMAGEN-->
+                <div class="modal fade" id="modal_imagen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Imagen Adjunta</h4>
+                      </div>
+                      <div class="modal-body">
+                            <img ng-if="imagen" src="http://agcollege.edu.mx/preparatoriascorporativas/prepacoppel/ayuda/imagenes/{{imagen}}" >
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row col-md-12" style="height:400px; " >
+                </div>
+                <!-- CHATS ACTIVOS-->
+                <div ng-if="false" class="col-md-12" style="bottom: 0px; border-color: #ccc; position: fixed; overflow-x:scroll ; overflow-y: visible !important; white-space: nowrap; z-index: 3;" >
+                    <div style=" width:300px; bottom: -10px;  white-space: normal; display:inline-block;" ng-repeat="chat in seguimientos" ng-if="showSeguimientos[chat.id]" >
+                    
+                        <div class="panel panel-info" style="height:280px; white-space: normal;"  >
+                            <div class="panel-heading"  >
+                                {{chat.nombre}} <button type="button" ng-click="StopAutoUpdate(chat.id,$index)" class="close" aria-label="Close"><span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                          <div class="panel-body">
+                                <div ng-animate=" 'animate' " animate-on-change="chat.chat.length" id="id_chat" class="col-md-12" style=" height:150px; overflow: scroll; overflow-x: hidden;" scroll-glue> 
+                                    <!-- DIV CHAT-->
+                                    <div ng-repeat="msg in chat.chat" class="row"> <!-- LINEA DE CHAT por mensaje-->
+                                        <div class="col-md-12 ">
+                                            <div class="row"> <!-- linea nombre y fecha-->
+                                                <div class="col-md-6" style="color: rgb(32, 93, 176); font-size: 10px;" >
+                                                    <strong ng-bind="msg.nombre">
+                                                        Roberto vega
+                                                    </strong>
+                                                    :
+                                                </div> 
+                                                <div class="col-md-6" style="color: #95a5a6; font-size: 10px;">
+                                                    <strong  ng-bind="msg.fecha">
+                                                        2015-01-02 22:30:04
+                                                    </strong>
+                                                </div> 
+                                            </div>
+                                            <div class="row"> <!-- linea nombre y fecha mensaje-->
+                                                <div  ng-bind="msg.mensaje" class="col-md-12 panel panel-info" style="font-size: 10px; word-wrap: break-word;">
+                                                    Donec in augue odio. Sed vel ultrices odio. Aliquam vel sollicitudin urna. Aenean nec sem hendrerit, consectetur felis feugiat, ornare libero. Maecenas tempus condimentum egestas.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          <div class="panel-footer"  >
+                            <form class="form-inline" role="form">
+                                <div class="form-group">
+                                  <input ng-attr-id="{{'chat_msg'+chat.id}}" onfocus="this.selectionStart = this.selectionEnd = this.value.length;"  ng-focus="SetCurrentFocus(chat.id)" custom-autofocus="funcFocus[chat.id]" ng-enter="funcSetMensajes[chat.id](chat.id,$index)" ng-model="MsgSeguimientos[chat.id]" name="chat_msg" type="text" class="form-control" cols="40" placeholder="Escribe un comentario...">
+                                 <button type="submit" ng-click="funcSetMensajes[chat.id](chat.id,$index)" class="btn btn-default">
+                                 Enviar
+                                </button>
+                                </div>
+                            </form>
+                          </div>
+                          
+                        </div>
+                    </div>
+               </div>

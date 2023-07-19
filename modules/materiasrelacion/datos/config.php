@@ -1,0 +1,12 @@
+<?php 
+/*
+$server="localhost";
+$user="root";
+$password="shutdown";
+$database="escolar_prueba";
+*/
+$server="localhost";
+$user="sistemas";
+$password="uCG1lysB9a4PGTkg7qeZ496u5063yHVW";
+$database="escolar";
+?>

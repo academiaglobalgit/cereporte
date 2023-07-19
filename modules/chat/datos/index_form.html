@@ -1,0 +1,231 @@
+<link rel="stylesheet" href="assets/modal.css">
+<script src="assets/modal.js"></script>
+<style>
+    .modal-header{
+        background-color: #0061a6;
+    }
+
+    .roboto{
+        font-family: "Roboto", Helvetica, Arial, sans-serif;
+    }
+</style>
+<?php
+if ($show_instructions) {
+    $columns = 'twocolumns';
+} else {
+    $columns = 'onecolumn';
+}
+
+if (empty($CFG->xmlstrictheaders) and !empty($CFG->loginpasswordautocomplete)) {
+    $autocomplete = 'autocomplete="off"';
+} else {
+    $autocomplete = '';
+}
+?>
+<div class="loginbox clearfix <?php echo $columns ?>">
+  <div class="loginpanel">
+<?php
+  if (($CFG->registerauth == 'email') || !empty($CFG->registerauth)) { ?>
+      <div class="skiplinks"><a class="skip" href="signup.php"><?php print_string("tocreatenewaccount"); ?></a></div>
+<?php
+  } ?>
+    <h2><?php //print_string("returningtosite") ?></h2>
+      <div class="subcontent loginsub">
+     <!--   <div class="desc">
+          <?php
+            print_string("loginusing");
+            echo '<br/>';
+            echo '('.get_string("cookiesenabled").')';
+            echo $OUTPUT->help_icon('cookiesenabled');
+           ?>
+        </div> ---------------------- ML----------- -->
+        <?php
+          if (!empty($errormsg)) {
+              echo html_writer::start_tag('div', array('class' => 'loginerrors'));
+              echo html_writer::link('#', $errormsg, array('id' => 'loginerrormessage', 'class' => 'accesshide'));
+              echo $OUTPUT->error_text($errormsg);
+              echo html_writer::end_tag('div');
+          }
+        ?>
+        <form action="<?php echo $CFG->httpswwwroot; ?>/login/index.php" method="post" id="login" <?php echo $autocomplete; ?> >
+          <div class="loginform">
+            <div class="form-label"><label for="username">Nombre de Usuario</label></div>
+            <div class="form-input">
+              <input type="text" name="username" id="username" size="15" value="<?php p($frm->username) ?>" />
+            </div>
+            <div class="clearer"><!-- --></div>
+            <br/>
+            <div class="form-label"><label for="password">Contraseña</label></div>
+            <div class="form-input">
+              <input type="password" name="password" id="password" size="15" value="" <?php echo $autocomplete; ?> />
+              <br/>
+              <br/>
+              <input type="submit" id="loginbtn" style="color:#ffffff;" style="margin-left:10px;" value="<?php print_string("login") ?>" />
+            </div>
+          </div>
+            <div class="clearer"><!-- --></div>
+              <?php if (isset($CFG->rememberusername) and $CFG->rememberusername == 2 and false) { ?><!-- ------------------ML-------------------- -->
+              
+<div class="rememberpass">
+            <input type="checkbox" name="rememberusername" id="rememberusername" value="1" <?php if ($frm->username) {echo 'checked="checked"';} ?> />
+                  <label for="rememberusername"><?php print_string('rememberusername', 'admin') ?></label>
+              </div>
+              <?php } ?>
+          <div class="clearer"><!-- --></div>
+        <!--  <div class="forgetpass"><a href="forgot_password.php"><?php print_string("forgotten") ?></a></div>   --------------------ML------------------- -->
+        </form>
+      </div>
+
+      <!-- Curso induccion-->
+      <div align="center" id="VideoInduccion"  class="" style="margin-left: 45px;">
+          <a href='#' href2='http://youtu.be/lBR6KH9isMc' data-target="#myModalvideo" data-toggle="modal" target='_blank' ><img src='../V2/img/Induccion-01.png' /></a>
+      </div>
+      <br/>
+      <br/>
+      <br/>
+
+      <!-- preguntas frecuentes-->
+      <div align="right"  data-toggle="modal" data-target="#myModal">
+          <img src='../V2/img/pregfrec.png'/>
+      </div>
+      <p align="right">
+      Línea de ayuda Prepa Coppel Tel. (667) 7122574.<br/>
+      Línea de ayuda Prepa Coppel Tel. (01800)8497056.<br/>
+      Horario de Lunes a Viernes de 8:00 am a 2:00 pm. <br/>
+      y de 4:00 pm a 7:00 pm. Sábados de 9:00 am a 1:00 pm. <br/>
+      </p>
+
+
+      <!-- Modal Preguntas Frecuentes-->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header" align="right">
+                      <button aria-hidden="true" class="close" style="color:#ffffff" data-dismiss="modal"  type="button" ><span aria-label="Close">&times;</span></button>
+                      <h4 align="center" class="modal-title" id="myModalLabel" style="color:#FFFF00; font-size:26px;">Preguntas Frecuentes</h4>
+                  </div>
+                  <div class="modal-body" style="font-size: 16px;">
+
+                          <strong style="text-align: justify">
+                        Las siguientes preguntas son aquellas que
+                        hemos detectado que tienen una mayor frecuencia de repetición entre nuestros
+                        alumnos.</strong><br/>
+
+                      <br/>
+                      <p class="roboto">
+                          <strong>1.- ¿ Qué sucede si no puede accesar mi usuario o contraseña?</strong>
+                          <br>&bull; Deberás enviar una solicitud de ayuda al
+                          personal de Prepa Coppel, que aparece en el botón de ayuda como Técnico y de
+                          forma inmediata te haremos llegar tu usuario y contraseña que tienes dado de
+                          alta en el sistema.
+                      </p>
+
+                      <p class="roboto">
+                          <strong>2.- ¿Puedo cargar más de una materia?</strong>
+                          <br>&bull; Sí, siempre y cuando el proceso de
+                          seriación lo permita.
+                      </p>
+
+                      <p class="roboto">
+                          <strong>3.- ¿En cuánto tiempo puedo terminar mi preparatoria?</strong>
+                          <br>&bull; Dependerá de la carga de materias que
+                          decidas llevar y el sistema académico te lo permita.
+                      </p>
+
+                      <p class="roboto">
+                          <strong>4.- ¿Cómo haré mis pagos a Prepa Coppel?</strong>
+                          <br>&bull; El descuento se realiza vía nómina y sólo
+                          se descuenta una materia al mes en dos quincenas.
+                      </p>
+
+                      <p class="roboto">
+                          <strong>5.- Mi esposo no tiene la preparatoria, ¿Puede estudiar en Prepa Coppel?</strong>
+                          <br>&bull;Por supuesto que sí, siempre y cuando tu
+                          tengas un año o más laborando en Coppel.
+                      </p>
+
+
+
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+  <!-- Modal video induccion -->
+      <div class="modal fade" id="myModalvideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header" align="right">
+                      <button aria-hidden="true" class="close" style="color:#ffffff" data-dismiss="modal"  type="button" ><span aria-label="Close">&times;</span></button>
+                      <h4 align="center" class="modal-title" id="myModalLabel" style="color:#FFFF00; font-size:26px;">Curso de inducción</h4>
+                  </div>
+                  <div class="modal-body" style="font-size: 16px;">
+
+                        
+
+                    <iframe src="https://player.vimeo.com/video/158752546?byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+<?php if ($CFG->guestloginbutton and !isguestuser() and false) {  ?> <!-- ------------------ML-------------------- -->
+      <div class="subcontent guestsub">
+        <div class="desc">
+          <?php print_string("someallowguest") ?>
+        </div>
+        <form action="index.php" method="post" id="guestlogin">
+          <div class="guestform">
+            <input type="hidden" name="username" value="guest" />
+            <input type="hidden" name="password" value="guest" />
+            <input type="submit" value="<?php print_string("loginguest") ?>" />
+          </div>
+        </form>
+      </div>
+<?php } ?>
+     </div>
+<?php if ($show_instructions) { ?>
+    <div class="signuppanel">
+      <h2><?php print_string("firsttime") ?></h2>
+      <div class="subcontent">
+<?php     if (is_enabled_auth('none')) { // instructions override the rest for security reasons
+              print_string("loginstepsnone");
+          } else if ($CFG->registerauth == 'email') {
+              if (!empty($CFG->auth_instructions)) {
+                  echo format_text($CFG->auth_instructions);
+              } else {
+                  print_string("loginsteps", "", "signup.php");
+              } ?>
+                 <div class="signupform">
+                   <form action="signup.php" method="get" id="signup">
+                   <div><input type="submit" value="<?php print_string("startsignup") ?>" /></div>
+                   </form>
+                 </div>
+<?php     } else if (!empty($CFG->registerauth)) {
+              echo format_text($CFG->auth_instructions); ?>
+              <div class="signupform">
+                <form action="signup.php" method="get" id="signup">
+                <div><input type="submit" value="<?php print_string("startsignup") ?>" /></div>
+                </form>
+              </div>
+<?php     } else {
+              echo format_text($CFG->auth_instructions);
+          } ?>
+      </div>
+    </div>
+<?php } ?>
+<?php if (!empty($potentialidps)) { ?>
+    <div class="subcontent potentialidps">
+        <h6><?php print_string('potentialidps', 'auth'); ?></h6>
+        <div class="potentialidplist">
+<?php foreach ($potentialidps as $idp) {
+    echo  '<div class="potentialidp"><a href="' . $idp['url']->out() . '" title="' . $idp['name'] . '">' . $OUTPUT->render($idp['icon'], $idp['name']) . '&nbsp;' . $idp['name'] . '</a></div>';
+} ?>
+        </div>
+    </div>
+<?php } ?>
+</div>

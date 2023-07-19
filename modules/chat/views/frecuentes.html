@@ -1,0 +1,190 @@
+                <!-- Page Heading -->
+                <div class="row"  >
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Preguntas Frecuentes <small></small>
+                        </h1>
+                    </div>
+                </div>
+                <div class="row" >
+                    <div class="col-md-12"  > <!--FORMULARIO-->
+                        <div class="panel panel-info">
+                            <div class="panel-heading" style="background-color: #024699; color:white;" >
+                                <strong>
+                                    Creacion de preguntas frecuentes
+                                </strong>
+                            </div>
+                            <div class="panel-body">
+                                <form class="form-horizontal" role="form" name="form" novalidate>
+                                    <div class="form-group">
+                                      <label class="control-label col-sm-2" for="jerarquia">Jerarquia: </label>
+                                      <div class="col-sm-10">          
+                                        <input type="number" name="jerarquia" class="form-control" id="jerarquia" placeholder="0">
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="control-label col-sm-2" for="pregunta">Pregunta: </label>
+                                      <div class="col-sm-10">          
+                                        <input type="text" name="pregunta" class="form-control" id="pregunta" placeholder="¿Pregunta?">
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="control-label col-sm-2" for="respuesta">Respuesta: </label>
+                                      <div class="col-sm-10">          
+                                        <textarea style="resize: vertical;" class="form-control" wrap="on" rows="5" name="respuesta" id="respuesta" placeholder="Respuesta.."></textarea>
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="control-label col-sm-2" for="file">Sube un video .mp4 </label>
+                                      <div class="col-sm-10">          
+                                        <input class="btn btn-default" data-buttonText="Sube un video." type="file" ngf-select="" ng-model="picFile" name="file" accept="video/*" required="" class="ng-valid-pattern ng-valid-min-size ng-valid-max-size ng-valid-max-total-size ng-valid-validate-fn ng-valid-max-height ng-valid-min-height ng-valid-max-width ng-valid-min-width ng-valid-ratio ng-valid-max-duration ng-valid-min-duration ng-valid-validate-async-fn ng-dirty ng-valid ng-valid-required">
+                                        
+                                      </div>
+                                    </div>
+
+                                    <div class="form-group">        
+                                      <div class="col-sm-offset-2 col-sm-10">
+                                        <button ng-if="!cargandoForm" type="submit" style="background-color: rgb(32, 93, 176); color: white;" ng-click="SetFrecuente(picFile)" class="btn btn-primary">Guardar Pregunta</button>
+                                        <button ng-if="cargandoForm" type="submit" style="background-color: rgb(32, 93, 176); color: white;" disabled="disabled" class="btn btn-primary">Guardando...</button>
+                                      </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" >
+                    <div class="col-lg-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading" style="background-color: #024699; color:white;" >
+                                <h3 class="panel-title"><i class="fa fa-question-circle fa-fw"></i> Preguntas frecuentes</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12" >
+                                        <div class="row">
+                                            <div class="col-md-4" >
+                                                <div class="input-group" >  <span class="input-group-addon" id="basic-addon1">Busqueda rapida: </span><input ng-model="s.$" class="form-control"   type="txt" id="texto" name="texto" value="" placeholder="Ingrese la busqueda" ></div>
+                                            </div>
+                                            <div class="col-md-4" >
+
+                                            </div>
+                                            <div class="col-md-4" >
+                                            </div>
+                                        <div>
+                                    </div>
+                                </div>
+                                <div class="row col-md-12 text-center">
+                                    <dir-pagination-controls boundary-links="true" template-url="assets/dirpagination.tpl.html"></dir-pagination-controls>                                
+                                </div>
+                                <div class="row">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Pregunta</th>
+                                                <th>Respuesta</th>
+                                                <th>jerarquia</th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr dir-paginate="frec in frecuentes | itemsPerPage:10 | filter: s">
+                                                <td ng-bind="frec.id">0</td>
+                                                <td ng-bind="frec.asunto">...</td>
+                                                <td ng-bind="frec.mensaje">...</td>
+                                                <td ng-bind="frec.jerarquia">...</td>
+                                                <td>
+                                                    <button class="btn btn-default" type="button" data-toggle="modal" data-target="#modal_update" ng-click="SetCurrent(frec.id,$index); SetCurrentFrecuente();" >
+                                                         <i class="fa fa-fw fa-edit">
+                                                        </i>
+                                                    </button>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#modal_delete" ng-click="SetCurrent(frec.id,$index)">
+                                                        <i class="fa fa-times">
+                                                        </i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        <tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+             <!-- Modal mensajes-->
+                <div class="modal fade" id="modal_update" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel" >Modificaciòn</h4>
+                      </div>
+                      <div class="modal-body">
+                        <form class="form-horizontal" role="form" name="form_update" novalidate>
+                            <div class="form-group">
+                              <label class="control-label col-sm-2" for="jerarquia_update">Jerarquia: </label>
+                              <div class="col-sm-10">          
+                                <input type="number" name="jerarquia_update" class="form-control" id="jerarquia_update" placeholder="0">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-sm-2" for="pregunta">Pregunta: </label>
+                              <div class="col-sm-10">          
+                                <input type="text" name="pregunta_update" class="form-control" id="pregunta_update" placeholder="¿Pregunta?">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-sm-2" for="respuesta">Respuesta: </label>
+                              <div class="col-sm-10">          
+                                <textarea style="resize: vertical;" class="form-control" wrap="on" rows="5" name="respuesta_update" id="respuesta_update" placeholder="Respuesta.."></textarea>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-sm-2" for="file">Video .mp4</label>
+                              <div class="col-sm-10">          
+                                <input class="btn btn-default" data-buttonText="Sube un video." type="file" ngf-select="" ng-model="picFile_update" name="file_update" accept="video/*" required="" class="ng-valid-pattern ng-valid-min-size ng-valid-max-size ng-valid-max-total-size ng-valid-validate-fn ng-valid-max-height ng-valid-min-height ng-valid-max-width ng-valid-min-width ng-valid-ratio ng-valid-max-duration ng-valid-min-duration ng-valid-validate-async-fn ng-dirty ng-valid ng-valid-required">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label class="control-label col-sm-2" for="respuesta"></label>
+                              <div class="col-sm-10">          
+                                <label class="col-md-10" >Sube un video .mp4 para reemplazar el actual </label>
+                              </div>
+                            </div>
+                            <div class="form-group">        
+                              <div class="col-sm-offset-2 col-sm-10">
+                                <button ng-if="!cargandoForm" type="submit" style="background-color: rgb(32, 93, 176); color: white;" ng-click="SetFrecuenteUpdate(picFile_update)" class="btn btn-primary">Guardar</button>
+                                <button ng-if="cargandoForm" type="submit" style="background-color: rgb(32, 93, 176); color: white;" disabled="disabled" class="btn btn-primary">Guardando cambios...</button>
+                              </div>
+                            </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default"  data-dismiss="modal">Cancelar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Modal eliminar-->
+                <div class="modal fade" id="modal_delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Eliminar pregunta frecuente</h4>
+                      </div>
+                      <div class="modal-body">
+                        ¿Està seguro que desea eliminar esta pregunta frecuente?
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="DelFrecuente()">Eliminar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>

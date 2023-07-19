@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.custom.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script src="js/jquery.js"></script>
+        <script src="js/boostrap.min.js"></script>
+        <script src="js/bootstrap-notify.min.js"></script>
+        <script src="js/angular.js"></script>
+        <script src="js/angular_s.js"></script>
+        <script src="js/angular_animate.js"></script>
+        <script src="js/ng-file-upload-shim.js"></script> <!-- for no html5 browsers support -->
+        <script src="js/ng-file-upload.js"></script>
+        <script src="js/ng-csv.js"></script>
+        <script src="js/scrollglue.js"></script>
+        <script src="controller.js?n=3"></script>
+        <script src="js/dirpagination.js"></script>
+        <script src="js/ckeditor/ckeditor.js"></script>
+        <!--<script src="//cdn.ckeditor.com/4.5.8/basic/ckeditor.js"></script>-->
+</head>
+
+<body id="divContenido"  style="height:100% !important;" ng-app="appReport" ng-controller="ctrlReport" ng-init="view='views/reporte.html'; bd=2; permisos=0; id_permiso=0;"  >
+ <title>Sistema Global  {{ titulo }}</title>
+    <div id="wrapper" ng-style="wrapperStyle" >
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" style="{{colorBanner[bd]}}" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--<a class="navbar-brand" href="#" style="color: white" >
+                    <img alt="Prepacoppel" src="img/logo_prepa_coppel.png" height="20">
+                </a>-->
+
+                <a class="navbar-brand" href="#" style="color: white;" >
+                    <strong>Sistema Global - {{ titulo }}</strong>
+                </a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+              
+                <!--<li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="background-color: #ecf0f1; color:black;" >PrepaCoppel <i class="fa  fa-university"></i>  <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                         <li>
+                            <a href="#" ng-click="ChangeView('views/coppel/reporteador.html',true); " ><i class="fa fa-line-chart"></i> Reporteador</a>
+                        </li>
+        
+                         <li class="divider"></li>
+                         <li>
+                            <a href="#" ng-click="ChangeView('views/coppel/sistema_casa.html',true);"  ><i class="fa fa-tty " aria-hidden="true"></i> Sistema Casa 
+                            </a>
+                        </li> 
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="background-color: #ecf0f1; color:black;" >Ley <i class="fa  fa-university"></i>  <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                         <li>
+                            <a href="#" ng-click="ChangeView('views/ucl/reporteador.html',true); " ><i class="fa fa-line-chart"></i> Reporteador</a>
+                        </li>
+
+                         <li class="divider"></li>
+                         <li>
+                            <a href="#" ng-click="ChangeView('views/ucl/sistema_casa.html',true);"  ><i class="fa fa-tty " aria-hidden="true"></i> Sistema Casa</a>
+                        </li> 
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="background-color: #ecf0f1; color:black;" >Sumate <i class="fa  fa-university"></i>  <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                         <li>
+                            <a href="#" ng-click="ChangeView('views/sumate/reporteador.html',true);" ><i class="fa fa-line-chart"></i> Reporteador </a>
+                        </li>
+
+                         <li class="divider"></li>
+                         <li>
+                            <a href="#" ng-click="ChangeView('views/sumate/sistema_casa.html',true);"  ><i class="fa fa-tty " aria-hidden="true"></i> Sistema Casa</a>
+                        </li> 
+                    </ul>
+                </li> -->
+
+                <li class="dropdown" >
+                    <a href="#" style="background-color: #ecf0f1; color:black;"  onclick="window.open('https://agcollege.edu.mx/cereporte/modules/phpfreechat/chatinterno.php','Chat Interno','toolbar=0,menubar=0,scrollbars=0,width=600,height=550'); return false;" ><i class="fa fa-comments-o" aria-hidden="true"></i> Chat Interno  </a>
+                  </li>
+                <li class="dropdown" >
+                    <a href="#" style="background-color: #ecf0f1; color:black;"  ng-click="bd=2;  ChangeView('views/incidencias.html',true,'Sistema de Incidencias BETA');" ><i class="fa fa-flag" aria-hidden="true"></i> Incidencias  </a>
+                  </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="background-color: #ecf0f1; color:black;" >Reporteadores <i class="fa  fa-line-chart"></i>  <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                         <li>
+                            <a href="#" style="color:black !important" ng-click="ChangeView('views/toks/reporteador.html',true,'Reporteadores Toks');" ><i class="fa fa-line-chart"></i> Toks</a>
+                        </li>
+
+                         <li class="divider"></li>
+                         <li>
+                            <a href="#" style="color:black !important" ng-click="ChangeView('views/coppel/reporteador.html',true,'Reporteador Coppel');" ><i class="fa fa-line-chart"></i> Coppel </a>
+                        </li>
+
+                         <li class="divider"></li>
+                          <li>
+                            <a href="#" style="color:black !important" ng-click="ChangeView('views/ucl/reporteador.html',true,'Reporteador UCL PrepaLey');" ><i class="fa fa-line-chart"></i> Ley PrepaLey</a>
+                        </li>
+                         <li>
+                            <a href="#" style="color:black !important" ng-click="ChangeView('views/ucl/reporteador_lic.html',true,'Reporteador UCL Licenciatura');" ><i class="fa fa-line-chart"></i> Ley Lic.</a>
+                        </li>
+                         <li class="divider"></li>
+                        <li>
+                            <a href="#" style="color:black !important" ng-click="ChangeView('views/sumate/reporteador.html',true,'Reporteador Sumate');" ><i class="fa fa-line-chart"></i> Sumate </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#" style="color:black !important" ng-click="ChangeView('views/agsocial/reporteador.html',true,'Reporteador AG Social');" ><i class="fa fa-line-chart"></i> AG Social </a>
+                        </li>
+                    </ul>
+                </li>
+
+                  <li class="dropdown" >
+                    <a href="#" style="background-color: #ecf0f1; color:black;"  ng-click="bd=2;  ChangeView('views/casa.html',true,'Sistema de CASA');" ><i class="fa fa-tty " aria-hidden="true"></i> Sistema CASA  </a>
+                  </li>
+                 <li class="divider"></li>
+
+                  <li class="dropdown" >
+                    <a href="#" style="background-color: #ecf0f1; color:black;"  ng-click="bd=2;  ChangeView('views/reporte.html',false,'Inicio'); " > Inicio </a>
+                  </li>
+                  <li class="dropdown"  >
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="background-color: #ecf0f1; color:black; " ><i class="fa fa-gear"></i>  <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+
+                        <!-- <li class="divider"></li>
+                         <li>
+                            <a href="#" ng-click="view='views/controlescolar.html';"  ><i class="fa fa-university"></i> Control Escolar </a>
+                        </li> -->
+                         <li  ng-if="(permisos==101 || permisos ==115 || permisos ==104) || (id_permiso==1 || id_permiso==5)" >
+                            <a href="#" style="padding:5px; color:black !important" ng-click="ChangeView('views/foros.html',true,'Foros');"  ><i class="fa fa-comments-o" aria-hidden="true"></i> Foros DGB</a>
+                        </li> 
+                       <!--<li ng-if="(permisos==101 || permisos ==104 || permisos ==117 || permisos ==109) || (id_permiso==1 || id_permiso==4) " >
+                            <a href="#" ng-click="ChangeView('views/adminchat.html',true,'Administrador Chat');"  ><i class="fa fa-comments-o" aria-hidden="true"></i> Admin Chat</a>
+                        </li> 
+                       <li ng-if="(permisos==101 || permisos ==104 || permisos ==117 || permisos ==109 || permisos==102 || permisos==116 || permisos==117) || (id_permiso==1 || id_permiso==5 || id_permiso==2 || id_permiso==3 || id_permiso==4)" >
+                            <a href="#" ng-click="ChangeView('views/chat.html',true,'Chat');"  ><i class="fa fa-comments-o" aria-hidden="true"></i> Chat</a>
+                        </li> -->
+                        <li  ng-if="(permisos==101 || permisos ==104 || permisos ==103) || (id_permiso==1 || id_permiso==6) "  >
+                            <a href="#" style="padding:5px; color:black !important" ng-click="ChangeView('views/mensajes.html',true,'Administrador de Avisos');" ><i class="fa fa-warning"></i> Admin Avisos </a>
+                        </li>
+                        <li class="divider"></li> 
+                       <li  ng-if="(permisos==101 || permisos ==104 || permisos ==117 || permisos ==114  || permisos ==109 || permisos==103 || permisos==102 || permisos==116) || (id_permiso==1 || id_permiso==2 || id_permiso==3 || id_permiso==6 || id_permiso==4 )"  >
+                            <a  href="#" style="padding:5px; color:black !important" ng-click="ChangeView('views/usuarios.html',true,'Alumnos');"  ><i class="fa fa-users" aria-hidden="true"></i> Alumnos</a>
+                        </li> 
+                      <!-- <li  ng-if="(permisos==101 || permisos ==104 || permisos ==117 || permisos ==114  || permisos ==109 || permisos==103 || permisos==102 || permisos==116) || (id_permiso==1 || id_permiso==2 || id_permiso==3 || id_permiso==6 || id_permiso==4 )"  >
+                            <a href="#" ng-click="ChangeView('views/sumate/usuarios_sumate.html',true,'Alumnos Sumate');"  ><i class="fa fa-users" aria-hidden="true"></i>Alumnos Sumate</a>
+                        </li> -->
+                       <li  ng-if="permisos ==104 || id_permiso==1" >
+                            <a href="#" style="padding:5px; color:black !important" ng-click="ChangeView('views/examenes.html',true,'Examenes de Alumnos');"  ><i class="fa fa-file-excel-o" aria-hidden="true"></i> Exam. Alumnos</a>
+                        </li> 
+
+                        <li class="divider"></li>
+                       <li ng-if="(permisos==101 || permisos ==104 || permisos==103 || permisos==115) || (id_permiso==1 || id_permiso==5 || id_permiso==6) " >
+                            <a href="#" style="padding:5px; color:black !important" ng-click="ChangeView('views/materiasrelacion.html',true,'Relacion de Materias');"  ><i class="fa fa-random"></i>Relacion Mat.</a>
+                        </li> 
+                       <li   ng-if="(permisos==101 || permisos ==104 || permisos==103 || permisos==115)  || (id_permiso==1 || id_permiso==5 || id_permiso==6) " >
+                            <a href="#" style="padding:5px; color:black !important" ng-click="ChangeView('views/examenes_relacion.html',true,'Relacion de Examenes');"  ><i class="fa fa-random"></i>Relacion Exam.</a>
+                        </li> 
+                          <li class="divider"></li>
+
+                        <li   ng-if="(permisos==101 || permisos ==104 || permisos==103) || (id_permiso==1 || id_permiso==5 || id_permiso==6) " >
+                            <a href="#" style="padding:5px; color:black !important" ng-click="ChangeView('views/dgb_alumnos.html',true,'Alumnos DGB');" ><i class="fa fa-university"></i> Alumnos DGB</a>
+                        </li>
+
+                        <li  ng-if="(permisos==101 || permisos ==104 || permisos==103) || (id_permiso==1 || id_permiso==5 || id_permiso==6 || id_permiso==4) " >
+                            <a href="#" style="padding:5px; color:black !important" ng-click="ChangeView('views/avance_generar.html',true,'Generador Reporte Avance');"  ><i class="fa fa-download"></i>Reporte Avance</a>
+                        </li>
+
+                        <li   ng-if="(permisos==101 || permisos ==104 || permisos==103) || (id_permiso==1 || id_permiso==5 || id_permiso==6 || id_permiso==4) " >
+                            <a href="#" style="padding:5px; color:black !important" ng-click="ChangeView('views/cambioalumnos.html',true,'Cambio de Estatus Toks');"  ><i class="fa fa-download"></i>Cambios Estatus Toks</a>
+                        </li>
+
+                        <li   ng-if="(permisos==101 || permisos ==104 || permisos==103) || (id_permiso==1 || id_permiso==5 || id_permiso==6 || id_permiso==4) " >
+                            <a href="#" style="padding:5px; color:black !important" ng-click="ChangeView('views/reportes_toks.html',true,'Reportes Cortes Toks');"  ><i class="fa fa-download"></i>Reporte Cortes Toks</a>
+                        </li>
+                        
+                        <li   ng-if="(permisos==101 || permisos ==104 || permisos==103) || (id_permiso==1 || id_permiso==5 || id_permiso==6) " >
+                            <a href="#" style="padding:5px; color:black !important" ng-click="ChangeView('views/dgb_generar.html',true,'Generador Reporte Avance');"  ><i class="fa fa-download"></i> Actas DGB</a>
+                        </li>  
+
+                        <!-- 
+                        <li>
+                            <a href="#" ng-click="view='views/dgb_historial.html';" ><i class="fa fa-folder-open-o"></i> Historial DGB</a>
+                        </li>
+                        -->
+
+                        <!-- 
+                        <li class="divider"></li>
+                            <li ng-if="(permisos==101 || permisos ==104 || permisos==103)" >
+                                <a href="/cereporte/datos/dgb_actas.php"><i class="fa fa-download"></i> Actas DGB Calificacion</a>
+                            </li >       
+                            <li ng-if="(permisos==101 || permisos ==104 || permisos==103)" >
+                                <a href="/cereporte/datos/dgb_actas2.php"><i class="fa fa-download"></i> Actas DGB Cursadas</a>
+                            </li>   
+                        -->
+
+                        <li class="divider" ></li>
+                        <li   >
+                            <a href="logout.php" style="padding:5px; color:black !important" ><i class="fa fa-fw fa-power-off"></i> Salir</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse" style="{{colorBanner[bd]}}">
+                <div ng-show="showSideBar" class="side-nav container"  style="background-color: #ecf0f1;" >
+                    <div class="row">
+                        <div class="col-md-12">
+                            &nbsp;
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <select  class="form-control" ng-model="bd" ng-change="GetColumns(bd)" name="platform" id="platform">
+                                <option value="1" selected>AGCollege</option>
+                                <option value="2" >PrepaCoppel</option>
+                                <option value="3" >Soriana Prepa</option>
+                                <option value="4" >PrepaLey</option>
+                                <option value="14" >Licenciatura Ley</option>
+                                <option value="9" >PrepaToks</option>
+                                <option value="10" >Licenciatura Toks</option>
+                                <option value="13" >Sumate</option>
+                                <option value="17" >AgSocial</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <div class="divider" >&nbsp;</div>
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div ng-repeat="colm in columns"  class="col-md-12" >
+                            <button class="btn btn-{{colorPannel[bd]}}" type="button" ng-disabled="columnsSelect.indexOf($index)!=-1" ng-click="SelectColumn($index);" >{{colm.desc}} <span ng-if="colm.isFilter" class="glyphicon glyphicon-filter" aria-hidden="true"></span> </button>
+                        </div>
+                    </div>
+                </div>
+
+
+               <!-- <ul class="side-nav" style="background-color: #ecf0f1; ">
+                    <li>
+                        Plataforma 
+                        <select name="platform" id="platform">
+                            <option value="0" selected>PrepaCoppel<option>
+                        </select>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="view='views/inicio.html'; GetTotalesSeguimientos();" class="label label-primary"  ><i class="fa fa-fw fa-bar-chart-o"></i> Inicio</a>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="view='views/seguimientos.html';  GetSeguimientos(); " class="label label-primary" ><i class="fa fa-fw fa-comments-o"></i> Seguimientos de Ayuda</a>
+                    </li>
+                    <li >
+                        <a href="#" ng-click="view='views/frecuentes.html'; GetFrecuentes();" class="label label-primary" ><i class="fa fa-question-circle fa-fw"></i> Preguntas Frecuentes</a>
+                    </li>
+                </ul>-->
+                
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper" style="padding:0px !important;" >
+
+            <div class="container-fluid" ng-include="view" ng-style="contentStyle" >
+
+ 
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+ 
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
+
+
+

@@ -1,0 +1,14 @@
+{
+	"success":true,
+	"datos":[{
+		"id":1,
+		"estafeta":"123",
+		"estatus":"Baja de la empresa"
+	},
+	{
+		"id":2,
+		"estafeta":"112323",
+		"estatus":"Suspendido de la empresa"
+		
+	}]
+}

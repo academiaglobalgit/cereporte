@@ -1,0 +1,186 @@
+                <!-- Page Heading -->
+                <div class="row" ng-init="Mensajes();" >
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                           Avisos de plataforma <small></small>
+                        </h1>
+                    </div>
+                </div>
+                <div  class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-info">
+                            <div ng-show="!isEditar" class="panel-heading" style="background-color: #024699; color:white;">
+                                <h4  class="panel-title">Crear nuevo mensaje</h4>
+                            </div>
+                              <div ng-show="isEditar" class="panel-heading" style="background-color: #e67e22; color:white;" >
+                                <h4  class="panel-title">Editando Mensaje ID:{{mensaje.id}}</h4>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12" >
+                                        <div class="row">
+                                          <form name='importa' ng-init="mensaje.$"   id='form'>
+
+                                                <div class="col-md-3" >
+                                                             <div class="form-group">
+                                                        <label for=''>Titulo</label>
+                                                        <input class="form-control" ng-model="mensaje.titulo" type='text' value="" placeholder="Titulo del mensaje" name='titulo'/>
+                                                    </div>
+                                                </div>
+                                                 <!--<div class="form-group">
+                                                <div class="col-md-3" >
+                                                        <label for=''>Corporación</label>
+                                                        <select ng-model="mensaje.id_corporacion" class="form-control" name="corporacion" id="corporacion" >
+                                                            <option value="2" selected>Prepacoppel</option>
+                                                            <option value="4" >PrepaLey</option>
+                                                            <option value="7" >Toks</option>
+                                                        </select>
+                                                    </div>
+                                                </div>-->
+                                                 <div class="col-md-3" >
+                                                 <div class="form-group">
+                                                        <label for=''>Plan de Estudios</label>
+                                                        <select ng-model="mensaje.id_plan_estudio" class="form-control" name="id_plan_estudio" id="id_plan_estudio" >
+                                                            <option value="1" selected>AGCollege</option>
+                                                            <option value="2" >Prepacoppel</option>
+                                                            <option value="4" >PrepaLey</option>
+															<option value="22" >LEG Coppel 2018</option>
+                                                            <option value="62" >LEG Coppel 2022</option>
+                                                            <option value="14" >Licenciatura Ley</option>
+                                                            <option value="9" >PrepaToks</option>
+                                                            <option value="10" >Licenciatura Toks</option>
+                                                            <option value="17" >AGSocial</option>
+                                                            <option value="13" >Sumate</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                 <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>Tipo mensaje:</label>
+                                                       <select ng-model="mensaje.tipo" class="form-control" name="tipo" id="tipo" >
+                                                            <option value="0" selected>Modal</option>
+                                                            <option value="1" >Aviso normal</option>
+                                                            <!--<option value="2" >Baja de la empresa</option>
+                                                            <option value="3" >Baja del programa</option>-->
+                                                            <!--<option value="4" >Suspendidos por Documentos</option>
+                                                            <option value="5" >Suspendidos por Inactividad</option>
+                                                          	<option value="6" >Suspendidos por Tiempo</option>-->
+                                                          	<!--<option value="7" >Baja sin Confirmacion</option>
+                                                          	<option value="8" >Egresado</option>-->
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+ 
+                                                  <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>Dirigido a sexo:</label>
+                                                       <select ng-model="mensaje.sexo" class="form-control" name="sexo" id="sexo" >
+                                                            <option value="0" selected>Todos</option>
+                                                            <option value="1" >Masculino</option>
+                                                            <option value="2" >Femenino</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+
+
+                                                <div class="col-md-3" >
+                                                	<div class="form-group">
+                                                        <label for='modos'>Estatus</label>
+                                                        <select ng-model="mensaje.status" class="form-control" name="status" id="status" >
+                                                            <option value="0" selected>Inactivo</option>
+                                                            <option value="1" >Activo</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                 <div class="col-md-12" >
+                                                    <label for='editor1'>Mensaje</label>
+                                                	<div class="form-group">
+                                                	    <label for='modos'></label>
+                                                        <textarea  name="editor1" id="editor1" ng-model="mensaje.mensaje" class="col-md-12" placeholder="Mensaje" ></textarea>
+                                                    </div>
+                                                </div>
+                                                
+                                                 <div class="col-md-2" ng-show="isEditar" >
+                                                	<button class="btn btn-warning" id="edit" type='button' name='edit' ng-click="ResetMensaje();">Cancelar Edición
+                                                	</button>
+                                                </div>
+                                                <div class="col-md-2" >
+                                                	<button class="btn btn-primary" id="enviar" type='button' name='enviar' ng-click="SetMensaje(mensaje);">Guardar</button>
+                                                </div>
+                                                 
+                                            </form>
+                                        <div>
+                                    </div>
+                                </div>
+                               
+                                <div class="row">
+	                                <div class="col-md-12">
+	                                   <table class="table">
+	                                        <thead>
+	                                            <tr>
+	                                                <th># ID</th>
+	                                                <th>Título</th>
+                                                  <!--<th>Corporacion</th>-->
+	                                                <th>Plan de Estudios</th>
+	                                                <th>Tipo</th>
+	                                                <th>Estatus</th>
+	                                                <th>Creación</th>
+	                                                <th>Actualiación</th>
+	                                                <th>
+
+                                                  <input type="text" ng-model="searchMensaje" name="search" id="search" placeholder="Buscar" class="form-control" >	                                                	
+
+                                                  <button type="button" ng-click="Mensajes();"class="btn btn-default" >Actualizar</button>
+	                                                </th>
+	                                            </tr>
+	                                        </thead>
+	                                        <tbody ng-repeat="men in mensajes track by $index | filter:searchMensaje" >
+	                                             	<td ng-bind="men.id" ></td>
+	                                                <td ng-bind="men.titulo" >...</td>
+	                                                <!--<td ng-bind="corporaciones[men.id_corporacion]" >...</td>-->
+                                                  <td ng-bind="plan_estudios[men.id_plan_estudio]" >...</td>
+
+	                                                <td ng-bind="tipos_mensajes[men.tipo]" >...</td>
+	                                                <td ng-bind="status[men.status]" >...</td>
+	                                                <td ng-bind="men.fecha_registro" >...</td>
+	                                                <td ng-bind="men.fecha_modificado" >...</td>
+	                                                <td>
+	                                                	<button type="button" ng-click="EditarMensaje(men)"class="btn btn-primary" >Editar</button>
+	                                                	<button type="button" ng-click="CurrentMensaje(men)" data-toggle="modal" data-target="#modal_mensajes" class="btn btn-danger" >Eliminar</button>
+	                                                </td>
+	                                        </tbody>
+	                                    </table>
+	                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script> 			
+                CKEDITOR.replace( 'editor1' );
+               
+</script>
+                <!-- Modal mensajes-->
+                <div class="modal fade" id="modal_mensajes" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel" >Eliminar Mensaje: ID {{mensajeEditar.id}} - {{mensajeEditar.titulo}}</h4>
+                      </div>
+                      <div class="modal-body">
+                          ¿Desea eliminar este mensaje?
+                      </div>
+                      <div class="modal-footer">
+                      	<button type="button" class="btn btn-default"  data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-danger" ng-click="EliminarMensaje(mensajeEditar.id)" >Eliminar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- Created with iSpring --><!-- 1382 934 --><!--type flash --><!--mainFolder ../ --><!--universal -->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="msapplication-tap-highlight" content="no" />
+	<title>IT_B_MAT1_B1</title>
+	<script src="lms.js"></script>
+<script src="data/isplayer.js"></script>
+
+   	
+	<style>
+		html, body {
+			background-color: #b2c4b2;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+<script>
+	(function(){
+		var ldr = new ispring.presenter.loader.CombinedPresentationLoaderWithAPI((function(start){
+	var params = {
+		presentationId: "",
+		slidesToView: 40,
+		slidesWeight: 1,
+		quizzes: [],
+		totalScore: 100,
+		passingScore: 100,
+		timeLimit: 3600,
+		exitOnTimeout: false,
+		showMessageOnTimeout: false,
+		timeoutMessage: "",
+		flags: 3,
+		resumeMode: "always",  
+		tincan:
+		{
+			endPoint: "",
+			auth:
+			{
+				type: "",
+				key: "",
+				login: "",
+				password: "",
+				name: "",
+				email: ""
+			},
+			i18n:{
+}
+		},
+		scorm2004:
+		{
+			edition: ""
+		}
+	};
+
+	var lms = iSpring.LMS.create("ISPRING_LMS_ID", "1.2", params);
+	lms.initialize(start);
+})
+);
+		ldr.playerInitEvent().addHandler(function(player){
+			(function(player){
+	(function(player){
+	var lms = iSpring.LMS.instance();
+	lms.start(player);
+
+	window.onunload = window.onbeforeunload = function()
+	{
+		lms.closeLms();
+	};
+})(player);
+
+})(player);
+		});
+		ldr.load("data/player.swf", "html5.html", "10.1.0", undefined, undefined);
+	})();
+</script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+                <!-- Page Heading -->
+                <div class="row" >
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                           Generar Excel de Reportes Toks <small></small>
+                        </h1>
+                    </div>
+                </div>
+
+
+ <div  class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading" style="background-color: orange; color:white;" >
+                                <h4 class="panel-title"><i class="fa fa-download fa-fw"></i>A2 INSTITUTO TOKS</h4>
+                              
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12" >
+                                        <div class="row">
+                                          <form name='importa' method='get' action='datos/reporte_toks_a2.php' enctype='multipart/form-data' id='excelform'>
+
+                                               <!-- <div class="col-md-3" >
+                                                    <div class="form-group">
+                                                        <label for=''>Fecha de corte</label>
+                                                        <select class="form-control" name="anio" id="anio" >
+                                                            <option  ng-repeat="amc in AniosMesesCortes"  value="{{amc['fecha_corte']}}" >{{amc['fecha_corte']}}</option>
+                                                        </select>
+                                                    </div>
+                                                </div>-->
+                                               <!--<div class="col-md-3" >
+                                                 <div class="form-group">
+                                                        <label for=''>Mes</label>
+                                                        <select class="form-control" name="mes" id="mes" >
+                                                            <option value="1" selected>Enero</option>
+                                                            <option value="2" >Febrero</option>
+                                                            <option value="3" >Marzo</option>
+                                                            <option value="4" >Abril</option>
+                                                            <option value="5" >Mayo</option>
+                                                            <option value="6" >Junio</option>
+                                                            <option value="7" >Julio</option>
+                                                            <option value="8" >Agosto</option>
+                                                            <option value="9" >Septiembre</option>
+                                                            <option value="10" >Octubre</option>
+                                                            <option value="11" >Noviembre</option>
+                                                            <option value="12" >Diciembre</option>
+                                                        </select>
+                                                    </div>
+                                                </div>  
+                                                
+                                               <div class="col-md-2" >
+                                                    <input class="btn btn-warning" id="excelenviar" type='submit' name='enviar'  value="GENERAR POR FECHA"  />
+                                                </div>-->
+                                                <div class="col-md-2" >
+                                                    <a href="datos/reporte_toks_a2.php" class="btn btn-default" target="_blank" >Descargar Reporte A2 Toks (Prepa y Licenciatura) <a/>                                         
+                                                    </div>
+                                                    <input type="hidden" value="upload" name="action" />
+
+                                            </form>
+                                        <div>
+                                    </div>
+                                </div>
+                                <div class="row col-md-12  text-center">
+                                    <dir-pagination-controls boundary-links="true" template-url="assets/dirpagination.tpl.html"></dir-pagination-controls>
+                                </div>
+                                <div class="row">
+                                   <!-- <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th># ID</th>
+                                                <th>Fecha</th>
+                                                <th>Usuario</th>
+                                                <th>Telefono</th>
+                                                <th>Asunto</th>
+                                                <th>Estado</th>
+                                                <th></th>
+                                                <th></th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+                                        <tbody>
+                                    </table>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--
+                <div  class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading" style="background-color: orange; color:white;" >
+                                <h4 class="panel-title"><i class="fa fa-download fa-fw"></i>CARGAS DE ALUMNOS DE CORTE PREPA TOKS</h4>
+                              
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12" >
+                                        <div class="row">
+                                          <form name='importa' method='get' action='datos/cargas_prepatoks.php' enctype='multipart/form-data' id='excelform'>
+
+                                                <div class="col-md-3" >
+                                                    <div class="form-group">
+                                                        <label for=''>Fecha de corte</label>
+                                                        <select class="form-control" name="anio" id="anio" >
+                                                            <option  ng-repeat="amc in AniosMesesCortes"  value="{{amc['fecha_corte']}}" >{{amc['fecha_corte']}}</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                              <div class="col-md-3" >
+                                                 <div class="form-group">
+                                                        <label for=''>Mes</label>
+                                                        <select class="form-control" name="mes" id="mes" >
+                                                            <option value="1" selected>Enero</option>
+                                                            <option value="2" >Febrero</option>
+                                                            <option value="3" >Marzo</option>
+                                                            <option value="4" >Abril</option>
+                                                            <option value="5" >Mayo</option>
+                                                            <option value="6" >Junio</option>
+                                                            <option value="7" >Julio</option>
+                                                            <option value="8" >Agosto</option>
+                                                            <option value="9" >Septiembre</option>
+                                                            <option value="10" >Octubre</option>
+                                                            <option value="11" >Noviembre</option>
+                                                            <option value="12" >Diciembre</option>
+                                                        </select>
+                                                    </div>
+                                                </div>  
+                                                
+                                                <div class="col-md-2" >
+                                                    <input class="btn btn-warning" id="excelenviar" type='submit' name='enviar'  value="GENERAR POR FECHA"  />
+                                                </div>
+                                                <div class="col-md-2" >
+                                                    <a href="datos/cargas_prepatoks.php?tipo=corte" class="btn btn-default" target="_blank" >GENERAR REPORTE SIN FECHA DE CORTE <a/>                                         
+                                                    </div>
+                                                    <input type="hidden" value="upload" name="action" />
+
+                                            </form>
+                                        <div>
+                                    </div>
+                                </div>
+                                <div class="row col-md-12  text-center">
+                                    <dir-pagination-controls boundary-links="true" template-url="assets/dirpagination.tpl.html"></dir-pagination-controls>
+                                </div>
+                                <div class="row">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th># ID</th>
+                                                <th>Fecha</th>
+                                                <th>Usuario</th>
+                                                <th>Telefono</th>
+                                                <th>Asunto</th>
+                                                <th>Estado</th>
+                                                <th></th>
+                                                <th></th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+                                        <tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div  class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading" style="background-color: orange; color:white;" >
+                                <h4 class="panel-title"><i class="fa fa-download fa-fw"></i>CARGAS DE ALUMNOS DE CORTE LICENCIATURA TOKS</h4>
+                              
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12" >
+                                        <div class="row">
+                                          <form name='importa2' method='get' action='datos/cargas_lictoks.php' enctype='multipart/form-data' id='excelform'>
+
+                                                <div class="col-md-3" >
+                                                    <div class="form-group">
+                                                        <label for=''>Fecha de corte</label>
+                                                        <select class="form-control" name="anio" id="anio" >
+                                                            <option  ng-repeat="amc in AniosMesesCortes"  value="{{amc['fecha_corte']}}" >{{amc['fecha_corte']}}</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                               <div class="col-md-3" >
+                                                 <div class="form-group">
+                                                        <label for=''>Mes</label>
+                                                        <select class="form-control" name="mes" id="mes" >
+                                                            <option value="1" selected>Enero</option>
+                                                            <option value="2" >Febrero</option>
+                                                            <option value="3" >Marzo</option>
+                                                            <option value="4" >Abril</option>
+                                                            <option value="5" >Mayo</option>
+                                                            <option value="6" >Junio</option>
+                                                            <option value="7" >Julio</option>
+                                                            <option value="8" >Agosto</option>
+                                                            <option value="9" >Septiembre</option>
+                                                            <option value="10" >Octubre</option>
+                                                            <option value="11" >Noviembre</option>
+                                                            <option value="12" >Diciembre</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>  
+                                                
+                                                <div class="col-md-2" >
+
+                                                <input class="btn btn-warning" id="excelenviar" type='submit' name='enviar'  value="GENERAR POR FECHA"  />
+                                                </div>
+                                                                                                <div class="col-md-2" >
+                                                    <a href="datos/cargas_lictoks.php?tipo=corte" class="btn btn-default" target="_blank" >GENERAR REPORTE SIN FECHA DE CORTE <a/>
+                                                </div>
+                                                <input type="hidden" value="upload" name="action" />
+                                            </form>
+                                        <div>
+                                    </div>
+                                </div>
+                                <div class="row col-md-12  text-center">
+                                    <dir-pagination-controls boundary-links="true" template-url="assets/dirpagination.tpl.html"></dir-pagination-controls>
+                                </div>
+                                <div class="row">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th># ID</th>
+                                                <th>Fecha</th>
+                                                <th>Usuario</th>
+                                                <th>Telefono</th>
+                                                <th>Asunto</th>
+                                                <th>Estado</th>
+                                                <th></th>
+                                                <th></th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+                                        <tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+</div>

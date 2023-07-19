@@ -1,0 +1,526 @@
+                <!-- Page Heading -->	
+                <div class="row" >
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                           Generar ACTAS SEPYC AG<small></small>
+                        </h1>
+                    </div>
+                </div>
+                <div  class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading" style="background-color: #024699; color:white;" >
+                                <h4 class="panel-title">GENERAR ACTAS DE CALIFICACIONES</h4>
+                              
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12" >
+                                        <div class="row">
+                                          <form name='importa' method='get' action='datos/dgb_actas_lic.php' enctype='multipart/form-data' id='excelform'>
+                                               <!-- <div class="col-md-3" >
+                                                    <div class="form-group">
+                                                        <label for="exampleInputFile">Excel de Alumnos(CURP) :</label>
+                                                        <input type="file" id="InputFile" name="excel">
+                                                     <small><a href="datos/excel_alumnos.xlsx" download>Formato Excel de ejemplo </a></small>
+
+                                                    </div>
+                                                </div>-->
+
+                                                <!--<div class="col-md-3" >
+                                                             <div class="form-group">
+                                                        <label for=''>Números de Registros en el Excel</label>
+                                                        <input class="form-control" type='number' value="0" name='registros'/>
+                                                    </div>
+                                                </div>-->
+
+                                               <!-- <div class="col-md-3" >
+                                                 <div class="form-group">
+                                                        <label for=''>Corporación</label>
+                                                        <select class="form-control" name="corporacion" id="corporacion" >
+                                                            <option value="2" selected>Prepacoppel</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>-->
+                                                 <div class="col-md-3" >
+                                                     <div class="form-group">
+                                                            <label for=''>Generacion</label>
+                                                            <select class="form-control" name="generacion" id="generacion" >
+                                                                <option value="1" selected>Generacion 1</option>
+                                                                <option value="2" >Generacion 2</option>
+                                                                <option value="3" >Generacion 3</option>
+                                                                <option value="4" >Generacion 4</option>
+                                                                <option value="5" >Generacion 5</option>
+                                                                <option value="6" >Generacion 6</option>
+                                                                <option value="7" >Generacion 7</option>
+                                                                <option value="8" >Generacion 8</option>
+                                                                <option value="9" >Generacion 9</option>
+                                                                <option value="10" >Generacion 10</option>
+                                                            </select>           
+                                                     </div>
+                                                </div>
+
+                                                <!--
+                                                <div class="col-md-3" >
+                                                     <div class="form-group">
+                                                            <label for=''>SubCiclo Escolar</label>
+                                                            <select class="form-control" name="subciclo_escolar" id="subciclo_escolar" >
+                                                                <option value="1" selected>SubCiclo 1</option>
+                                                                <option value="2" >SubCiclo 2</option>
+                                                                <option value="3" >SubCiclo 3</option>
+                                                                <option value="4" >SubCiclo 4</option>
+                                                                <option value="5" >SubCiclo 5</option>
+                                                                <option value="6" >SubCiclo 6</option>
+                                                            </select>           
+                                                     </div>
+                                                </div>
+                                                <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>Tipo de Evaluacion</label>
+                                                             <select class="form-control" name="tipo_evaluacion" id="tipo_evaluacion" >
+                                                            <option value="1" selected>ORD</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                -->
+
+                                                <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>Periodo</label>
+                                                          <select class="form-control" name="periodo" id="periodo" >
+                                                            <option value="1" selected>Periodo 1</option>
+                                                            <option value="2" >Periodo 2</option>
+                                                            <option value="3" >Periodo 3</option>
+                                                            <option value="4" >Periodo 4</option>
+                                                            <option value="5" >Periodo 5</option>
+                                                            <option value="6" >Periodo 6</option>
+                                                            <option value="7" >Periodo 7</option>
+                                                            <option value="8" >Periodo 8</option>
+                                                            <option value="9" >Periodo 9</option>
+                                                            <option value="10" >Periodo 10</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>Fecha de Evaluacion</label>
+                                                          <input class="form-control" type="text" value="" name="fecha_evaluacion" id="fecha_evaluacion" placeholder="2016-12-01" >
+                                                     
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>Iniciar desde el folio:</label>
+                                                          <input class="form-control" type="text" value="0" name="folio" id="folio" >
+                                                     
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>Tipo de Movimiento</label>
+                                                       <select class="form-control" name="tipo_movimiento" id="tipo_movimiento" >
+                                                            <option value="1" selected>ALTA</option>
+                                                            <option value="2" >BAJA</option>
+                                                            <option value="3" >CAMBIO</option>
+                                                        </select>
+                                                     
+                                                    </div>
+                                                </div>-->
+   
+
+                                                <div class="col-md-3" >
+                                                <div class="form-group">
+                                                        <label for='modos'>MODO</label>
+                                                        <select class="form-control" name="modo" id="modo" >
+                                                            <option value="0" selected>Prueba (previsualizar)</option>
+                                                            <option style="color:red;" value="1">GENERAR (Guarda en Base De Datos)</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-md-2" >
+
+                                                <input class="btn btn-primary" id="excelenviar" type='submit' name='enviar'  value="GENERAR"  />
+                                                </div>
+                                                <input type="hidden" value="upload" name="action" />
+                                            </form>
+                                        <div>
+                                    </div>
+                                </div>
+                                <div class="row col-md-12  text-center">
+                                    <dir-pagination-controls boundary-links="true" template-url="assets/dirpagination.tpl.html"></dir-pagination-controls>
+                                </div>
+                                <div class="row">
+                                   <!-- <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th># ID</th>
+                                                <th>Fecha</th>
+                                                <th>Usuario</th>
+                                                <th>Telefono</th>
+                                                <th>Asunto</th>
+                                                <th>Estado</th>
+                                                <th></th>
+                                                <th></th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+                                        <tbody>
+                                    </table>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div  class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading" style="background-color: #024699; color:white;" >
+                                <h4 class="panel-title">GENERAR ACTAS DE MATERIAS CURSADAS</h4>
+                              
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12" >
+                                        <div class="row">
+                                          <form name='importa' method='get' action='datos/sepyc_actas2.php' enctype='multipart/form-data' id='excelform'>
+
+                                               <!-- 
+                                               <div class="col-md-3" >
+                                                    <div class="form-group">
+                                                        <label for="exampleInputFile">Excel de Alumnos(CURP) :</label>
+                                                        <input type="file" id="InputFile" name="excel">
+                                                     <small><a href="datos/excel_alumnos.xlsx" download>Formato Excel de ejemplo </a></small>
+
+                                                    </div>
+                                                </div>-->
+
+                                                <!--<div class="col-md-3" >
+                                                             <div class="form-group">
+                                                        <label for=''>Números de Registros en el Excel</label>
+                                                        <input class="form-control" type='number' value="0" name='registros'/>
+                                                    </div>
+                                                </div>-->
+
+                                               <!-- <div class="col-md-3" >
+                                                 <div class="form-group">
+                                                        <label for=''>Corporación</label>
+                                                        <select class="form-control" name="corporacion" id="corporacion" >
+                                                            <option value="2" selected>Prepacoppel</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                -->
+
+                                                 <div class="col-md-3" >
+                                                     <div class="form-group">
+                                                            <label for=''>Generacion</label>
+                                                            <select class="form-control" name="generacion" id="generacion" >
+                                                                <option value="1" selected>Generacion 1</option>
+                                                                <option value="2" >Generacion 2</option>
+                                                                <option value="3" >Generacion 3</option>
+                                                                <option value="4" >Generacion 4</option>
+                                                                <option value="5" >Generacion 5</option>
+                                                                <option value="6" >Generacion 6</option>
+                                                            </select>           
+                                                     </div>
+                                                </div>
+
+                                                <!--
+                                                <div class="col-md-3" >
+                                                     <div class="form-group">
+                                                            <label for=''>SubCiclo Escolar</label>
+                                                            <select class="form-control" name="subciclo_escolar" id="subciclo_escolar" >
+                                                                <option value="1" selected>SubCiclo 1</option>
+                                                                <option value="2" >SubCiclo 2</option>
+                                                                <option value="3" >SubCiclo 3</option>
+                                                                <option value="4" >SubCiclo 4</option>
+                                                                <option value="5" >SubCiclo 5</option>
+                                                                <option value="6" >SubCiclo 6</option>
+                                                            </select>           
+                                                     </div>
+                                                </div>
+                                                <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>Tipo de Evaluacion</label>
+                                                             <select class="form-control" name="tipo_evaluacion" id="tipo_evaluacion" >
+                                                            <option value="1" selected>ORD</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                -->
+
+                                                <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>Periodo</label>
+                                                          <select class="form-control" name="periodo" id="periodo" >
+                                                            <option value="1" selected>Periodo 1</option>
+                                                            <option value="2" >Periodo 2</option>
+                                                            <option value="3" >Periodo 3</option>
+                                                            <option value="4" >Periodo 4</option>
+                                                            <option value="5" >Periodo 5</option>
+                                                            <option value="6" >Periodo 6</option>
+                                                            <option value="7" >Periodo 7</option>
+                                                            <option value="8" >Periodo 8</option>
+                                                            <option value="9" >Periodo 9</option>
+                                                            <option value="10" >Periodo 10</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>Fecha de Evaluacion</label>
+                                                          <input class="form-control" type="text" value="" name="fecha_evaluacion" id="fecha_evaluacion" placeholder="2016-12-01" >
+                                                     
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>Iniciar desde el folio:</label>
+                                                          <input class="form-control" type="text" value="0" name="folio" id="folio" >
+                                                     
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>Tipo de Movimiento</label>
+                                                       <select class="form-control" name="tipo_movimiento" id="tipo_movimiento" >
+                                                            <option value="1" selected>ALTA</option>
+                                                            <option value="2" >BAJA</option>
+                                                            <option value="3" >CAMBIO</option>
+                                                        </select>
+                                                     
+                                                    </div>
+                                                </div>-->
+   
+
+                                                <div class="col-md-3" >
+                                                <div class="form-group">
+                                                        <label for='modos'>MODO</label>
+                                                        <select class="form-control" name="modo" id="modo" >
+                                                            <option value="0" selected>Prueba (previsualizar)</option>
+                                                            <option style="color:red;" value="1">GENERAR (Guarda en Base De Datos)</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-md-2" >
+
+                                                <input class="btn btn-primary" id="excelenviar" type='submit' name='enviar'  value="GENERAR"  />
+                                                </div>
+                                                <input type="hidden" value="upload" name="action" />
+                                            </form>
+                                        <div>
+                                    </div>
+                                </div>
+
+                                <div class="row col-md-12  text-center">
+                                    <dir-pagination-controls boundary-links="true" template-url="assets/dirpagination.tpl.html"></dir-pagination-controls>
+                                </div>
+                                
+                                <div class="row">
+                                   <!-- <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th># ID</th>
+                                                <th>Fecha</th>
+                                                <th>Usuario</th>
+                                                <th>Telefono</th>
+                                                <th>Asunto</th>
+                                                <th>Estado</th>
+                                                <th></th>
+                                                <th></th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+                                        <tbody>
+                                    </table>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                                <div  class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading" style="background-color: #024699; color:white;" >
+                                <h4 class="panel-title">Materias faltantes SEPYC</h4>
+                              
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-12" >
+                                        <div class="row">
+                                          <form name='importa' method='get' action='datos/sepyc_alumnos_cargas.php' enctype='multipart/form-data' id='excelform'>
+
+                                               <!-- 
+                                               <div class="col-md-3" >
+                                                    <div class="form-group">
+                                                        <label for="exampleInputFile">Excel de Alumnos(CURP) :</label>
+                                                        <input type="file" id="InputFile" name="excel">
+                                                     <small><a href="datos/excel_alumnos.xlsx" download>Formato Excel de ejemplo </a></small>
+
+                                                    </div>
+                                                </div>-->
+
+                                                <!--<div class="col-md-3" >
+                                                             <div class="form-group">
+                                                        <label for=''>Números de Registros en el Excel</label>
+                                                        <input class="form-control" type='number' value="0" name='registros'/>
+                                                    </div>
+                                                </div>-->
+
+                                               <!-- <div class="col-md-3" >
+                                                 <div class="form-group">
+                                                        <label for=''>Corporación</label>
+                                                        <select class="form-control" name="corporacion" id="corporacion" >
+                                                            <option value="2" selected>Prepacoppel</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                -->
+
+                                                 <div class="col-md-3" >
+                                                     <div class="form-group">
+                                                            <label for=''>Generacion</label>
+                                                            <select class="form-control" name="generacion" id="generacion" >
+                                                                <option value="1" selected>Generacion 1</option>
+                                                                <option value="2" >Generacion 2</option>
+                                                                <option value="3" >Generacion 3</option>
+                                                                <option value="4" >Generacion 4</option>
+                                                                <option value="5" >Generacion 5</option>
+                                                                <option value="6" >Generacion 6</option>
+                                                            </select>           
+                                                     </div>
+                                                </div>
+
+                                                <!--
+                                                <div class="col-md-3" >
+                                                     <div class="form-group">
+                                                            <label for=''>SubCiclo Escolar</label>
+                                                            <select class="form-control" name="subciclo_escolar" id="subciclo_escolar" >
+                                                                <option value="1" selected>SubCiclo 1</option>
+                                                                <option value="2" >SubCiclo 2</option>
+                                                                <option value="3" >SubCiclo 3</option>
+                                                                <option value="4" >SubCiclo 4</option>
+                                                                <option value="5" >SubCiclo 5</option>
+                                                                <option value="6" >SubCiclo 6</option>
+                                                            </select>           
+                                                     </div>
+                                                </div>
+                                                <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>Tipo de Evaluacion</label>
+                                                             <select class="form-control" name="tipo_evaluacion" id="tipo_evaluacion" >
+                                                            <option value="1" selected>ORD</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                -->
+
+                                                <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>Periodo</label>
+                                                          <select class="form-control" name="periodo" id="periodo" >
+                                                            <option value="1" selected>Periodo 1</option>
+                                                            <option value="2" >Periodo 2</option>
+                                                            <option value="3" >Periodo 3</option>
+                                                            <option value="4" >Periodo 4</option>
+                                                            <option value="5" >Periodo 5</option>
+                                                            <option value="6" >Periodo 6</option>
+                                                            <option value="7" >Periodo 7</option>
+                                                            <option value="8" >Periodo 8</option>
+                                                            <option value="9" >Periodo 9</option>
+                                                            <option value="10" >Periodo 10</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>Fecha de Evaluacion</label>
+                                                          <input class="form-control" type="text" value="" name="fecha_evaluacion" id="fecha_evaluacion" placeholder="2016-12-01" >
+                                                     
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>Iniciar desde el folio:</label>
+                                                          <input class="form-control" type="text" value="0" name="folio" id="folio" >
+                                                     
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="col-md-3" >
+                                                       <div class="form-group">
+                                                        <label for=''>Tipo de Movimiento</label>
+                                                       <select class="form-control" name="tipo_movimiento" id="tipo_movimiento" >
+                                                            <option value="1" selected>ALTA</option>
+                                                            <option value="2" >BAJA</option>
+                                                            <option value="3" >CAMBIO</option>
+                                                        </select>
+                                                     
+                                                    </div>
+                                                </div>-->
+   
+
+                                                <!--<div class="col-md-3" >
+                                                <div class="form-group">
+                                                        <label for='modos'>MODO</label>
+                                                        <select class="form-control" name="modo" id="modo" >
+                                                            <option value="0" selected>Prueba (previsualizar)</option>
+                                                            <option style="color:red;" value="1">GENERAR (Guarda en Base De Datos)</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div>-->
+                                                
+                                                <div class="col-md-2" >
+
+                                                <input class="btn btn-primary" id="excelenviar" type='submit' name='enviar'  value="GENERAR"  />
+                                                </div>
+                                                <input type="hidden" value="upload" name="action" />
+                                            </form>
+                                        <div>
+                                    </div>
+                                </div>
+
+                                <div class="row col-md-12  text-center">
+                                    <dir-pagination-controls boundary-links="true" template-url="assets/dirpagination.tpl.html"></dir-pagination-controls>
+                                </div>
+                                
+                                <div class="row">
+                                   <!-- <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th># ID</th>
+                                                <th>Fecha</th>
+                                                <th>Usuario</th>
+                                                <th>Telefono</th>
+                                                <th>Asunto</th>
+                                                <th>Estado</th>
+                                                <th></th>
+                                                <th></th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            
+                                        <tbody>
+                                    </table>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>

@@ -1,0 +1,748 @@
+<?php 
+
+  $url="http://agcollege.edu.mx"; 
+  $titulo_escuela="";
+  $course=0;
+  $unidad=0;
+  $id_corporacion=0;
+  $id_plan_estudio=0;
+  $id_lenguaje=3;
+if( isset($corporacion) &&  isset($plan_estudio) &&  isset($_GET['course']) && isset($_GET['unidad']) && is_numeric($_GET['course']) && is_numeric($_GET['unidad']) && is_numeric($plan_estudio)  && is_numeric($corporacion)  ){
+      $course=$_GET['course'];
+      $unidad=$_GET['unidad'];
+      $id_corporacion=$corporacion;
+      $id_plan_estudio=$plan_estudio;
+}
+
+  //echo "USERID: ".$USER->id."";
+  $id_moodle=$USER->id;
+  $is_plataforma="true";
+
+   //echo "$id_moodle - $course - $unidad - $id_corporacion - $id_plan_estudio";
+   $ejercicios_hechos=$ejercicios->get_ejercicios_hechos($id_moodle,$course,$unidad,$id_corporacion,$id_plan_estudio);
+   //print_r($ejercicios_hechos);
+   $nombre_materia=$ejercicios->get_materia_nombre($course);
+?>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="simpleUpload.js"></script>-->
+
+
+    <script type="text/javascript">
+        <?php echo "
+              var id_lenguaje=".$id_lenguaje.";
+              var id_plan_estudio=".$id_plan_estudio.";
+              var id_corporacion=".$id_corporacion."; 
+              var is_plataforma=".$is_plataforma.";
+              var course=".$course.";
+              var unidad=".$unidad.";
+              var id_moodle=".$id_moodle.";
+
+        "; ?>
+    </script>
+   
+
+    <link rel="stylesheet" href="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/fold/foldgutter.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/inlet.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/lint/lint.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/dialog/dialog.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/hint/show-hint.css">
+    <link rel="stylesheet" href="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/theme/icecoder.css">    
+
+     <link  href="<?php echo $url; ?>/cereporte/modules/evidencias/assets/bootstrap/css/bootstrap.min.custom.css" rel="stylesheet">
+
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/js/jquery.min.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/ckeditor/ckeditor.js"></script>
+
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/lib/codemirror.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/mode/javascript/javascript.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/mode/xml/xml.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/mode/css/css.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/edit/closetag.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/edit/matchbrackets.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/selection/active-line.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/fold/foldcode.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/fold/foldgutter.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/fold/brace-fold.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/fold/xml-fold.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/fold/comment-fold.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/search/search.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/search/searchcursor.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/dialog/dialog.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/hint/show-hint.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/hint/xml-hint.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/hint/html-hint.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/hint/css-hint.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/hint/javascript-hint.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/search/match-highlighter.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/htmlhint.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/csslint.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/jshint.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/lint/lint.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/lint/html-lint.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/lint/css-lint.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/lint/javascript-lint.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/inlet.min.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/emmet.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/search/jump-to-line.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/markdown.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/continuelist.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/mode/ruby/ruby.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/mode/haml/haml.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/mode/sass/sass.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/mode/livescript/livescript.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/mode/coffeescript/coffeescript.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/coffee-script.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/coffeelint.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/addon/lint/coffeescript-lint.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/mode/stylus/stylus.js"></script>
+    <script src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/codemirror/mode/clike/clike.js"></script>
+
+
+
+   <script src="<?php echo $url; ?>/cereporte/modules/evidencias/controllers/simulador.js"></script>
+
+ <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+      .CodeMirror{
+        
+        width: 100%;
+        border: 1px solid black;
+      }
+
+      iframe {
+
+        width: 100%;
+        float: left;
+        height:400px;
+        border: 1px solid #ccc;
+        border-top-width: 0px;
+        
+      }
+    #console {
+    width: 100%;
+    float: left;
+    font-weight: bold;
+    font-size: 12px;
+    color: #1D1D1B;
+    height: 300px;
+    line-height: 14px;
+    padding-top: 4px;
+    overflow: hidden;
+  }
+
+  #console .header {
+    background-color: #1D1D1B;
+    height: 16px;
+    margin-bottom: 4px;
+    color: #aaa;
+  }
+
+  #console .content {
+    overflow: auto;
+    height: calc( 100% - 20px );
+    padding-bottom: 10px;
+    background-color: #1D1D1B;
+    
+  }
+
+  #console .msg {
+    padding-left: 10px;
+    transition: opacity 1s linear;
+    color: #aaa;
+  }
+
+  #console .msg:hover {
+    background-color: #445;
+  }
+
+  #console .msg span.url {
+    display: inline-block;
+    min-width: 300px;
+    color: #555;
+  }
+
+
+  #console .msg span.params {
+    opacity: 0.5;
+    display: inline-block;
+    overflow: hidden;
+    max-width: 600px;
+    height: 1em; 
+    white-space: nowrap;
+    color: #555;
+  }
+
+  #console .msg span.ip {
+    color: #777;
+    display: inline-block;
+    width: 150px;
+  }
+
+  #console .msg span.time {
+    color: #585;
+    display: inline-block;
+    width: 70px;
+  }
+
+  #console .msg span.bytes {
+    color: #885;
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+  }
+
+  #console .msg span.units {
+    opacity: 0.5;
+    display: inline-block;
+    width: 40px;
+    text-align: left;
+    color: #555;
+  }
+
+
+  #console .msg span.alert {
+    color: red !important;
+    font-weight: bold;
+  }
+
+  #console .msg span.ipnum {
+    display: inline-block;
+    width: 26px;
+    text-align: right;
+    color: #555;
+  }
+
+  #console .msg span.ipdot {
+    color: #555;
+  }
+
+
+  #console .msg .bit {
+    margin-right: 4px;
+    color: #555;
+  }
+
+  #console-input {
+    display: inline;
+    border: 0;
+    background: transparent;
+    color: #555;
+    width: 600px;
+    height: 19px;
+    padding: 0;
+    margin: 0;
+
+    cursor: inherit;
+  }
+
+  #console-input:focus {
+      outline: none;
+  }    
+    </style>
+
+<style type="text/css">
+    .messages{
+        float: left;
+        font-family: sans-serif;
+        display: none;
+    }
+    .info{
+        padding: 10px;
+        border-radius: 10px;
+        background: orange;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+    }
+    .before{
+        padding: 10px;
+        border-radius: 10px;
+        background: blue;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+    }
+    .success{
+        padding: 10px;
+        border-radius: 10px;
+        background: green;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+    }
+    .error{
+        padding: 10px;
+        border-radius: 10px;
+        background: red;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+    }
+	.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn3 {
+   background-color:#006fb9;
+  color:white;
+  padding: 8px 15px;
+  border-radius: 3px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+
+
+}
+.esquinas_redon{
+	  border-radius: 3px 3px 3px 3px;
+-moz-border-radius: 3px 3px 3px 3px;
+-webkit-border-radius: 3px 3px 3px 3px;
+	
+}
+
+</style>
+
+        <!-- VISTA CUANDO ESTÁ CARGANDO-->
+       <div class="view_cargando text-center" id="view_cargando" style="background-color: white;  vertical-align: center; width: 100%; height:100%; position: absolute; display:none;  opacity:0.85; z-index: 10;" ><br><br><br><br><br>
+        <img src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/img/loading2.gif" style="width: 5%;" alt="Espere un mmomento porfavor..."  ><br><strong>Espere un momento porfavor.</strong>
+      </div>
+
+     <!-- MENU DE PESTAÑAS DEPENDIENDO DE CUANTOS EJERCICIOS POR MODULO-->
+      <ul class="nav nav-tabs" id="content_ejercicios_tabs">
+        <li role="presentation" item-index="0"  class="ejercicio_tab active"><a href="#">... </a></li>
+       
+      </ul>
+    <div class="container-fluid">
+
+
+
+
+       <!-- VISTA NORMAL PARA EDITAR -->
+      <div class="container-fluid" id="view_editar" style="display:none;" >
+        <div class="row">
+            <div class="col-md-12 text-ñ"  ><h3 id="ejercicio_titulo" style="font-family: 'CircularStd-Book', Helvetica, sans-serif;color:#006fb9;">...</h3></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-left"  >
+              <p id="ejercicio_desc">
+                ....
+              </p><br>
+	    </div>
+	</div>
+	<hr>
+	<div class="showImage" style="color:#006fb9;font-family: 'CircularStd-Book', Helvetica, sans-serif;" class="circularbook"></div>
+	<br>
+	<div class="row">
+            <div class="col-md-4 text-left" >
+<!--<form enctype="multipart/form-data" class="formulario">
+	<div class="form-group">
+		<div class="input-group input-file" name="Fichier1">
+    		<input type="text" class="form-control" placeholder='Selecciona archivo...' />			
+            <span class="input-group-btn">
+        		<button class="btn btn-default btn-choose" type="button">Selecciona</button>
+    		</span>
+
+
+		</div>
+	</div>
+</form>-->
+  <!--div para visualizar en el caso de imagen-->
+
+				<!--el enctype debe soportar subida de archivos con multipart/form-data-->
+				<form enctype="multipart/form-data" class="formulario">
+				<!--<h2>Subir un archivo</h2><br/>-->
+      	       
+				<div class="upload-btn-wrapper">
+				<!--	<input type="button" class="btn btn-default esquinas_redon" id="uparchivo" style="background-color:#006fb9;color:white;border:none;" value="Subir Archivo" />-->
+					<input name="archivo" type="file" id="imagen" style="position: absolute;left:0;top: 0;opacity: 0;"/>
+					<!--<button class="btn btn-default btn_guardar esquinas_redon" type="button" id="btn_save" style="background-color:#006fb9;color:white;border:none;"> Guardar Progreso</button>-->
+				</form>
+				
+				</div>
+				<span style="position:relative;top:-41px;margin-left:120px;margin-bottom:100px;"><button class="btn btn-default btn_guardar esquinas_redon" type="button" id="btn_save" style="background-color:#006fb9;color:white;border:none;">Guardar Progreso</button></span>
+					<!--<button class="btn btn-default pull-right esquinas_redon" type="button" id="btn_save_finish" style="background-color:#006fb9;color:white;border:none;">Finalizar Actividad</button>-->
+					<br><div class="messages"></div>
+				
+            </div>
+				<div class="col-md-8 text-left"  >
+					<!--<input type="button" class="btn btn-default" id="uparchivo" style="background-color:#006fb9;color:white;" value="Subir Archivo" disabled/>-->
+					 
+					
+					<br>
+
+				<!--div para visualizar mensajes-->
+				<!--<br><div class="messages"></div>-->
+
+				</div>
+        </div>
+
+        <div class="row">
+           <div class="col-md-2 pull-left"  >
+               
+               
+           </div>
+           <div class="col-md-2 pull-right"  >
+                
+                <label style="display: none;" class="label label-success pull-left"  id="label_finish" ><!--<span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>-->ACTIVIDAD REALIZADA</label>
+           </div>
+        </div>
+
+        <!--<div class="row">
+          <br><input type="file" class="file">
+        </div>-->
+<style type="text/css">
+    .messages{
+        float: left;
+        font-family: sans-serif;
+        display: none;
+    }
+    .info{
+        padding: 10px;
+        border-radius: 10px;
+        background: #ffdd30;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+    }
+    .before{
+        padding: 10px;
+        border-radius: 10px;
+        background: #0b66ab;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+    }
+    .success{
+        padding: 10px;
+        border-radius: 10px;
+        background: green;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+    }
+    .error{
+        padding: 10px;
+        border-radius: 10px;
+        background: red;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+    }
+</style>
+
+<script>
+$(document).ready(
+    function(){
+        $('input:file').change(
+            function(){
+                if ($(this).val()) {
+                    $('#uparchivo').attr('disabled',false); 
+                }
+            }
+            );
+    });
+</script>
+<script>
+$(document).ready(function(){
+
+    $(".messages").hide();
+    //queremos que esta variable sea global
+    var fileExtension = "";
+    //función que observa los cambios del campo file y obtiene información
+    $(':file').change(function()
+    {
+        //obtenemos un array con los datos del archivo
+        var file = $("#imagen")[0].files[0];
+        //obtenemos el nombre del archivo
+        var fileName = file.name;
+        //obtenemos la extensión del archivo
+        fileExtension = fileName.substring(fileName.lastIndexOf('.') + 1);
+        //obtenemos el tamaño del archivo
+        var fileSize = file.size;
+        //obtenemos el tipo de archivo image/png ejemplo
+        var fileType = file.type;
+        //mensaje con la información del archivo
+        showMessage("<span class='info'>Archivo para subir: "+fileName+", peso total: "+fileSize+" bytes.</span>");
+    });
+
+    //al enviar el formulario
+    $('#uparchivo').click(function(){
+        //información del formulario
+        var formData = new FormData($(".formulario")[0]);
+        var message = ""; 
+        //hacemos la petición ajax  
+        $.ajax({
+            url: 'upload.php',
+	    type: 'POST',
+            // Form data
+            //datos del formulario
+            data: formData,
+            //necesario para subir archivos via ajax
+            cache: false,
+            contentType: false,
+            processData: false,
+            //mientras enviamos el archivo
+            beforeSend: function(){
+                message = $("<span class='before'>Subiendo el archivo, por favor espere...</span>");
+                showMessage(message)        
+            },
+            //una vez finalizado correctamente
+            success: function(data){
+                message = $("<span class='success'>El archivo ha subido correctamente,Guarde su Progreso.</span>");
+                showMessage(message);
+                //if(isImage(fileExtension))
+                //{
+                    //$(".showImage").html("<img src='files/"+data+"' />");
+				//alert("data");
+    		      $(".showImage").html("<h2 class='circularbook'>Visualizar:</h2><a href='files/"+data+"' target='blanck_' style='color:#006fb9;'>"+data+"</a><input type='hidden' id='ruta_archivo' class='ruta_archivo' name='ruta_archivo' value='"+data+"'>");
+		      
+                //}
+            },
+            //si ha ocurrido un error
+            error: function(){
+                message = $("<span class='error'>Ha ocurrido un error.</span>");
+                showMessage(message);
+            }
+        });
+    });
+})
+
+//como la utilizamos demasiadas veces, creamos una función para 
+//evitar repetición de código
+function showMessage(message){
+    $(".messages").html("").show();
+    $(".messages").html(message);
+}
+
+//comprobamos si el archivo a subir es una imagen
+//para visualizarla una vez haya subido
+function isImage(extension)
+{
+    switch(extension.toLowerCase()) 
+    {
+        case 'jpg': case 'gif': case 'png': case 'jpeg':
+            return true;
+        break;
+        default:
+            return false;
+        break;
+    }
+}
+</script>
+
+        <div class="row actividad_tipo_1" >
+            <div class="row edicion">
+                <div class="col-md-12"  style="margin-left:1.4%;">
+                  <textarea class="ejercicio_contenido" id="ejercicio_contenido" name="ejercicio_contenido"  name="ejercicio_contenido" rows="15"  >
+
+                  </textarea>
+				  <br>
+				  <!--<button class="btn btn-default pull-right esquinas_redon" type="button" id="btn_save_finish" style="background-color:#006fb9;color:white;border:none;">Finalizar Actividad</button>-->
+                </div>
+				
+            </div>
+            <div class="row vista_previa">
+                <div class="col-md-12 ejercicio_contenido_vista_previa text-left panel panel-default"   >
+                   
+                </div>
+            </div>
+	    <!--<h3 class="comen circularbook" id="comen" style="color:#006fb9;">Retroalimentación Académica:</h3>-->
+            <div class="row vista_previa">
+                <!--<div class="col-md-12 ejercicio_comentarios_vista_previa text-left panel panel-default"   >
+			
+                </div>-->
+            </div>
+
+        </div>
+
+        <div class="actividad_tipo_2">
+           <h3 class="circularbook">Simulador</h3>
+            <textarea  id="editor">
+                #include<stdio.h>
+                main() {
+                   
+                }
+            </textarea>
+			
+            <br>
+            <h3 class="circularbook">Resultado</h3>
+              <div class="preview" id="banner_iframe" style="border-top-right-radius: 4px;  border-top-left-radius: 4px; height: 40px; padding-left:10px; padding-right:10px; float: left;   width:100%;  background-color: #475558;" >
+              <label style="font-size: 40px; color: red;" > &#8226;</label>
+                <label style="font-size: 40px; color: yellow;" >&#8226;</label>
+                  <label style="font-size: 40px; color: #2ecc71;" >&#8226;</label>
+                    <label class="pull-right" style="font-size: 30px; color: white;" >&times;</label>
+              </div>
+              <iframe class="preview" id="iframe_preview" >
+              </iframe>
+              <div id="console" class="preview">
+
+                <div class=""><!--<button id="help-button">Ayuda</button>--><button id="compile-button">COMPILAR &#10148;</button><button id="clear-button">Limpiar Consola</button><button id="kill-button">Terminar Proceso</button><!--<button id="optimize-button">Optimizar</button>--></div>
+                <div class="content">
+                  <p class="msg">Consola Lista.</p>
+                </div>
+              </div>
+
+        </div>
+		<div class="">
+            <div class="row">
+                <div class="col-md-12"  style="">
+				  <button class="btn btn-default pull-right esquinas_redon" type="button" id="btn_save_finish" style="background-color:#006fb9;color:white;border:none;">Finalizar Actividad</button>
+				  <br><h3 class="comen circularbook" id="comen" style="color:#006fb9;">Retroalimentación Académica:</h3>
+<div class="col-md-12 ejercicio_comentarios_vista_previa text-left panel panel-default"   >
+
+                </div>
+                </div>
+				
+            </div>
+        </div>
+		<!--<button class="btn btn-default pull-right esquinas_redon" type="button" id="btn_save_finish" style="background-color:#006fb9;color:white;border:none;">Finalizar Actividad</button>-->
+
+      </div>
+
+      <div class="container-fluid circularbook" id="view_inicio" style="   background-position: center; color:#006fb9;" >
+        <div class="row" style="color:#006fb9;">
+            <div class="col-md-12 text-center circularbook"  ><h2 style="font-family: 'CircularStd-Book', Helvetica, sans-serif;">Actividades Integradoras de la Unidad <?php echo ($unidad+1); ?></h2></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center"  ><h4 id="ejercicios_realizados" style="font-family: 'CircularStd-Book', Helvetica, sans-serif;">
+
+            <?php 
+              if($ejercicios_hechos['totales']>0){
+                echo $nombre_materia."<br><br>Realizadas ".$ejercicios_hechos['hechos']." de ".$ejercicios_hechos['totales']; 
+
+              }else{
+                echo $nombre_materia."<br><br><br>Sin Actividades Integradoras a realizar."; 
+
+              }
+
+            ?>
+            </h2></div>
+        </div>
+       
+        <div class="row text-center">
+            <div class="col-md-offset-2 col-md-8 col-sm-12"  >
+              <p id="ejercicio_desc">
+              <?php if($ejercicios_hechos['totales']>0){
+                 echo " Realiza todas las Actividades Integradoras para poder presentar el examen de la Unidad ".($unidad+1).".<br>Cada Actividad Integradora se encuentra en las pestañas de la parte superior.<br> Recuerda Guardar tu progreso de cada actividad antes de salir. ";
+                  }
+              ?>
+               
+              </p>
+            </div>
+        </div>
+        <br>
+        <br>
+
+
+      </div>
+
+
+
+
+    </div><!--CONTAINER-->
+     <div id="modal_aviso" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title" id="" ><img style="width: 5%;" src="<?php echo $url; ?>/cereporte/modules/evidencias/assets/img/ok.png" ></h4>
+          </div>
+          <div class="modal-body" id="modal_aviso_msg" >
+            <p></p>
+          </div>
+          <div class="modal-footer text-center" >
+            <button type="button" class="btn btn-default pull-center" data-dismiss="modal">Aceptar</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+<script> 
+alert("aqi");
+$(document).ready(function(){
+    $(".messages").hide();
+    //queremos que esta variable sea global
+    var fileExtension = "";
+    //función que observa los cambios del campo file y obtiene información
+    $(':file').change(function()
+    {
+		console.log("aqui");
+        //obtenemos un array con los datos del archivo
+        var file = $("#imagen")[0].files[0];
+        //obtenemos el nombre del archivo
+        var fileName = file.name;
+        //obtenemos la extensión del archivo
+        fileExtension = fileName.substring(fileName.lastIndexOf('.') + 1);
+        //obtenemos el tamaño del archivo
+        var fileSize = file.size;
+        //obtenemos el tipo de archivo image/png ejemplo
+        var fileType = file.type;
+        //mensaje con la información del archivo
+        showMessage("<span class='info'>Archivo para subir: "+fileName+", peso total: "+fileSize+" bytes.</span>");
+    });
+    //al enviar el formulario
+    $(':button').click(function(){
+        //información del formulario
+        var formData = new FormData($(".formulario")[0]);
+        var message = "";
+        //hacemos la petición ajax
+        $.ajax({
+            url: 'upload.php',
+            type: 'POST',
+            // Form data
+            //datos del formulario
+            data: formData,
+            //necesario para subir archivos via ajax
+            cache: false,
+            contentType: false,
+            processData: false,
+            //mientras enviamos el archivo
+            beforeSend: function(){
+                message = $("<span class='before'>Subiendo la imagen, por favor espere...</span>");
+                showMessage(message)
+            },
+            //una vez finalizado correctamente
+            success: function(data){
+                message = $("<span class='success'>La imagen ha subido correctamente.</span>");
+                showMessage(message);
+                if(isImage(fileExtension))
+                {
+                    $(".showImage").html("<img src='files/"+data+"' />");
+                }
+            },
+            //si ha ocurrido un error
+            error: function(){
+                message = $("<span class='error'>Ha ocurrido un error.</span>");
+                showMessage(message);
+            }
+        });
+    });
+})
+//como la utilizamos demasiadas veces, creamos una función para //evitar repetición de código function showMessage(message){
+    $(".messages").html("").show();
+    $(".messages").html(message);
+
+//comprobamos si el archivo a subir es una imagen //para visualizarla una vez haya subido function isImage(extension) {
+    switch(extension.toLowerCase())
+    {
+        case 'jpg': case 'gif': case 'png': case 'jpeg':
+            return true;
+        break;
+        default:
+            return false;
+        break;
+    }
+}
+</script>
+
+
+
+

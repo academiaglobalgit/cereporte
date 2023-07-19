@@ -1,0 +1,1062 @@
+<?xml version="1.0"?>
+<presentation title="IT_B_MAT1_B1" width="1080.0000000" height="810.0000000" thmbWidth="78.0000000" thmbHeight="58.0000000" frameRate="24.0000000" looping="0" startingSlideShow="" pptVersion="2013" type="compound" hasExternalAudio="0" uid="{A2720DE4-45F5-4D44-8769-E714CEEF47E3}">
+	<presenters/>
+	<company logoAssetId="" webSite="" webSiteTarget="_blank"/>
+	<references/>
+	<soundAssets/>
+	<sharedAssetsLibrary src="assets.swf"/>
+	<graphicAssets>
+		<graphicAsset id="imgAsset0" src="thmb1.swf" embedded="0"/>
+		<graphicAsset id="imgAsset1" src="thmb2.swf" embedded="0"/>
+		<graphicAsset id="imgAsset2" src="thmb3.swf" embedded="0"/>
+		<graphicAsset id="imgAsset3" src="thmb4.swf" embedded="0"/>
+		<graphicAsset id="imgAsset4" src="thmb5.swf" embedded="0"/>
+		<graphicAsset id="imgAsset5" src="thmb6.swf" embedded="0"/>
+		<graphicAsset id="imgAsset6" src="thmb7.swf" embedded="0"/>
+		<graphicAsset id="imgAsset7" src="thmb8.swf" embedded="0"/>
+		<graphicAsset id="imgAsset8" src="thmb9.swf" embedded="0"/>
+		<graphicAsset id="imgAsset9" src="thmb10.swf" embedded="0"/>
+		<graphicAsset id="imgAsset10" src="thmb11.swf" embedded="0"/>
+		<graphicAsset id="imgAsset11" src="thmb12.swf" embedded="0"/>
+		<graphicAsset id="imgAsset12" src="thmb13.swf" embedded="0"/>
+		<graphicAsset id="imgAsset13" src="thmb14.swf" embedded="0"/>
+		<graphicAsset id="imgAsset14" src="thmb15.swf" embedded="0"/>
+		<graphicAsset id="imgAsset15" src="thmb16.swf" embedded="0"/>
+		<graphicAsset id="imgAsset16" src="thmb17.swf" embedded="0"/>
+		<graphicAsset id="imgAsset17" src="thmb18.swf" embedded="0"/>
+		<graphicAsset id="imgAsset18" src="thmb19.swf" embedded="0"/>
+		<graphicAsset id="imgAsset19" src="thmb20.swf" embedded="0"/>
+		<graphicAsset id="imgAsset20" src="thmb21.swf" embedded="0"/>
+		<graphicAsset id="imgAsset21" src="thmb22.swf" embedded="0"/>
+		<graphicAsset id="imgAsset22" src="thmb23.swf" embedded="0"/>
+		<graphicAsset id="imgAsset23" src="thmb24.swf" embedded="0"/>
+		<graphicAsset id="imgAsset24" src="thmb25.swf" embedded="0"/>
+		<graphicAsset id="imgAsset25" src="thmb26.swf" embedded="0"/>
+		<graphicAsset id="imgAsset26" src="thmb27.swf" embedded="0"/>
+		<graphicAsset id="imgAsset27" src="thmb28.swf" embedded="0"/>
+		<graphicAsset id="imgAsset28" src="thmb29.swf" embedded="0"/>
+		<graphicAsset id="imgAsset29" src="thmb30.swf" embedded="0"/>
+		<graphicAsset id="imgAsset30" src="thmb31.swf" embedded="0"/>
+		<graphicAsset id="imgAsset31" src="thmb32.swf" embedded="0"/>
+		<graphicAsset id="imgAsset32" src="thmb33.swf" embedded="0"/>
+		<graphicAsset id="imgAsset33" src="thmb34.swf" embedded="0"/>
+		<graphicAsset id="imgAsset34" src="thmb35.swf" embedded="0"/>
+		<graphicAsset id="imgAsset35" src="thmb36.swf" embedded="0"/>
+		<graphicAsset id="imgAsset36" src="thmb37.swf" embedded="0"/>
+		<graphicAsset id="imgAsset37" src="thmb38.swf" embedded="0"/>
+		<graphicAsset id="imgAsset38" src="thmb39.swf" embedded="0"/>
+		<graphicAsset id="imgAsset39" src="thmb40.swf" embedded="0"/>
+	</graphicAssets>
+	<backgroundSound soundAssetId="" looping="0" volume="1.0000000"/>
+	<narration/>
+	<settings>
+		<navigation>
+			<keyboard enabled="1">
+				<actions>
+					<action name="playPause">
+						<shortcut code="32" control="0" shift="0"/>
+					</action>
+					<action name="nextSlide">
+						<shortcut code="34" control="0" shift="0"/>
+					</action>
+					<action name="previousSlide">
+						<shortcut code="33" control="0" shift="0"/>
+					</action>
+					<action name="nextStep">
+						<shortcut code="13" control="0" shift="0"/>
+					</action>
+					<action name="previousStep">
+						<shortcut code="13" control="0" shift="1"/>
+					</action>
+					<action name="firstSlide">
+						<shortcut code="36" control="1" shift="0"/>
+					</action>
+					<action name="lastSlide">
+						<shortcut code="35" control="1" shift="0"/>
+					</action>
+					<action name="lastViewedSlide">
+						<shortcut code="8" control="0" shift="0"/>
+					</action>
+					<action name="slideStart">
+						<shortcut code="36" control="0" shift="0"/>
+					</action>
+					<action name="slideEnd">
+						<shortcut code="35" control="0" shift="0"/>
+					</action>
+					<action name="seekForward">
+						<shortcut code="39" control="0" shift="0"/>
+					</action>
+					<action name="seekBackward">
+						<shortcut code="37" control="0" shift="0"/>
+					</action>
+					<action name="volumeUp">
+						<shortcut code="38" control="0" shift="0"/>
+					</action>
+					<action name="volumeDown">
+						<shortcut code="40" control="0" shift="0"/>
+					</action>
+					<action name="toggleFullscreen">
+						<shortcut code="70" control="1" shift="0"/>
+					</action>
+				</actions>
+			</keyboard>
+			<mouse enabled="1" target="step"/>
+			<gesture zoom="1"/>
+		</navigation>
+		<skin>
+			<colorSettings>
+				<color id="button.content.normal">#FFFFFF</color>
+				<color id="button.content.over">#FFFFFF</color>
+				<color id="button.face.normal">#000000</color>
+				<color id="button.face.over">#000000</color>
+				<color id="companyLogo.background">#FFFFFF</color>
+				<color id="hyperlink">#AFAFAF</color>
+				<color id="listItem.face.over">#F3EDDC</color>
+				<color id="listItem.face.pressed">#F07E30</color>
+				<color id="listItem.label.over">#000000</color>
+				<color id="listItem.label.pressed">#FFFFFF</color>
+				<color id="listItem.label.visited">#4D4F53</color>
+				<color id="page.background">#B2C4B2</color>
+				<color id="panel.background">#FFFFFF</color>
+				<color id="panel.text">#727272</color>
+				<color id="player.background">#E2EBE2</color>
+				<color id="popup.background">#FFFFFF</color>
+				<color id="progress.background">#6E6E6E</color>
+				<color id="progress.loading">#BDFFA4</color>
+				<color id="progress.playback">#2AD01A</color>
+				<color id="text">#000000</color>
+			</colorSettings>
+			<controlPanelSettings>
+				<visible>true</visible>
+				<showOutline>false</showOutline>
+				<showPlayPause>false</showPlayPause>
+				<showRewind>false</showRewind>
+				<showVolumeControl>false</showVolumeControl>
+				<showCCButton>false</showCCButton>
+				<showPrevButton>true</showPrevButton>
+				<showNextButton>true</showNextButton>
+				<showSlideOnlyButton>true</showSlideOnlyButton>
+				<progressBar>
+					<visible>false</visible>
+					<enabled>true</enabled>
+					<showLabels>true</showLabels>
+					<mode>slideTimeline</mode>
+				</progressBar>
+				<navigationMode>bySteps</navigationMode>
+			</controlPanelSettings>
+			<titlePanelSettings>
+				<showLogo>true</showLogo>
+				<visible>true</visible>
+				<buttons>
+					<button type="attachments" visible="false"/>
+					<button type="presenterInfo" visible="false"/>
+					<button type="markerTools" visible="true"/>
+					<button type="notes" visible="false"/>
+					<button type="outline" visible="false"/>
+				</buttons>
+			</titlePanelSettings>
+			<outlinePanelSettings>
+				<numberEntries>true</numberEntries>
+				<highlightViewedEntries>false</highlightViewedEntries>
+				<thumbnails>true</thumbnails>
+				<search>true</search>
+				<multilevel>true</multilevel>
+			</outlinePanelSettings>
+			<sidePanelSettings>
+				<showAtLeft>false</showAtLeft>
+				<showLogo>false</showLogo>
+				<showPresenterInfo>false</showPresenterInfo>
+				<showPresenterVideo>false</showPresenterVideo>
+				<visible>true</visible>
+				<tabsPanel>
+					<showOutline>true</showOutline>
+					<showNotes>false</showNotes>
+				</tabsPanel>
+			</sidePanelSettings>
+		</skin>
+		<appearance fullScreen="1" showSlidePreloader="1"/>
+		<playback autoStart="1" syncWithVideoNarration="1" enableVideoControl="1" resumePresentationPlayback="always"/>
+	</settings>
+	<slides embedded="0">
+		<slide index="0" title="" titleNormalized="" src="slide1.swf" size="36636" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset0">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Matemáticas I</text>
+		</slide>
+		<slide index="1" title="" titleNormalized="" src="slide2.swf" size="26137" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset1">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Introducción a la Aritmética
+Bloque 1</text>
+		</slide>
+		<slide index="2" title="Bienvenida" titleNormalized="bienvenida" src="slide3.swf" size="4055" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset2">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Estimado alumno,
+
+Te damos una cordial bienvenida a tu curso de Matemáticas I; sabemos que el tiempo y esfuerzo que estás dedicando, darán frutos muy pronto, tanto en tu vida personal como laboral.
+
+Tu empresa, es una organización que reconoce en sus colaboradores, su mayor activo; es por eso que ve en ti, a un ser humano con grandes posibilidades de desarrollo y para ello, es fundamental que camines paso a paso en tu formación a través de tus estudios de preparatoria.
+
+Te invitamos a que veas el contenido del curso y las actividades de aprendizaje que se diseñaron para desarrollar las competencias que te permitan mejorar tu desempeño en el trabajo, al tiempo que alcanzas el grado académico de bachillerato.
+
+Bienvenida</text>
+		</slide>
+		<slide index="3" title="Bienvenida" titleNormalized="bienvenida" src="slide4.swf" size="2512" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset3">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Bienvenida
+En el botón de ayuda de la plataforma de estudio de Prepa Toks, te ofrecemos estar al pendiente de tus dudas y comentarios, y contestar tus mensajes en un tiempo máximo de 12 horas.
+ 
+Con todo el crédito que mereces, considéranos siempre tus aliados en tu preparación continua.
+
+
+Instituto Toks.</text>
+		</slide>
+		<slide index="4" title="" titleNormalized="" src="slide5.swf" size="3796" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset4">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>El estudio de la asignatura Matemáticas I te permitirá aprender el uso de variables y expresiones algebraicas en el contexto de los números positivos, reales, uso de tasas, razones, proporciones y variación proporcional. 
+
+Conocerás con ejemplos aplicados a su contexto y vida cotidiana sucesiones y series (aritméticas y geométricas), también se estudiarán los sistemas de ecuaciones de 1x1, 2x2 y 3x3, en estrecha conexión con la función lineal. Finalmente estudiarás las ecuaciones cuadráticas en una variable y su relación con la función cuadrática. 
+
+Todos estos temas son explicados con ejemplos prácticos con la finalidad de que puedas aplicar los conocimientos que vayas descubriendo en tu contexto real de una manera más sencilla.
+Objetivo general</text>
+		</slide>
+		<slide index="5" title="" titleNormalized="" src="slide6.swf" size="222041" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset5">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>A lo largo de este curso se propicia el desarrollo del pensamiento lógico y crítico de los estudiantes. 
+Introducción
+Se promueve la resolución de problemas matemáticos que encuentren aplicación en su mundo real y que lleven al estudiante a trasladar las matemáticas a su vida cotidiana, a reconocer el objeto de estudio y el campo de acción de las mismas, así como la manera particular de esta ciencia para construir el conocimiento relacionado con los seres humanos.</text>
+		</slide>
+		<slide index="6" title="" titleNormalized="" src="slide7.swf" size="129916" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset6">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>El propósito de este curso es contribuir a promover en los estudiantes el razonamiento, la argumentación y la estructuración de ideas, entendiendo las matemáticas como un elemento presente en múltiples situaciones de la vida real y no como un campo aislado de conocimiento. 
+Sin duda, este curso representará la posibilidad de acercar a los estudiantes de manera práctica y natural al fascinante mundo de las matemáticas.
+Introducción</text>
+		</slide>
+		<slide index="7" title="" titleNormalized="" src="slide8.swf" size="3745" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset7">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Lectura 
+Los números en nuestra vida
+
+En nuestra vida diaria vemos números en todo lo que nos rodea; vemos números en los anuncios de la calle, en los precios de las tiendas, en los autobuses que tomamos, en los números de celular de nuestros amigos y familiares, entre otros.
+
+Con estos números podemos realizar muchas operaciones, como sumarlos para crear números más grandes, restarlos para representar diferencias entre cantidades, dividirlos para hacer reparticiones, etcétera. 
+
+El porcentaje juega un papel muy importante en el manejo de cantidades, esta es una de las expresiones matemáticas más utilizadas. En los medios de comunicación hay una diversidad de formas de expresar porcentajes y constantemente los encontraremos en gráficas y tablas.</text>
+		</slide>
+		<slide index="8" title="" titleNormalized="" src="slide9.swf" size="4480" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset8">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Es muy común escuchar en la radio o ver en la televisión que 75% de la población prefiere un refresco de cola, que en alguna tienda hay rebajas de 20%, que cada 1000 habitantes que utilizan jabón prefieren el líquido y no en barra, 74.2% son mujeres y 25.8% son hombres, por decir algo. Ejemplos como estos existen muchos, es necesario entender el uso de los porcentajes e interpretarlos y, sobre todo, saber calcularlos, debido a que en cualquier momento podemos necesitar de ellos.
+
+Cuando decimos que una persona invierte 10% de su dinero en comprar ropa, estamos expresando que se gasta $10 de cada $100 que gana. Se puede expresar el tanto por ciento como una fracción que tiene denominador 100, en este caso sería 10/100, que significa 10 de cada 100 y, como sabemos, cualquier fracción se puede expresar en forma decimal realizando la operación de división.
+Lectura</text>
+		</slide>
+		<slide index="9" title="Números reales" titleNormalized="números reales" src="slide10.swf" size="52982" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset9">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Números reales
+Para que puedas iniciar el estudio de este núcleo temático deberás conocer o recordar algunas de las propiedades de campo de los números reales, por lo que estudiar cualquier rama del conocimiento requieres manejar el lenguaje técnico que le es propio, o por lo menos los elementos básicos. 
+
+Para la introducción formal al estudio de los números reales, se parte del conocimiento que tengas de las operaciones binarias de adición y multiplicación, por las cuales a cada pareja de números reales se les asocia un algoritmo llamado suma (+) y producto (x) respectivamente; y que además estar familiarizado con el uso del símbolo igual (=).
+Estos conceptos que se aceptan sin definir, del lenguaje de la lógica y las palabras de nuestro idioma usadas comúnmente, constituyen el lenguaje básico de los números reales (R).</text>
+		</slide>
+		<slide index="10" title="Propiedades de campo de los números reales" titleNormalized="propiedades de campo de los números reales" src="slide11.swf" size="3576" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset10">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Propiedades de la adición
+
+Asociatividad. Para tres números diferentes a, b y c que pertenecen a los reales (a + b) + c = a + (b + c). Esto quiere decir que no importa como se asocien tres números reales para realizar la suma, el resultado es el mismo. 
+
+Ejemplo:
+
+3 + (4 + 5) = (3 + 4) + 5
+
+Sumado primero los términos que están agrupados en paréntesis queda:
+
+3 + 9 = 7 + 5
+
+12 = 12 
+
+Las siguientes propiedades, que te presentamos a continuación, son las que más utilizaras para desarrollar la problemática. 
+Propiedades de campo de los números reales</text>
+		</slide>
+		<slide index="11" title="Propiedades de campo de los números reales" titleNormalized="propiedades de campo de los números reales" src="slide12.swf" size="3309" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset11">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Propiedades de campo de los números reales 
+Conmutatividad. Para todo número a, b y c que pertenecen a los números reales a + b = b + a. Esto significa que el orden de los sumandos no altera la suma.
+
+Ejemplo:
+
+3 + 2 = 2 + 3
+
+5 = 5 
+
+
+Propiedades de la multiplicación
+
+Asociatividad. Para todo número a, b y c que pertenecen a los números reales, (ab)c = a(bc). Esto significa que si asociamos de diferente manera para multiplicar tres o más números, el resultado es el mismo.</text>
+		</slide>
+		<slide index="12" title="Propiedades de campo de los números reales" titleNormalized="propiedades de campo de los números reales" src="slide13.swf" size="3011" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset12">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Propiedades de campo de los números reales 
+Ejemplo
+
+((3)(5)) (7) = (3) ((5)(7))
+
+ efectuando la operación 
+
+ (15) (7) = (3)(35) 
+
+ 105 = 105
+
+Conmutatividad. Para todo número a y b que pertenecen a los números reales, ab = ba. Esto significa que el orden de los factores no altera el producto. 
+
+Ejemplo
+
+(3)(4) = (4)(3)
+</text>
+		</slide>
+		<slide index="13" title="" titleNormalized="" src="slide14.swf" size="3059" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset13">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Propiedad distributiva de la multiplicación con respecto a la adición. 
+
+Para todo número a, b y c que pertenecen a los números reales:
+
+a (b+c) = ab + ac
+
+Y también,
+
+(b+c) a = ba + ca
+
+Ejemplos
+ 
+3(2+5) = (3)(2) + (3)(5) = 6 + 15 = 21 
+
+(2+5)3 = (2)(3) + (5)(3) = 6 + 15 = 21
+Propiedades de campo de los números reales</text>
+		</slide>
+		<slide index="14" title="" titleNormalized="" src="slide15.swf" size="117972" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset14">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>En la Prehistoria, la aritmética se limitó al uso de números enteros inscritos en objetos que indicaban una clara concepción de la suma y resta; el más conocido es el hueso Ishango de África Central, que data entre 1800 y 2000 a. C. 
+La aritmética es la más antigua y elemental rama de la matemática, se utiliza en casi todo el mundo, en tareas cotidianas que involucran el proceso de contar y en los más avanzados cálculos científicos, su objetivo principal son las operaciones con los números y sus propiedades elementales. 
+
+La palabra aritmética proviene de “ἀριθµηtικός”, término de origen griego; arithmos aριθµός que quieren decir número y techne habilidad.
+Operaciones con números reales</text>
+		</slide>
+		<slide index="15" title="Operaciones con números reales" titleNormalized="operaciones con números reales" src="slide16.swf" size="3550" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset15">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Para realizar operaciones con números enteros necesitas conocer las reglas de los signos, técnicas para efectuar sumas, restas, multiplicaciones y divisiones.
+
+Suma
+
+Te presentamos las reglas de los signos para sumar y restar enteros: 
+
+Cuando se suman dos números (o más) positivos, el resultado es otro número positivo. 
+
+Ejemplos
+
+3+7 = 10
+
+7+3 = 10
+
+
+Operaciones con números reales
+Recuerda que la suma cumple con la propiedad conmutativa 3 + 7 = 7 + 3. 
+
+Esta propiedad nos dice: El orden de los sumandos no altera la suma.</text>
+		</slide>
+		<slide index="16" title="Operaciones con números reales" titleNormalized="operaciones con números reales" src="slide17.swf" size="3412" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset16">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Cuando se suman dos números (o más) negativos el resultado es otro número negativo. 
+
+Ejemplo:
+
+-3 - 7 = -10
+ 
+Cuando se suman dos números con signos contrarios, se restan sus valores absolutos, y el resultado lleva el signo del número mayor. 
+
+Ejemplos:
+
+-3 + 7 = 4 (porque a 7 le restamos 3 y el número mayor es positivo, por lo tanto el resultado es positivo).
+
+-7 + 3 = -4 (porque a -7 le sumamos 3 y el resultado lleva el signo del número mayor, que en este caso es negativo).
+Operaciones con números reales</text>
+		</slide>
+		<slide index="17" title="Operaciones con números reales" titleNormalized="operaciones con números reales" src="slide18.swf" size="13050" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset17">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>¿Qué es un valor absoluto? 
+
+El valor absoluto de cualquier número real, siempre es positivo.
+
+Se representa con unas barras verticales.
+
+Ejemplos:
+
+ 4 =4
+
+ −4 =4
+
+ 0 =0
+Operaciones con números reales</text>
+		</slide>
+		<slide index="18" title="Operaciones con números reales" titleNormalized="operaciones con números reales" src="slide19.swf" size="133466" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset18">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Multiplicación
+
+Para realizar operaciones de multiplicación con números enteros debemos tener presente las leyes de los signos para multiplicar, estas se presentan en la siguiente tabla:
+Operaciones con números reales
+Esto quiere decir que signos iguales cuando se multiplican son positivos y signos diferentes será negativo.</text>
+		</slide>
+		<slide index="19" title="Operaciones con números reales" titleNormalized="operaciones con números reales" src="slide20.swf" size="4874" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset19">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Ejercicio de práctica
+
+Si realizas las siguientes compras para una reunión con tus amigos, ¿cuál es el total?: 
+
+5 pizzas de $130.00 c/u. 
+12 refrescos de $15.00 c/u.
+3 paquetes de vasos de $ 8.00 c/u.
+4 paquetes de platos de $ 12.00 c/u.
+$159.00 en diversos artículos. 
+
+
+Operaciones con números reales
+Se multiplica el número de artículos que compraste por el precio de cada uno de ellos.
+(5)(130) = 650
+(12)(15) = 180
+ (3)(8) = 24 
+ (4)(12) = 48
+ 159
+Ya que tengas la cantidad de cada producto, debes realizar una suma para encontrar el total de gastos.
+Solución
+Procedimiento
+Paso 1
+Paso 2
+$1,061</text>
+		</slide>
+		<slide index="20" title="Operaciones con números reales" titleNormalized="operaciones con números reales" src="slide21.swf" size="102168" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset20">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Resta
+
+Una resta es lo que llamamos sustracción.
+
+La sustracción de números enteros, es decir la diferencia de dos enteros es un caso particular de la adición, restar un número es sumar el inverso aditivo del otro número. En otras palabras, la sustracción (resta) es la operación inversa de la adición (suma).
+
+
+
+Operaciones con números reales
+Ejemplo: 
+
+13 - 4 = 9, esto también se puede representar como: 13 + (-4) = 9.
+Partes que componen una resta</text>
+		</slide>
+		<slide index="21" title="Operaciones con números reales" titleNormalized="operaciones con números reales" src="slide22.swf" size="49161" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset21">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>División de número enteros
+
+Teniendo los números enteros a y b (b≠0), la división de a entre b se denota por 𝑎 𝑏 .
+
+La división es la operación inversa de la multiplicación.
+Operaciones con números reales
+Conociendo el dividendo y el divisor, se busca encontrar el “cociente”. El producto del cociente por el divisor más el residuo es, por tanto, igual al dividendo.
+Partes que componen una división</text>
+		</slide>
+		<slide index="22" title="Operaciones con números reales" titleNormalized="operaciones con números reales" src="slide23.swf" size="3451" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset22">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Fracciones
+
+Un número racional es todo aquel que se representa como la relación por cociente entre dos números enteros denominada comúnmente fracción. 
+
+El concepto matemático de fracción corresponde a la idea intuitiva de dividir una totalidad en partes iguales, como cuando hablamos, por ejemplo, de un cuarto de hora o de la mitad de un pastel.
+
+Una fracción se representa matemáticamente por números que están escritos uno sobre otro y que se hallan separados por una línea recta horizontal llamada “raya fraccionaria”.
+
+La fracción está formada por dos términos: el numerador y el denominador. 
+Operaciones con números reales</text>
+		</slide>
+		<slide index="23" title="Operaciones con números reales (fracciones)" titleNormalized="operaciones con números reales (fracciones)" src="slide24.swf" size="22489" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset23">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Los valores de a y b deben ser enteros, y “b” que es el denominador debe ser siempre diferente de cero. 
+
+El “numerador”, indica el número de partes iguales que se han tomado o considerado de un entero. El “denominador”, indica el número de partes iguales en que se ha dividido un entero.
+ 
+Tres cuartos de hora no son, evidentemente, la misma cosa que las tres cuartas partes de un pastel, pero se “calculan” de la misma manera: dividiendo la totalidad (una hora o el pastel) en cuatro partes iguales y tomando luego tres de esas partes. Por esta razón, en ambos casos, se habla de dividir dicha unidad (una hora, un pastel, etc.) en 4 partes iguales y tomar luego 3 de dichas partes. 
+Operaciones con números reales (fracciones)
+Partes de una fracción</text>
+		</slide>
+		<slide index="24" title="Operaciones con números reales (fracciones)" titleNormalized="operaciones con números reales (fracciones)" src="slide25.swf" size="240742" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset24">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Ejemplos:
+Operaciones con números reales (fracciones)</text>
+		</slide>
+		<slide index="25" title="Operaciones con números reales (fracciones)" titleNormalized="operaciones con números reales (fracciones)" src="slide26.swf" size="4033" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset25">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Operaciones con números reales (fracciones)
+Las operaciones con números racionales te permiten obtener los resultados de una gran cantidad de cuestiones prácticas como son: el peso de una o varias personas, cortar una lámina en partes iguales, llenar cierto números de botellas con una cantidad de líquido, y muchas más que se presentan en la vida cotidiana, es decir, utilizamos fracciones para identificar, relacionar y comparar cantidades, en nuestro día a día, por ejemplo:
+
+El peso en la compra de productos alimenticios; al comprar ½ kg de pollo.
+
+El tiempo que nos lleva realizar una actividad; deje secar por ¾ de hora.
+No podemos prescindir de estas operaciones, ya que generalmente las cuestiones prácticas se presentan con números racionales.</text>
+		</slide>
+		<slide index="26" title="Operaciones con números reales (fracciones)" titleNormalized="operaciones con números reales (fracciones)" src="slide27.swf" size="46971" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset26">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Operaciones con fracciones
+
+Suma y resta con igual denominador
+
+Para realizar este tipo de sumas pasamos el mismo denominador al resultado y sumamos o restamos los numeradores.
+
+Operaciones con números reales (fracciones)</text>
+		</slide>
+		<slide index="27" title="Operaciones con números reales (fracciones)" titleNormalized="operaciones con números reales (fracciones)" src="slide28.swf" size="115568" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset27">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Suma y resta con diferente denominador
+
+Para realizar estas operaciones necesitamos un denominador común, para obtenerlo multiplicamos los dos denominadores y realizamos un producto cruzado para obtener el numerador.
+
+
+Operaciones con números reales (fracciones)
+1
+2
+5
+4
+3
+Esta fracción puede simplificarse si el numerador (24) y el denominador (27) pueden ser divisibles por un mismo número. En este caso, observamos que ese número es el 3, ya que 24 y 27 pueden dividirse exactamente en tres partes. El resultado se indica en el paso 5.</text>
+		</slide>
+		<slide index="28" title="Operaciones con números reales (fracciones)" titleNormalized="operaciones con números reales (fracciones)" src="slide29.swf" size="67700" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset28">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Multiplicación de fracciones
+
+Se multiplica numerador con numerador y denominador con denominador, para obtener el numerador y el denominador respectivamente.
+
+
+Operaciones con números reales (fracciones)</text>
+		</slide>
+		<slide index="29" title="Operaciones con números reales (fracciones)" titleNormalized="operaciones con números reales (fracciones)" src="slide30.swf" size="24191" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset29">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>División de fracciones
+
+En el caso de la división de dos fracciones, realizamos un producto cruzado:
+
+
+Operaciones con números reales (fracciones)</text>
+		</slide>
+		<slide index="30" title="" titleNormalized="" src="slide31.swf" size="47083" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset30">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Porcentajes
+Un porcentaje es una forma de expresar una cantidad como una fracción de 100 (de ahí el nombre por ciento, que significa “de cada 100”). 
+
+Para denotarlo utilizamos el símbolo porcentaje “%”, y se escribe inmediatamente después del número al que se hace referencia sin dejar espacio de separación. 
+Por ejemplo: “cuarenta y cinco por ciento” se representa 45% y significa “cuarenta y cinco de cada cien”. Los porcentajes también los podemos representar mediante fracciones, de esta manera, el ejemplo anterior quedaría representado como 45/100.</text>
+		</slide>
+		<slide index="31" title="" titleNormalized="" src="slide32.swf" size="70738" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset31">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Cuando queremos calcular determinado porcentaje de un número, multiplicamos el porcentaje que necesitamos por el número, y luego lo dividimos entre cien. 
+
+Por ejemplo, el 25% de 70, sería 70 x 25 = 1750, y a ese resultado lo dividimos por 100, lo que nos da 17.50.
+
+Si realizamos esta operación en la calculadora, pondríamos 70 x 0.25. 
+Porcentajes</text>
+		</slide>
+		<slide index="32" title="" titleNormalized="" src="slide33.swf" size="74632" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset32">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Ejemplos de porcentajes en la vida cotidiana
+Se utilizan porcentajes para:
+
+Otorgar comisiones a empleados sobre sus ventas.
+Calcular cuentas con intereses.
+Determinar cuánto han subido o bajado los precios.
+Saber el incremento que aumentaron las ganancias.
+Realizar rebajas o descuentos, etc.
+
+Por ejemplo, cuando hacemos una rebaja, descontaremos del total el porcentaje, y cuando damos un premio, un estímulo o un recargo, lo sumaremos. 
+
+Así que, si un artículo cuesta $1000, y ofrecemos una rebaja del 15%, lo venderemos a $850, pero si un empleado cobra $1000 de salario y le aumentaron un 15% por su buen rendimiento laboral, cobrará $1150.
+Porcentajes</text>
+		</slide>
+		<slide index="33" title="" titleNormalized="" src="slide34.swf" size="29649" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset33">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Una fracción común como porcentaje
+La forma de obtener un tanto por ciento de una cantidad es simple, solo se plantea una regla de tres.
+Si se quiere convertir un porcentaje en fracción, se coloca el número porcentual como numerador y al número 100 como denominador. Como vemos toda fracción o número decimal puede expresarse en porcentajes, y viceversa.
+Si se desea convertir fracciones a porcentajes, primero debemos dividir el numerador entre el denominador, y luego a ese resultado se lo multiplica por 100.</text>
+		</slide>
+		<slide index="34" title="" titleNormalized="" src="slide35.swf" size="2827" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset34">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Calcular el porcentaje de una cantidad
+
+Para calcular el porcentaje de una cantidad, se multiplica dicha cantidad por el porcentaje y se divide entre 100.
+
+El 20% de 50 = (50 x 20) / 100 = 10.
+
+
+Calcular el 15% de 200:
+(200 x 15) / 100 = 30
+Calcular el 25% de 8:
+(8 x 25) / 100 = 2
+Veamos otros ejemplos:
+Calcular el 60% de 120:
+(120 x 60) / 100 = 72
+Cálculo de porcentajes</text>
+		</slide>
+		<slide index="35" title="" titleNormalized="" src="slide36.swf" size="2854" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset35">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Aumentar una cantidad en un porcentaje
+
+Para aumentar o disminuir una cantidad en un porcentaje, se calcula cuánto representa dicho porcentaje de esa cantidad y se le suma o resta a la cantidad inicial.
+
+Ejemplo:
+
+Aumentar 60 en un 20%.
+
+Calculamos cuánto representa el 20%:
+
+	(60 x 20) / 100 = 12
+
+Se lo sumamos al importe inicial:
+
+	60 + 12 = 72
+Cálculo de porcentajes</text>
+		</slide>
+		<slide index="36" title="" titleNormalized="" src="slide37.swf" size="2299" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset36">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Disminuir una cantidad en un porcentaje
+
+Ejemplo:
+
+Disminuir 50 en un 10%.
+
+Calculamos cuanto representa el 10%:
+
+	(50 x 10) / 100 = 5
+
+Se lo restamos al importe inicial:
+
+	50 - 5 = 45
+ 
+Cálculo de porcentajes</text>
+		</slide>
+		<slide index="37" title="" titleNormalized="" src="slide38.swf" size="3407" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset37">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Cálculo de porcentajes
+Ejemplo práctico de porcentajes.
+
+Si consideramos que el Banco del Ahorro cobra un interés anual de 45.70%, ¿qué cantidad de intereses debe pagar en un año un cliente que adeuda $45,000? 
+
+Para resolver el problema debemos expresar 45.70% como equivalente decimal, es decir, 0.457. Posteriormente, se multiplica este valor por la cantidad adeudada para determinar cuánto deberá pagar el cliente al año. 
+45,000 x 0.457= $20,565
+
+Por lo tanto, un cliente del Banco del Ahorro que mantiene una deuda de $45,000 durante un año, debe pagar $20,565 por intereses y la deuda original se mantiene.</text>
+		</slide>
+		<slide index="38" title="" titleNormalized="" src="slide39.swf" size="256355" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset38">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>En este bloque aprendiste a:
+Conclusión</text>
+		</slide>
+		<slide index="39" title="Conclusión" titleNormalized="conclusión" src="slide40.swf" size="3795" advanceOnTime="0" framesCount="1" hasEmbeddedFlashClip="0" hidden="0" level="0" advanceOnClick="1" thumbnailAssetId="imgAsset39">
+			<sounds/>
+			<videos/>
+			<transitionEffect name="" duration="0.0000000" soundId="" looped="0"/>
+			<soundCommands/>
+			<videoCommands/>
+			<animationSteps>
+				<step start="0" end="0" playTime="0.0010000" pauseTime="0.0000000"/>
+			</animationSteps>
+			<notes/>
+			<notesNormalized/>
+			<notesHtml/>
+			<text>Conclusión
+En la antigüedad el hombre tuvo la necesidad de contar, de medir y ahora en la actualidad el ser humano tiene la capacidad de resolver problemas más complejos que se le presentan en su vida cotidiana y en el trabajo. 
+
+Algunas personas trabajan como encargado de tiendas de auto servicio, y al efectuar el cierre de caja se deben aplicar algunas operaciones con números racionales para comprobar que el importe corresponde al total vendido en un día.
+
+Las operaciones con números racionales son las que más utilidades tienen, porque el entorno que nos rodea, científico, tecnológico y en nuestra vida cotidiana, siempre se presentan casos de medición y repartición que requieren el uso de los números.</text>
+		</slide>
+	</slides>
+</presentation>
