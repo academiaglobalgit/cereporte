@@ -1,7 +1,7 @@
 <?php
 		require_once "columnas_default.php";
 
-	array_push($columns_tmp,new Column(3,1,"ingreso","ingreso","IFNULL((select ta.fecha_incripcion 
+	array_push($columns_tmp,new Column(3,1,"ingreso","ingreso","IFNULL((select ta.fecha_inscripcion 
 		from escolar.tb_alumnos ta where ta.idmoodle=mdl_user.id AND ta.id_plan_estudio=74 limit 1),' ')", "mdl_user","Fecha Inscripcion") );
 	
 	array_push($columns_tmp,new Column(3,1,"firstname","firstname","IFNULL((select tp.nombre 
