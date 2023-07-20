@@ -13,7 +13,7 @@
 		// array_push($columns_tmp,new Column(122,0,"email","email","(select 0 )", "mdl_user","Correo Electrónico") );
 
 
-		array_push($columns_tmp,new Column(5,1,"ingreso","ingreso"," date(from_unixtime(mdl_user.timecreated)) ", "mdl_user","Fecha Inscripcion") );
+		//array_push($columns_tmp,new Column(5,1,"ingreso","ingreso"," date(from_unixtime(mdl_user.timecreated)) ", "mdl_user","Fecha Inscripcion") );
 		//array_push($columns_tmp,new Column(5,1,"registro","registro"," date(from_unixtime(mdl_user.timecreated)) ", "mdl_user","Fecha Registro") );
 		//array_push($columns_tmp,new Column(12,0,"inscripcion","inscripcion"," DATE(fecha_inscripcion) ", "tb_alumnos","Fecha Inscripcion") );
 
