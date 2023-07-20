@@ -3,10 +3,12 @@
 	require_once "columnas_default.php"; 
 
 	/*AGREGAR COLUMNAS PERSONALIZADAS */
+	array_push($columns_tmp,new Column(3,1,"ingreso","ingreso","IFNULL((select ta.fecha_inscripcion 
+				from escolar.tb_alumnos ta where ta.idmoodle=mdl_user.id AND ta.id_plan_estudio = 39 limit 1),' ')", "mdl_user","Fecha Inscripcion") );
 
 	array_push($columns_tmp,new Column(3,1,"firstname","firstname","IFNULL((select tp.nombre 
 				from escolar.tb_personas tp
-				inner join escolar.tb_alumnos ta on tp.id = ta.id_persona and  ta.id_plan_estudio = 39
+				inner join escolar.tb_alumnos ta on tp.id = ta.id_persona
 				where ta.idmoodle=mdl_user.id 
 				AND ta.id_plan_estudio = 39
 				limit 1),' ')", "mdl_user","Nombre") );
@@ -14,7 +16,7 @@
 
 	array_push($columns_tmp,new Column(3,1,"lastname","lastname","IFNULL((select CONCAT(tp.apellido1,' ',tp.apellido2)
 			from escolar.tb_personas tp
-			inner join escolar.tb_alumnos ta on tp.id = ta.id_persona and ta.id_plan_estudio = 39
+			inner join escolar.tb_alumnos ta on tp.id = ta.id_persona
 			where ta.idmoodle=mdl_user.id 
 			AND ta.id_plan_estudio = 39
 			limit 1),' ')", "mdl_user","Apellido") );
