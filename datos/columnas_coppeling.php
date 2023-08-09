@@ -3,10 +3,30 @@
 	require_once "columnas_default.php"; 
 
 	/*AGREGAR COLUMNAS PERSONALIZADAS */
+	$id_plan_estudio_columnas = 18;
 
 	array_push($columns_tmp,new Column(3, 1, "ingreso", "ingreso", "IFNULL((select ta.fecha_inscripcion 
-		from escolar.tb_alumnos ta where ta.idmoodle=mdl_user.id AND ta.id_plan_estudio=18 limit 1),' ')", "mdl_user","Fecha Inscripcion"));
+		from escolar.tb_alumnos ta where ta.idmoodle=mdl_user.id AND ta.id_plan_estudio=18 limit 1),' ')", "mdl_user","Fecha Inscripcion") );
 
+	array_push($columns_tmp,new Column(
+		140, /*NUMERO DE COLUMNA*/
+		1,
+		"fecha_migracion",
+		"fecha_migracion",
+		"IFNULL((
+			SELECT
+				a.fecha_migracion
+			FROM
+				escolar.tb_alumnos a
+			WHERE
+				a.idmoodle = mdl_user.id
+				AND a.id_plan_estudio = $id_plan_estudio_columnas
+			LIMIT 0, 1
+		), 'NO DEFINIDO')",
+		"mdl_user",
+		"Fecha Migración")
+	);
+	
 	array_push($columns_tmp,new Column(3, 1, "firstname", "firstname", "IFNULL((select tp.nombre 
 		from escolar.tb_personas tp
 		inner join escolar.tb_alumnos ta on tp.id = ta.id_persona
@@ -22,7 +42,7 @@
 		AND ta.id_plan_estudio=18
 		limit 1),' ')", "mdl_user","Apellido") );
 
-	array_push($columns_tmp,new Column(130,1,"responsable_inscripcion","responsable_inscripcion","IFNULL((select IF(escolar.tb_alumnos.id_usuario_responsable = 210, 'NO DEFINIDO', concat(usu.nombre,' ', ifnull(usu.apellidop,''),' ', ifnull(usu.apellidom,''))) from escolar.tb_alumnos LEFT JOIN escolar.tb_usuarios usu ON usu.id = escolar.tb_alumnos.id_usuario_responsable
+	array_push($columns_tmp,new Column(1000,1,"responsable_inscripcion","responsable_inscripcion","IFNULL((select IF(escolar.tb_alumnos.id_usuario_responsable = 210, 'NO DEFINIDO', concat(usu.nombre,' ', ifnull(usu.apellidop,''),' ', ifnull(usu.apellidom,''))) from escolar.tb_alumnos LEFT JOIN escolar.tb_usuarios usu ON usu.id = escolar.tb_alumnos.id_usuario_responsable
 		where escolar.tb_alumnos.idmoodle=mdl_user.id AND escolar.tb_alumnos.id_plan_estudio=18 limit 1),'')", "mdl_user","Responsable Inscripcion") );	
 	//columna tipo 0  ()
 	array_push($columns_tmp,new Column(3,0,"suspended","suspended","(select 0 )", "mdl_user", "Status", false) );
@@ -175,7 +195,7 @@
 
 	#==============================================================================================
 	#A PARTIR DE AQUI FAVOR DE LLEVAR UNA NUMERACION SECUENCIAL DEL NUMERO DE COLUMNA
-	$id_plan_estudio_columnas = 18;
+	
 	array_push($columns_tmp,new Column(
 		100, /*NUMERO DE COLUMNA*/
 		1,
@@ -482,7 +502,19 @@
 		"generacion_carga",
 		"IFNULL(
 			(SELECT
-			if(MONTH(b.fecha_primera_carga) <= 8 AND YEAR(b.fecha_primera_carga) = 2023, '12',c.numero )AS 'generacion_carga'
+				IFNULL(
+					(
+						SELECT
+							cc.numero
+						FROM
+							escolar.tb_generaciones cc
+						WHERE
+							cc.id_plan_estudio = $id_plan_estudio_columnas
+							AND MONTH(a.fecha_inscripcion) <= cc.month_inscripcion
+							AND YEAR(a.fecha_inscripcion) = cc.year_inscripcion
+						LIMIT 1
+					), c.numero
+				) AS 'generacion_carga'
 			FROM
 				escolar.tb_alumnos a
 				INNER JOIN escolar.tb_alumnos_posibles_cargar b ON b.id_alumno = a.id
@@ -765,15 +797,15 @@ idmoodle_mat5eria = moodle
 		"IFNULL((SELECT
 				COUNT(*) AS total_ordinario 
 			FROM
-				coppeling.ag_calificaciones f
+				ag_calificaciones f
 			WHERE
 				f.id_alumno = mdl_user.id AND
 				f.id_tipo_examen = 1 AND
-				f.calificacion >= escolar.fn_materia_calificacion_minima(18,f.id_materia)
-				AND f.id_alumno IN ( SELECT id_alumno AS id_alumno FROM coppeling.ag_calificaciones ) 
+				f.calificacion >= escolar.fn_materia_calificacion_minima($id_plan_estudio_columnas,f.id_materia)
+				AND f.id_alumno IN ( SELECT id_alumno AS id_alumno FROM ag_calificaciones ) 
 			GROUP BY
 				f.id_alumno
-		LIMIT 0,1), 'NO DEFINIDO')",
+		LIMIT 0,1), 0)",
 		"mdl_user",
 		"Cargas acreditadas ordinario")
 	);
@@ -785,22 +817,22 @@ idmoodle_mat5eria = moodle
         "IFNULL((SELECT
                 COUNT(*) AS cargas_extraordinario_acreditados 
             FROM 
-                coppeling.mdl_user mu 
-                INNER JOIN coppeling.mdl_user_enrolments b ON b.userid = mu.id 
-                INNER JOIN coppeling.mdl_enrol c ON c.id = b.enrolid 
-                INNER JOIN coppeling.mdl_course d ON d.id = c.courseid AND d.visible = 1 
-                INNER JOIN coppeling.mdl_course_sections cs ON cs.course = d.id 
-                INNER JOIN coppeling.mdl_course_modules cm on cm.section = cs.id 
-                INNER JOIN coppeling.mdl_scorm ms ON ms.id = cm.instance 
-                LEFT JOIN coppeling.mdl_scorm_scoes_track ss1 ON ss1.scormid = ms.id AND ss1.element = 'cmi.core.score.raw' AND ss1.userid = mu.id 
+                mdl_user mu 
+                INNER JOIN mdl_user_enrolments b ON b.userid = mu.id 
+                INNER JOIN mdl_enrol c ON c.id = b.enrolid 
+                INNER JOIN mdl_course d ON d.id = c.courseid AND d.visible = 1 
+                INNER JOIN mdl_course_sections cs ON cs.course = d.id 
+                INNER JOIN mdl_course_modules cm on cm.section = cs.id 
+                INNER JOIN mdl_scorm ms ON ms.id = cm.instance 
+                LEFT JOIN mdl_scorm_scoes_track ss1 ON ss1.scormid = ms.id AND ss1.element = 'cmi.core.score.raw' AND ss1.userid = mu.id 
             WHERE 
 				mu.id = mdl_user.id AND
-                mu.id IN (SELECT id_alumno AS id FROM coppeling.ag_calificaciones)
-                AND ss1.`value` >= escolar.fn_materia_calificacion_minima(18, d.id)
+                mu.id IN (SELECT id_alumno AS id FROM ag_calificaciones)
+                AND ss1.`value` >= escolar.fn_materia_calificacion_minima($id_plan_estudio_columnas, d.id)
                 AND ms.`name` LIKE '%EE%'
                 AND cs.section = 5 
             GROUP BY mu.id 
-        LIMIT 0,1), 'NO DEFINIDO')",
+        LIMIT 0,1), 0)",
         "mdl_user",
         "Cargas acreditadas extraordinario")
     );
@@ -812,22 +844,22 @@ idmoodle_mat5eria = moodle
         "IFNULL((SELECT
                 COUNT(*) AS total_extraordinario 
             FROM 
-                coppeling.mdl_user mu 
-                INNER JOIN coppeling.mdl_user_enrolments b ON b.userid = mu.id 
-                INNER JOIN coppeling.mdl_enrol c ON c.id = b.enrolid 
-                INNER JOIN coppeling.mdl_course d ON d.id = c.courseid AND d.visible = 1 
-                INNER JOIN coppeling.mdl_course_sections cs ON cs.course = d.id 
-                INNER JOIN coppeling.mdl_course_modules cm on cm.section = cs.id 
-                INNER JOIN coppeling.mdl_scorm ms ON ms.id = cm.instance 
-                LEFT JOIN coppeling.mdl_scorm_scoes_track ss1 ON ss1.scormid = ms.id AND ss1.element = 'cmi.core.score.raw' AND ss1.userid = mu.id 
+                mdl_user mu 
+                INNER JOIN mdl_user_enrolments b ON b.userid = mu.id 
+                INNER JOIN mdl_enrol c ON c.id = b.enrolid 
+                INNER JOIN mdl_course d ON d.id = c.courseid AND d.visible = 1 
+                INNER JOIN mdl_course_sections cs ON cs.course = d.id 
+                INNER JOIN mdl_course_modules cm on cm.section = cs.id 
+                INNER JOIN mdl_scorm ms ON ms.id = cm.instance 
+                LEFT JOIN mdl_scorm_scoes_track ss1 ON ss1.scormid = ms.id AND ss1.element = 'cmi.core.score.raw' AND ss1.userid = mu.id 
             WHERE 
 				mu.id = mdl_user.id AND
-                mu.id IN (SELECT id_alumno AS id FROM coppeling.ag_calificaciones)
+                mu.id IN (SELECT id_alumno AS id FROM ag_calificaciones)
                 AND ss1.`value` IS NOT NULL AND ss1.`value` <> ''
                 AND ms.`name` LIKE '%EE%'
                 AND cs.section = 5 
             GROUP BY mu.id 
-        LIMIT 0,1), 'NO DEFINIDO')",
+        LIMIT 0,1), 0)",
         "mdl_user",
         "Total de extraordinarios")
     );
@@ -839,22 +871,22 @@ idmoodle_mat5eria = moodle
         "IFNULL((SELECT
                 COUNT(*) AS total_extraordinario 
             FROM 
-                coppeling.mdl_user mu 
-                INNER JOIN coppeling.mdl_user_enrolments b ON b.userid = mu.id 
-                INNER JOIN coppeling.mdl_enrol c ON c.id = b.enrolid 
-                INNER JOIN coppeling.mdl_course d ON d.id = c.courseid AND d.visible = 1 
-                INNER JOIN coppeling.mdl_course_sections cs ON cs.course = d.id 
-                INNER JOIN coppeling.mdl_course_modules cm on cm.section = cs.id 
-                INNER JOIN coppeling.mdl_scorm ms ON ms.id = cm.instance 
-                LEFT JOIN coppeling.mdl_scorm_scoes_track ss1 ON ss1.scormid = ms.id AND ss1.element = 'cmi.core.score.raw' AND ss1.userid = mu.id 
+                mdl_user mu 
+                INNER JOIN mdl_user_enrolments b ON b.userid = mu.id 
+                INNER JOIN mdl_enrol c ON c.id = b.enrolid 
+                INNER JOIN mdl_course d ON d.id = c.courseid AND d.visible = 1 
+                INNER JOIN mdl_course_sections cs ON cs.course = d.id 
+                INNER JOIN mdl_course_modules cm on cm.section = cs.id 
+                INNER JOIN mdl_scorm ms ON ms.id = cm.instance 
+                LEFT JOIN mdl_scorm_scoes_track ss1 ON ss1.scormid = ms.id AND ss1.element = 'cmi.core.score.raw' AND ss1.userid = mu.id 
             WHERE 
 				mu.id = mdl_user.id AND
-                mu.id IN (SELECT id_alumno AS id FROM coppeling.ag_calificaciones)
-                AND ss1.`value` >= escolar.fn_materia_calificacion_minima(18, d.id)
+                mu.id IN (SELECT id_alumno AS id FROM ag_calificaciones)
+                AND ss1.`value` >= escolar.fn_materia_calificacion_minima($id_plan_estudio_columnas, d.id)
                 AND ms.`name` LIKE '%ES%'
                 AND cs.section = 5 
             GROUP BY mu.id 
-        LIMIT 0,1), 'NO DEFINIDO')",
+        LIMIT 0,1), 0)",
         "mdl_user",
         "Cargas acreditadas especial")
     );
@@ -866,22 +898,22 @@ idmoodle_mat5eria = moodle
         "IFNULL((SELECT
                 COUNT(*) AS total_extraordinario 
             FROM 
-                coppeling.mdl_user mu 
-                INNER JOIN coppeling.mdl_user_enrolments b ON b.userid = mu.id 
-                INNER JOIN coppeling.mdl_enrol c ON c.id = b.enrolid 
-                INNER JOIN coppeling.mdl_course d ON d.id = c.courseid AND d.visible = 1 
-                INNER JOIN coppeling.mdl_course_sections cs ON cs.course = d.id 
-                INNER JOIN coppeling.mdl_course_modules cm on cm.section = cs.id 
-                INNER JOIN coppeling.mdl_scorm ms ON ms.id = cm.instance 
-                LEFT JOIN coppeling.mdl_scorm_scoes_track ss1 ON ss1.scormid = ms.id AND ss1.element = 'cmi.core.score.raw' AND ss1.userid = mu.id 
+                mdl_user mu 
+                INNER JOIN mdl_user_enrolments b ON b.userid = mu.id 
+                INNER JOIN mdl_enrol c ON c.id = b.enrolid 
+                INNER JOIN mdl_course d ON d.id = c.courseid AND d.visible = 1 
+                INNER JOIN mdl_course_sections cs ON cs.course = d.id 
+                INNER JOIN mdl_course_modules cm on cm.section = cs.id 
+                INNER JOIN mdl_scorm ms ON ms.id = cm.instance 
+                LEFT JOIN mdl_scorm_scoes_track ss1 ON ss1.scormid = ms.id AND ss1.element = 'cmi.core.score.raw' AND ss1.userid = mu.id 
             WHERE 
 				mu.id = mdl_user.id AND
-                mu.id IN (SELECT id_alumno AS id FROM coppeling.ag_calificaciones)
+                mu.id IN (SELECT id_alumno AS id FROM ag_calificaciones)
                 AND ss1.`value` IS NOT NULL AND ss1.`value` <> ''
                 AND ms.`name` LIKE '%ES%'
                 AND cs.section = 5 
             GROUP BY mu.id 
-        LIMIT 0,1), 'NO DEFINIDO')",
+        LIMIT 0,1), 0)",
         "mdl_user",
         "Total especial")
     );
@@ -893,8 +925,8 @@ idmoodle_mat5eria = moodle
         "IFNULL((SELECT 
 				b.fullname 
 			FROM
-				coppeling.ag_calificaciones a
-				INNER JOIN coppeling.mdl_course b ON b.id = a.id_materia
+				ag_calificaciones a
+				INNER JOIN mdl_course b ON b.id = a.id_materia
 				WHERE a.id_alumno = mdl_user.id 
 			ORDER BY a.fecha_registro DESC
         LIMIT 0,1), 'NO DEFINIDO')",

@@ -1,9 +1,29 @@
 <?php
 		require_once "columnas_default.php";
+		$id_plan_estudio_columnas = 49;
 
 	array_push($columns_tmp,new Column(3,1,"ingreso","ingreso","IFNULL((select ta.fecha_inscripcion 
 		from escolar.tb_alumnos ta WHERE ta.idmoodle=mdl_user.id AND ta.id_plan_estudio=49
 		limit 1),' ')", "mdl_user","Fecha Inscripcion") );
+
+	array_push($columns_tmp,new Column(
+		140, /*NUMERO DE COLUMNA*/
+		1,
+		"fecha_migracion",
+		"fecha_migracion",
+		"IFNULL((
+			SELECT
+				a.fecha_migracion
+			FROM
+				escolar.tb_alumnos a
+			WHERE
+				a.idmoodle = mdl_user.id
+				AND a.id_plan_estudio = $id_plan_estudio_columnas
+			LIMIT 0, 1
+		), 'NO DEFINIDO')",
+		"mdl_user",
+		"Fecha Migración")
+	);
 	
 	array_push($columns_tmp,new Column(3,1,"firstname","firstname","IFNULL((select tp.nombre 
 				from escolar.tb_personas tp
@@ -277,7 +297,6 @@ where escolar.tb_alumnos.idmoodle=mdl_user.id AND escolar.tb_alumnos.id_corporac
 
 		#==============================================================================================
 	#A PARTIR DE AQUI FAVOR DE LLEVAR UNA NUMERACION SECUENCIAL DEL NUMERO DE COLUMNA
-	$id_plan_estudio_columnas = 49;
 	array_push($columns_tmp,new Column(
 		100, /*NUMERO DE COLUMNA*/
 		1,
