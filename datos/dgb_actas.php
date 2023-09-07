@@ -629,37 +629,37 @@ if($generacion==1){
             REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(concat(UPPER(tp.nombre),' ',UPPER(tp.apellido1),' ',UPPER(tp.apellido2)),'Á','A'),'É','E'),'Í','I'),'Ó','O'),'Ú','U') as nombre_profesor,
             tp.id as id_profesor,md.matricula as clave,m.nombre as nombre_moodle,
             md.nombre as nombre_dgb ,md.periodo ,
-            (select tmi_ley.id_moodle from tb_materias_ids tmi_ley 
+            (select group_concat(tmi_ley.id_moodle) from tb_materias_ids tmi_ley 
               inner join tb_materias_relacion mr_ley on mr_ley.id_materia=tmi_ley.id_materia 
               where tmi_ley.id_plan_estudio=4 
               and mr_ley.id_materia_autoridad=md.id limit 1 
             ) as idmoodle_ley,
-            (select tmi_ley.id_moodle from tb_materias_ids tmi_ley 
+            (select group_concat(tmi_ley.id_moodle) from tb_materias_ids tmi_ley 
               inner join tb_materias_relacion mr_ley on mr_ley.id_materia=tmi_ley.id_materia 
               where tmi_ley.id_plan_estudio=3 
               and mr_ley.id_materia_autoridad=md.id limit 1 
             ) as idmoodle_soriana,            
-            (select tmi_ley.id_moodle from tb_materias_ids tmi_ley 
+            (select group_concat(tmi_ley.id_moodle) from tb_materias_ids tmi_ley 
               inner join tb_materias_relacion mr_ley on mr_ley.id_materia=tmi_ley.id_materia 
               where tmi_ley.id_plan_estudio=1 
               and mr_ley.id_materia_autoridad=md.id limit 1 
             ) as idmoodle_agcollege,
-            (select tmi_ley.id_moodle from tb_materias_ids tmi_ley 
+            (select group_concat(tmi_ley.id_moodle) from tb_materias_ids tmi_ley 
               inner join tb_materias_relacion mr_ley on mr_ley.id_materia=tmi_ley.id_materia 
               where tmi_ley.id_plan_estudio=13
                and mr_ley.id_materia_autoridad=md.id limit 1
             ) as idmoodle_sumate,
-            (select tmi_ley.id_moodle from tb_materias_ids tmi_ley 
+            (select group_concat(tmi_ley.id_moodle) from tb_materias_ids tmi_ley 
               inner join tb_materias_relacion mr_ley on mr_ley.id_materia=tmi_ley.id_materia 
               where tmi_ley.id_plan_estudio=17
                and mr_ley.id_materia_autoridad=md.id limit 1
             ) as idmoodle_agsocial,
-            (select tmi_ley.id_moodle from tb_materias_ids tmi_ley 
+            (select group_concat(tmi_ley.id_moodle) from tb_materias_ids tmi_ley 
               inner join tb_materias_relacion mr_ley on mr_ley.id_materia=tmi_ley.id_materia 
               where tmi_ley.id_plan_estudio=9 
               and mr_ley.id_materia_autoridad=md.id limit 1 
             ) as idmoodle_toks,
-            (select tmi_ley.id_moodle from tb_materias_ids tmi_ley 
+            (select group_concat(tmi_ley.id_moodle) from tb_materias_ids tmi_ley 
               inner join tb_materias_relacion mr_ley on mr_ley.id_materia=tmi_ley.id_materia 
               where tmi_ley.id_plan_estudio=29
                and mr_ley.id_materia_autoridad=md.id limit 1
@@ -669,17 +669,17 @@ if($generacion==1){
               where tmi_ley.id_plan_estudio=47
                and mr_ley.id_materia_autoridad=md.id limit 1
             ) as idmoodle_prepacoppel_2020,
-            (select tmi_ley.id_moodle from tb_materias_ids tmi_ley 
+            (select group_concat(tmi_ley.id_moodle)  from tb_materias_ids tmi_ley 
               inner join tb_materias_relacion mr_ley on mr_ley.id_materia=tmi_ley.id_materia 
               where tmi_ley.id_plan_estudio=49
                and mr_ley.id_materia_autoridad=md.id limit 1
             ) as idmoodle_agcollege_2020,
-            (select tmi_ley.id_moodle from tb_materias_ids tmi_ley 
+            (select group_concat(tmi_ley.id_moodle) from tb_materias_ids tmi_ley 
               inner join tb_materias_relacion mr_ley on mr_ley.id_materia=tmi_ley.id_materia 
               where tmi_ley.id_plan_estudio=60
                and mr_ley.id_materia_autoridad=md.id limit 1
             ) as idmoodle_oxxo,
-            (select tmi_ley.id_moodle from tb_materias_ids tmi_ley 
+            (select group_concat(tmi_ley.id_moodle) from tb_materias_ids tmi_ley 
               inner join tb_materias_relacion mr_ley on mr_ley.id_materia=tmi_ley.id_materia 
               where tmi_ley.id_plan_estudio=61
                and mr_ley.id_materia_autoridad=md.id limit 1
@@ -776,7 +776,7 @@ if($generacion==1){
 
                         if((int)$al['id_plan_estudio'] == 2)
                         {
-                            $query_calificaciones="SELECT agc.calificacion from prepacoppel.ag_calificaciones agc where agc.id_materia='".$mat['idmoodle']."' AND agc.id_alumno='".$al['idmoodle']."' limit 1";
+                            $query_calificaciones="SELECT agc.calificacion from prepacoppel.ag_calificaciones agc where FIND_IN_SET(agc.id_materia,'".$mat['idmoodle']."') AND agc.id_alumno='".$al['idmoodle']."' limit 1";
                             $cali=0;
                             if($result_cali=$mysql->Query($query_calificaciones)){
                                 $reg = mysql_fetch_array($result_cali);
@@ -816,10 +816,10 @@ if($generacion==1){
                     }else if((int)$al['id_corporacion']==4){ //ley
 
                         if((int)$al['id_plan_estudio'] == 4) {
-                          $query_calificaciones="SELECT agc.calificacion from prepaley.ag_calificaciones agc where agc.id_materia='".$mat['idmoodle_ley']."' AND agc.id_alumno='".$al['idmoodle']."' limit 1";
+                          $query_calificaciones="SELECT agc.calificacion from prepaley.ag_calificaciones agc where FIND_IN_SET(agc.id_materia,'".$mat['idmoodle_ley']."') AND agc.id_alumno='".$al['idmoodle']."' limit 1";
                         }
                         elseif((int)$al['id_plan_estudio'] == 61) {
-                          $query_calificaciones="SELECT agc.calificacion from nprepaley.ag_calificaciones agc where agc.id_materia='".$mat['idmoodle_prepaley2022']."' AND agc.id_alumno='".$al['idmoodle']."' limit 1";
+                          $query_calificaciones="SELECT agc.calificacion from nprepaley.ag_calificaciones agc where FIND_IN_SET(agc.id_materia,'".$mat['idmoodle_prepaley2022']."') AND agc.id_alumno='".$al['idmoodle']."' limit 1";
                         }
 
                         $cali=0;
@@ -839,7 +839,7 @@ if($generacion==1){
 
                     }else if((int)$al['id_corporacion']==3){ //soriana
 
-                        $query_calificaciones="SELECT agc.calificacion from soriana.ag_calificaciones agc where agc.id_materia='".$mat['idmoodle_soriana']."' AND agc.id_alumno='".$al['idmoodle']."' limit 1";
+                        $query_calificaciones="SELECT agc.calificacion from soriana.ag_calificaciones agc where FIND_IN_SET(agc.id_materia,'".$mat['idmoodle_soriana']."') AND agc.id_alumno='".$al['idmoodle']."' limit 1";
                         $cali=0;
                         if($result_cali=$mysql->Query($query_calificaciones)){
                             $reg = mysql_fetch_array($result_cali);
@@ -860,7 +860,7 @@ if($generacion==1){
                             // AG COLLEGE
                         if((int)$al['id_plan_estudio']==1)
                         {
-                            $query_calificaciones="SELECT agc.calificacion from `agcollege-ag`.ag_calificaciones agc where agc.id_materia='".$mat['idmoodle_agcollege']."' AND agc.id_alumno='".$al['idmoodle']."' limit 1";
+                            $query_calificaciones="SELECT agc.calificacion from `agcollege-ag`.ag_calificaciones agc where FIND_IN_SET(agc.id_materia,'".$mat['idmoodle_agcollege']."') AND agc.id_alumno='".$al['idmoodle']."' limit 1";
                             $cali=0;
                             if($result_cali=$mysql->Query($query_calificaciones)){
                                 $reg = mysql_fetch_array($result_cali);
@@ -878,7 +878,7 @@ if($generacion==1){
                         }
                         else if((int)$al['id_plan_estudio']==49)
                         {
-                            $query_calificaciones="SELECT agc.calificacion from prepaagcollege.ag_calificaciones agc where agc.id_materia='".$mat['idmoodle_agcollege_2020']."' AND agc.id_alumno='".$al['idmoodle']."' limit 1";
+                            $query_calificaciones="SELECT agc.calificacion from prepaagcollege.ag_calificaciones agc where FIND_IN_SET(agc.id_materia,'".$mat['idmoodle_agcollege_2020']."') AND agc.id_alumno='".$al['idmoodle']."' limit 1";
                             $cali=0;
                             if($result_cali=$mysql->Query($query_calificaciones)){
                                 $reg = mysql_fetch_array($result_cali);
@@ -898,7 +898,7 @@ if($generacion==1){
                         {
                         // AG COLLEGE SOCIAL 
 
-                            $query_calificaciones="SELECT agc.calificacion from agsocial.ag_calificaciones agc where agc.id_materia='".$mat['idmoodle_agsocial']."' AND agc.id_alumno='".$al['idmoodle']."' limit 1";
+                            $query_calificaciones="SELECT agc.calificacion from agsocial.ag_calificaciones agc where FIND_IN_SET(agc.id_materia,'".$mat['idmoodle_agsocial']."') AND agc.id_alumno='".$al['idmoodle']."' limit 1";
                             $cali=0;
                             if($result_cali=$mysql->Query($query_calificaciones)){
                                 $reg = mysql_fetch_array($result_cali);
@@ -919,7 +919,7 @@ if($generacion==1){
 
                         if($al['id_plan_estudio'] == 9)
                         {
-                                $query_calificaciones="SELECT agc.calificacion from prepatoks.ag_calificaciones agc where agc.id_materia='".$mat['idmoodle_toks']."' AND agc.id_alumno='".$al['idmoodle']."' limit 1";
+                                $query_calificaciones="SELECT agc.calificacion from prepatoks.ag_calificaciones agc where FIND_IN_SET(agc.id_materia,'".$mat['idmoodle_toks']."') AND agc.id_alumno='".$al['idmoodle']."' limit 1";
                                 $cali=0;
                                 if($result_cali=$mysql->Query($query_calificaciones)){
                                     $reg = mysql_fetch_array($result_cali);
@@ -937,7 +937,7 @@ if($generacion==1){
                         } 
                         else
                         {
-                            $query_calificaciones="SELECT agc.calificacion from nprepatoks.ag_calificaciones agc where agc.id_materia='".$mat['idmoodle_nueva_toks']."' AND agc.id_alumno='".$al['idmoodle']."' limit 1";
+                            $query_calificaciones="SELECT agc.calificacion from nprepatoks.ag_calificaciones agc where FIND_IN_SET(agc.id_materia,'".$mat['idmoodle_nueva_toks']."') AND agc.id_alumno='".$al['idmoodle']."' limit 1";
                             $cali=0;
                             if($result_cali=$mysql->Query($query_calificaciones)){
                                 $reg = mysql_fetch_array($result_cali);
@@ -954,7 +954,7 @@ if($generacion==1){
                             }
                         }
                     }else if((int)$al['id_corporacion']==8){ //SUMATE 
-                        $query_calificaciones="SELECT agc.calificacion from prepasumate.ag_calificaciones agc where agc.id_materia='".$mat['idmoodle_sumate']."' AND agc.id_alumno='".$al['idmoodle']."' limit 1";
+                        $query_calificaciones="SELECT agc.calificacion from prepasumate.ag_calificaciones agc where FIND_IN_SET(agc.id_materia,'".$mat['idmoodle_sumate']."') AND agc.id_alumno='".$al['idmoodle']."' limit 1";
                         $cali=0;
                         if($result_cali=$mysql->Query($query_calificaciones)){
                             $reg = mysql_fetch_array($result_cali);
@@ -971,7 +971,7 @@ if($generacion==1){
                         }
                     }
                     else if((int)$al['id_corporacion'] == 11){ //OXXO 
-                        $query_calificaciones="SELECT agc.calificacion from prepaoxxo.ag_calificaciones agc where agc.id_materia='".$mat['idmoodle_oxxo']."' AND agc.id_alumno='".$al['idmoodle']."' limit 1";
+                        $query_calificaciones="SELECT agc.calificacion from prepaoxxo.ag_calificaciones agc where FIND_IN_SET(agc.id_materia,'".$mat['idmoodle_oxxo']."') AND agc.id_alumno='".$al['idmoodle']."' limit 1";
                         $cali=0;
                         if($result_cali=$mysql->Query($query_calificaciones)){
                             $reg = mysql_fetch_array($result_cali);
