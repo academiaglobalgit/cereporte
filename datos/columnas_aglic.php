@@ -44,9 +44,12 @@
 				AND ta.id_plan_estudio=40
 				limit 1),' ')", "mdl_user","Apellido") );
 
-		array_push($columns_tmp,new Column(130,1,"responsable_inscripcion","responsable_inscripcion","IFNULL((select IF(escolar.tb_alumnos.id_usuario_responsable = 210, 'NO DEFINIDO', concat(usu.nombre,' ', ifnull(usu.apellidop,''),' ', ifnull(usu.apellidom,''))) from escolar.tb_alumnos LEFT JOIN escolar.tb_usuarios usu ON usu.id = escolar.tb_alumnos.id_usuario_responsable
-				where escolar.tb_alumnos.idmoodle=mdl_user.id AND escolar.tb_alumnos.id_plan_estudio=40 limit 1),'')", "mdl_user","Responsable Inscripcion") );	
-	array_push($columns_tmp,new Column(3,0,"suspended","suspended","(select 0 )", "mdl_user","Status",false) );
+		array_push($columns_tmp,new Column(130,1,"responsable_admision","responsable_admision","IFNULL((select IF(escolar.tb_alumnos.id_usuario_responsable = 210, 'NO DEFINIDO', concat(usu.nombre,' ', ifnull(usu.apellidop,''),' ', ifnull(usu.apellidom,''))) from escolar.tb_alumnos LEFT JOIN escolar.tb_usuarios usu ON usu.id = escolar.tb_alumnos.id_usuario_responsable
+				where escolar.tb_alumnos.idmoodle=mdl_user.id AND escolar.tb_alumnos.id_plan_estudio=40 limit 1),'')", "mdl_user","Responsable Admisión Inscripción") );	
+				array_push($columns_tmp,new Column(131,1,"responsable_gestion","responsable_gestion","IFNULL((select IF (log.id = 210, 'NO DEFINIDO', concat(usu.nombre, ' ', ifnull( usu.apellidop, '' ), ' ', ifnull( usu.apellidom, '' ))) FROM escolar.tb_alumnos LEFT JOIN escolar.tb_alumnos_a1 log on log.id = escolar.tb_alumnos.id_alumno_a1 LEFT JOIN escolar.tb_usuarios usu ON usu.id = log.id_usuario_registra 
+				WHERE escolar.tb_alumnos.idmoodle = mdl_user.id  AND escolar.tb_alumnos.id_plan_estudio = 40 LIMIT 1),'NO DEFINIDO')", "mdl_user","Responsable Gestión Escolar Inscripción") );
+
+				array_push($columns_tmp,new Column(3,0,"suspended","suspended","(select 0 )", "mdl_user","Status",false) );
 
 
 	
