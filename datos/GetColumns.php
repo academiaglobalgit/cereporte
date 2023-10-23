@@ -118,7 +118,7 @@ if(isset($_GET['bd']) && is_numeric($_GET['bd'])){
 			case 39: // Maestria
 				$mysql = new Connect("localhost","sistemas","uCG1lysB9a4PGTkg7qeZ496u5063yHVW","agmaestria");
 				require_once "columnas_maestria_2.php"; 
-			break;	
+			break;
 
 			case 40: // Ag lic
 				$mysql = new Connect("localhost","sistemas","uCG1lysB9a4PGTkg7qeZ496u5063yHVW","aglic");
@@ -158,6 +158,11 @@ if(isset($_GET['bd']) && is_numeric($_GET['bd'])){
 			case 74: // PREPA VALDEZ BALUARTE
 				$mysql = new Connect("localhost","sistemas","uCG1lysB9a4PGTkg7qeZ496u5063yHVW","prepaagcollege");
 				require_once "columnas_prepavaldezbaluarte.php";
+			break;
+
+			case 89: // Maestria UMI 3
+				$mysql = new Connect("localhost","sistemas","uCG1lysB9a4PGTkg7qeZ496u5063yHVW","mdnumi2023");
+				require_once "columnas_maestria_3.php"; 
 			break;
 
 			default:

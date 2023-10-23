@@ -218,11 +218,15 @@ $datos = json_decode(file_get_contents("php://input"));
 				require_once "columnas_prepapizzahut.php"; // columnas configuradas de Prepa PIZZA HUT
 				$reporte= new Report("mdl_user","id","prepaagcollege","","mdl_user.deleted = 0 and  (select mdl_user_info_data.data from mdl_user_info_data where mdl_user_info_data.fieldid = 1 and mdl_user_info_data.userid = mdl_user.id limit 1) = 'Alumno' AND (SELECT COUNT(*) FROM escolar.tb_alumnos WHERE id_plan_estudio = $datos->bd AND idmoodle = mdl_user.id) = 1"); // intitialize with primary table and his primary key
 
+			break;
+			
 			case 72: // Prepa WINGS ARMY
 				$mysql = new Connect("localhost","sistemas","uCG1lysB9a4PGTkg7qeZ496u5063yHVW","prepaagcollege");
 
 				require_once "columnas_prepawingsarmy.php"; // columnas configuradas de Prepa WINGS ARMY
 				$reporte= new Report("mdl_user","id","prepaagcollege","","mdl_user.deleted = 0 and  (select mdl_user_info_data.data from mdl_user_info_data where mdl_user_info_data.fieldid = 1 and mdl_user_info_data.userid = mdl_user.id limit 1) = 'Alumno' AND (SELECT COUNT(*) FROM escolar.tb_alumnos WHERE id_plan_estudio = $datos->bd AND idmoodle = mdl_user.id) = 1"); // intitialize with primary table and his primary key
+			
+			break;
 
 			case 73: // Prepa KIA SUSHI
 				$mysql = new Connect("localhost","sistemas","uCG1lysB9a4PGTkg7qeZ496u5063yHVW","prepaagcollege");
@@ -230,11 +234,21 @@ $datos = json_decode(file_get_contents("php://input"));
 				require_once "columnas_prepakiasushi.php"; // columnas configuradas de Prepa KIA SUSHI
 				$reporte= new Report("mdl_user","id","prepaagcollege","","mdl_user.deleted = 0 and  (select mdl_user_info_data.data from mdl_user_info_data where mdl_user_info_data.fieldid = 1 and mdl_user_info_data.userid = mdl_user.id limit 1) = 'Alumno' AND (SELECT COUNT(*) FROM escolar.tb_alumnos WHERE id_plan_estudio = $datos->bd AND idmoodle = mdl_user.id) = 1"); // intitialize with primary table and his primary key
 
+			break;
+
 			case 74: // Prepa VALDEZ BALUARTE
 				$mysql = new Connect("localhost","sistemas","uCG1lysB9a4PGTkg7qeZ496u5063yHVW","prepaagcollege");
 
 				require_once "columnas_prepavaldezbaluarte.php"; // columnas configuradas de Prepa VALDEZ BALUARTE
 				$reporte= new Report("mdl_user","id","prepaagcollege","","mdl_user.deleted = 0 and  (select mdl_user_info_data.data from mdl_user_info_data where mdl_user_info_data.fieldid = 1 and mdl_user_info_data.userid = mdl_user.id limit 1) = 'Alumno' AND (SELECT COUNT(*) FROM escolar.tb_alumnos WHERE id_plan_estudio = $datos->bd AND idmoodle = mdl_user.id) = 1"); // intitialize with primary table and his primary key
+
+			break;
+
+			case 89: // MAESTRIA UMI 3
+				$mysql = new Connect("localhost","sistemas","uCG1lysB9a4PGTkg7qeZ496u5063yHVW","mdnumi2023");
+
+				require_once "columnas_maestria_3.php"; // columnas configuradas de MAESTRIA UMI 3
+				$reporte= new Report("mdl_user","id","mdnumi2023","","mdl_user.deleted = 0 and  (select mdl_user_info_data.data from mdl_user_info_data where mdl_user_info_data.fieldid = 1 and mdl_user_info_data.userid = mdl_user.id limit 1) = 'Alumno' AND (SELECT COUNT(*) FROM escolar.tb_alumnos WHERE id_plan_estudio = $datos->bd AND idmoodle = mdl_user.id) = 1"); // intitialize with primary table and his primary key
 
 			break;
 
