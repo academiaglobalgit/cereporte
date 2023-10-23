@@ -245,6 +245,14 @@
 				$query = "mdl_user.deleted = 0 and  (select mdl_user_info_data.data from mdl_user_info_data where mdl_user_info_data.fieldid = 1 and mdl_user_info_data.userid = mdl_user.id limit 1) = 'Alumno' AND (SELECT COUNT(*) FROM escolar.tb_alumnos WHERE id_plan_estudio = ".$_GET['bd']." AND idmoodle = mdl_user.id) = 1";
 				$reporte= new Report("mdl_user","id","prepaagcollege","",$query); // intitialize with primary table and his primary key
 			break;
+
+			case 89: // MAESTRIA UMI 3
+				$mysql = new Connect("localhost","sistemas","uCG1lysB9a4PGTkg7qeZ496u5063yHVW","mdnumi2023");
+
+				require_once "columnas_maestria_3.php";
+				$query = "mdl_user.deleted = 0 and  (select mdl_user_info_data.data from mdl_user_info_data where mdl_user_info_data.fieldid = 1 and mdl_user_info_data.userid = mdl_user.id limit 1) = 'Alumno' AND (SELECT COUNT(*) FROM escolar.tb_alumnos WHERE id_plan_estudio = ".$_GET['bd']." AND idmoodle = mdl_user.id) = 1";
+				$reporte= new Report("mdl_user","id","mdnumi2023","",$query); // intitialize with primary table and his primary key
+			break;
 				
 			default:
 				# code...

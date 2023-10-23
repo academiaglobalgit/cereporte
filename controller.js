@@ -70,9 +70,9 @@ app.factory('Excel', function($window) {
     $scope.colorBanner[4] = "background-color: #E11030; color:white;";
     $scope.colorBanner[61] = "background-color: #E11030; color:white;";
     $scope.colorBanner[9] = "background-color: #f07e30; color:white;";
-    $scope.colorBanner[10] = "background-color:#f07e30; color:white;";
+    $scope.colorBanner[10] = "background-color: #f07e30; color:white;";
     $scope.colorBanner[12] = "background-color: #205DB0; color:white;";
-    $scope.colorBanner[14] = "background-color:#E11030; color:white;";
+    $scope.colorBanner[14] = "background-color: #E11030; color:white;";
     $scope.colorBanner[17] = "background-color: #3498db; color:white;";
     $scope.colorBanner[18] = "background-color: #205DB0; color:white;";
     $scope.colorBanner[51] = "background-color: #205DB0; color:white;";
@@ -82,7 +82,7 @@ app.factory('Excel', function($window) {
     $scope.colorBanner[22] = "background-color: #205DB0; color:white;";
     $scope.colorBanner[62] = "background-color: #205DB0; color:white;";
     $scope.colorBanner[29] = "background-color: #f07e30; color:white;";
-    $scope.colorBanner[30] = "background-color:#f07e30; color:white;";
+    $scope.colorBanner[30] = "background-color: #f07e30; color:white;";
     $scope.colorBanner[39] = "background-color: #205DB0; color:white;";
     $scope.colorBanner[40] = "background-color: #3498db; color:white;";
     $scope.colorBanner[19] = "background-color: #db1d36; color:white;";
@@ -93,6 +93,7 @@ app.factory('Excel', function($window) {
     $scope.colorBanner[72] = "background-color: #e50011; color:white;";
     $scope.colorBanner[73] = "background-color: #e50011; color:white;";
     $scope.colorBanner[74] = "background-color: #f1b609; color:white;";
+    $scope.colorBanner[89] = "background-color: #205DB0; color:white;";
 
     /* tipo color del PANEL y botones para cada plan de estudios en boostrap */
 
@@ -128,6 +129,7 @@ app.factory('Excel', function($window) {
     $scope.colorPannel[72] = "danger";
     $scope.colorPannel[73] = "danger";
     $scope.colorPannel[74] = "warning";
+    $scope.colorPannel[89] = "info";
 
     /*para mensajes*/
     $scope.corporaciones = [];
@@ -167,7 +169,7 @@ app.factory('Excel', function($window) {
     $scope.plan_estudios[62] = "LEG Coppel 2022";
     $scope.plan_estudios[29] = "Nueva Prepa Toks";
     $scope.plan_estudios[30] = "Nueva Licenciatura Toks";
-    $scope.plan_estudios[39] = "Nueva Licenciatura Toks";
+    $scope.plan_estudios[39] = "Nueva Maestria";
     $scope.plan_estudios[40] = "AGcollege Licenciatura";
     $scope.plan_estudios[19] = "Flexi Academias";
     $scope.plan_estudios[60] = "Prepa Oxxo";
@@ -177,6 +179,7 @@ app.factory('Excel', function($window) {
     $scope.plan_estudios[72] = "Prepa WINGS ARMY";
     $scope.plan_estudios[73] = "Prepa KIA SUSHI";
     $scope.plan_estudios[74] = "Prepa VALDEZ BALUARTE";
+    $scope.plan_estudios[89] = "Maestria UMI 3";
 
     /*status mensajes*/
     $scope.status = [];
