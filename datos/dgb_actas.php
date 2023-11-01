@@ -674,6 +674,26 @@ if($generacion==1){
               where tmi_ley.id_plan_estudio=49
                and mr_ley.id_materia_autoridad=md.id limit 1
             ) as idmoodle_agcollege_2020,
+            (select group_concat(tmi_ley.id_moodle)  from tb_materias_ids tmi_ley 
+              inner join tb_materias_relacion mr_ley on mr_ley.id_materia=tmi_ley.id_materia 
+              where tmi_ley.id_plan_estudio=71
+               and mr_ley.id_materia_autoridad=md.id limit 1
+            ) as idmoodle_pizza_hut,
+            (select group_concat(tmi_ley.id_moodle)  from tb_materias_ids tmi_ley 
+              inner join tb_materias_relacion mr_ley on mr_ley.id_materia=tmi_ley.id_materia 
+              where tmi_ley.id_plan_estudio=72
+               and mr_ley.id_materia_autoridad=md.id limit 1
+            ) as idmoodle_wings_army,
+            (select group_concat(tmi_ley.id_moodle)  from tb_materias_ids tmi_ley 
+              inner join tb_materias_relacion mr_ley on mr_ley.id_materia=tmi_ley.id_materia 
+              where tmi_ley.id_plan_estudio=73
+               and mr_ley.id_materia_autoridad=md.id limit 1
+            ) as idmoodle_kia_sushi,
+            (select group_concat(tmi_ley.id_moodle)  from tb_materias_ids tmi_ley 
+              inner join tb_materias_relacion mr_ley on mr_ley.id_materia=tmi_ley.id_materia 
+              where tmi_ley.id_plan_estudio=74
+               and mr_ley.id_materia_autoridad=md.id limit 1
+            ) as idmoodle_valdez_baluarte,
             (select group_concat(tmi_ley.id_moodle) from tb_materias_ids tmi_ley 
               inner join tb_materias_relacion mr_ley on mr_ley.id_materia=tmi_ley.id_materia 
               where tmi_ley.id_plan_estudio=60
@@ -894,6 +914,78 @@ if($generacion==1){
                                 }
                             }
                         }
+                        else if((int)$al['id_plan_estudio']==71) //PIZZA HUT
+                        {
+                            $query_calificaciones="SELECT agc.calificacion from prepaagcollege.ag_calificaciones agc where FIND_IN_SET(agc.id_materia,'".$mat['idmoodle_pizza_hut']."') AND agc.id_alumno='".$al['idmoodle']."' limit 1";
+                            $cali=0;
+                            if($result_cali=$mysql->Query($query_calificaciones)){
+                                $reg = mysql_fetch_array($result_cali);
+                                $cali=$reg['calificacion'];
+
+                                if($cali>=6.0){
+                                    $cali=round($cali,0);
+                                }else{
+                                    $cali=(int)$cali;
+                                    if(!isset($array_alumno_cero[$al['id_plan_estudio']][$al['idmoodle']]) && $opciones == 1){
+                                        $array_alumno_cero[$al['id_plan_estudio']][$al['numero_empleado']] = $al['numero_empleado'];
+                                    }
+                                }
+                            }
+                        }
+                        else if((int)$al['id_plan_estudio']==72) //WINGS ARMY
+                        {
+                            $query_calificaciones="SELECT agc.calificacion from prepaagcollege.ag_calificaciones agc where FIND_IN_SET(agc.id_materia,'".$mat['idmoodle_wings_army']."') AND agc.id_alumno='".$al['idmoodle']."' limit 1";
+                            $cali=0;
+                            if($result_cali=$mysql->Query($query_calificaciones)){
+                                $reg = mysql_fetch_array($result_cali);
+                                $cali=$reg['calificacion'];
+
+                                if($cali>=6.0){
+                                    $cali=round($cali,0);
+                                }else{
+                                    $cali=(int)$cali;
+                                    if(!isset($array_alumno_cero[$al['id_plan_estudio']][$al['idmoodle']]) && $opciones == 1){
+                                        $array_alumno_cero[$al['id_plan_estudio']][$al['numero_empleado']] = $al['numero_empleado'];
+                                    }
+                                }
+                            }
+                        }
+                        else if((int)$al['id_plan_estudio']==73) //KIA SUCHI
+                        {
+                            $query_calificaciones="SELECT agc.calificacion from prepaagcollege.ag_calificaciones agc where FIND_IN_SET(agc.id_materia,'".$mat['idmoodle_kia_sushi']."') AND agc.id_alumno='".$al['idmoodle']."' limit 1";
+                            $cali=0;
+                            if($result_cali=$mysql->Query($query_calificaciones)){
+                                $reg = mysql_fetch_array($result_cali);
+                                $cali=$reg['calificacion'];
+
+                                if($cali>=6.0){
+                                    $cali=round($cali,0);
+                                }else{
+                                    $cali=(int)$cali;
+                                    if(!isset($array_alumno_cero[$al['id_plan_estudio']][$al['idmoodle']]) && $opciones == 1){
+                                        $array_alumno_cero[$al['id_plan_estudio']][$al['numero_empleado']] = $al['numero_empleado'];
+                                    }
+                                }
+                            }
+                        }
+                        else if((int)$al['id_plan_estudio']==74) //VALDEZ BALUARTE
+                        {
+                            $query_calificaciones="SELECT agc.calificacion from prepaagcollege.ag_calificaciones agc where FIND_IN_SET(agc.id_materia,'".$mat['idmoodle_valdez_baluarte']."') AND agc.id_alumno='".$al['idmoodle']."' limit 1";
+                            $cali=0;
+                            if($result_cali=$mysql->Query($query_calificaciones)){
+                                $reg = mysql_fetch_array($result_cali);
+                                $cali=$reg['calificacion'];
+
+                                if($cali>=6.0){
+                                    $cali=round($cali,0);
+                                }else{
+                                    $cali=(int)$cali;
+                                    if(!isset($array_alumno_cero[$al['id_plan_estudio']][$al['idmoodle']]) && $opciones == 1){
+                                        $array_alumno_cero[$al['id_plan_estudio']][$al['numero_empleado']] = $al['numero_empleado'];
+                                    }
+                                }
+                            }
+                        }
                         else 
                         {
                         // AG COLLEGE SOCIAL 
@@ -1060,6 +1152,22 @@ if($generacion==1){
                         else if((int)$al['id_plan_estudio']==49)
                         {
                             $corp="AGCOLLEGE 2020";
+                        }
+                        else if((int)$al['id_plan_estudio']==71)
+                        {
+                            $corp="PREPARATORIA PIZZA HUT";
+                        }
+                        else if((int)$al['id_plan_estudio']==72)
+                        {
+                            $corp="PREPARATORIA WINGS ARMY";
+                        }
+                        else if((int)$al['id_plan_estudio']==73)
+                        {
+                            $corp="PREPARATORIA KIA SUSHI";
+                        }	
+                        else if((int)$al['id_plan_estudio']==74)
+                        {
+                            $corp="PREPARATORIA VALDEZ BALUARTE";
                         }	
                         else
                         {
