@@ -676,22 +676,22 @@ if($generacion==1){
             ) as idmoodle_agcollege_2020,
             (select group_concat(tmi_ley.id_moodle)  from tb_materias_ids tmi_ley 
               inner join tb_materias_relacion mr_ley on mr_ley.id_materia=tmi_ley.id_materia 
-              where tmi_ley.id_plan_estudio=71
+              where tmi_ley.id_plan_estudio = 71
                and mr_ley.id_materia_autoridad=md.id limit 1
             ) as idmoodle_pizza_hut,
             (select group_concat(tmi_ley.id_moodle)  from tb_materias_ids tmi_ley 
               inner join tb_materias_relacion mr_ley on mr_ley.id_materia=tmi_ley.id_materia 
-              where tmi_ley.id_plan_estudio=72
+              where tmi_ley.id_plan_estudio = 72
                and mr_ley.id_materia_autoridad=md.id limit 1
             ) as idmoodle_wings_army,
             (select group_concat(tmi_ley.id_moodle)  from tb_materias_ids tmi_ley 
               inner join tb_materias_relacion mr_ley on mr_ley.id_materia=tmi_ley.id_materia 
-              where tmi_ley.id_plan_estudio=73
+              where tmi_ley.id_plan_estudio = 73
                and mr_ley.id_materia_autoridad=md.id limit 1
             ) as idmoodle_kia_sushi,
             (select group_concat(tmi_ley.id_moodle)  from tb_materias_ids tmi_ley 
               inner join tb_materias_relacion mr_ley on mr_ley.id_materia=tmi_ley.id_materia 
-              where tmi_ley.id_plan_estudio=74
+              where tmi_ley.id_plan_estudio = 74
                and mr_ley.id_materia_autoridad=md.id limit 1
             ) as idmoodle_valdez_baluarte,
             (select group_concat(tmi_ley.id_moodle) from tb_materias_ids tmi_ley 
@@ -717,7 +717,7 @@ if($generacion==1){
 
 
             //echo '<hr>'; 
-            //echo $query_materias;  
+      //      echo $query_materias;  
             //echo '<hr>'; 
         
 
@@ -761,6 +761,10 @@ if($generacion==1){
           $materias[$idx_materia]['idmoodle_nueva_toks']=$row_materia['idmoodle_nueva_toks'];
           $materias[$idx_materia]['idmoodle_prepacoppel_2020']=$row_materia['idmoodle_prepacoppel_2020'];
           $materias[$idx_materia]['idmoodle_agcollege_2020']=$row_materia['idmoodle_agcollege_2020'];
+          $materias[$idx_materia]['idmoodle_pizza_hut']=$row_materia['idmoodle_pizza_hut'];
+          $materias[$idx_materia]['idmoodle_wings_army']=$row_materia['idmoodle_wings_army'];
+          $materias[$idx_materia]['idmoodle_kia_sushi']=$row_materia['idmoodle_kia_sushi'];
+          $materias[$idx_materia]['idmoodle_valdez_baluarte']=$row_materia['idmoodle_valdez_baluarte'];
           $materias[$idx_materia]['idmoodle_oxxo']=$row_materia['idmoodle_oxxo'];
           $materias[$idx_materia]['idmoodle_prepaley2022']=$row_materia['idmoodle_prepaley2022'];
 
