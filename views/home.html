@@ -480,7 +480,7 @@
                 >
               </li>
               <li
-                ng-if="(permisos==101 || permisos==102 || permisos ==104) || (id_permiso==1) || (<?php echo $_SESSION['id_usuario'] ?> == 408 || <?php echo $_SESSION['id_usuario'] ?> == 449 || <?php echo $_SESSION['id_usuario'] ?> == 389)"
+                ng-if="(permisos==101 || permisos==102 || permisos ==104) || (id_permiso==1) || (<?php echo in_array($_SESSION['id_usuario'], array(408, 449, 389, 630)) ?>)"
               >
                 <a
                   href="#"
