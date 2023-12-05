@@ -424,7 +424,7 @@ function getAsignarTicketEncargado()
 				FROM escolar.tb_ayuda_rolespersonas arp
 				INNER JOIN escolar.tb_personas pxx ON pxx.id = arp.id_asesor 
 				INNER JOIN escolar.tb_usuarios usx ON usx.id_persona = arp.id_asesor 
-				WHERE arp.id_tiporol = 3 AND UPPER(usx.estatus) = 'A' AND usx.id_area = " . $_REQUEST["id_departamento"];
+				WHERE arp.id_tiporol = 3 AND UPPER(usx.estatus) = 'A'";
 
 			$registrosAsesores = $mysql->Query($query);			
 			if ($registrosAsesores) 
