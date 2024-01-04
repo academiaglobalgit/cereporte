@@ -31,7 +31,7 @@
 			case 2: // prepcoppel
 				$mysql = new Connect("localhost","sistemas","uCG1lysB9a4PGTkg7qeZ496u5063yHVW","prepacoppel");
 				require_once "columnascoppel.php"; // columnas configuradas de coppel
-				$reporte= new Report("mdl_user","id","prepacoppel","left join alumnos_cobaes ON alumnos_cobaes.IdMoodle=mdl_user.id","  (select mdl_user_info_data.data from mdl_user_info_data where mdl_user_info_data.fieldid = 1 and mdl_user_info_data.userid = mdl_user.id limit 1) = 'alumno' "); // intitialize with primary table and his primary key
+				$reporte= new Report("mdl_user","id","prepacoppel","left join alumnos_cobaes ON alumnos_cobaes.IdMoodle=mdl_user.id","  (select mdl_user_info_data.data from mdl_user_info_data where mdl_user_info_data.fieldid = 1 and mdl_user_info_data.userid = mdl_user.id limit 1) = 'alumno' AND (SELECT COUNT(*) FROM escolar.tb_alumnos WHERE id_plan_estudio = ".$_GET['bd']." AND idmoodle = mdl_user.id AND prueba = 0) = 1"); // intitialize with primary table and his primary key
 			break;
 
 			case 60:
@@ -44,7 +44,7 @@
 			case 47: // Flexi Academias 
 				$mysql = new Connect("localhost","sistemas","uCG1lysB9a4PGTkg7qeZ496u5063yHVW","nprepacoppel");
 				require_once "columnas_prepacoppel2020.php"; // columnas configuradas de toksuni
-				$reporte= new Report("mdl_user","id","nprepacoppel","","mdl_user.deleted = 0 and (select mdl_user_info_data.data from mdl_user_info_data where mdl_user_info_data.fieldid = 1 and mdl_user_info_data.userid = mdl_user.id limit 1) = 'Alumno' "); // intitialize with primary table and his primary key
+				$reporte= new Report("mdl_user","id","nprepacoppel","","mdl_user.deleted = 0 and (select mdl_user_info_data.data from mdl_user_info_data where mdl_user_info_data.fieldid = 1 and mdl_user_info_data.userid = mdl_user.id limit 1) = 'Alumno' AND (SELECT COUNT(*) FROM escolar.tb_alumnos WHERE id_plan_estudio = ".$_GET['bd']." AND idmoodle = mdl_user.id) = 1"); // intitialize with primary table and his primary key
 			break;
 
 			case 3: // soriana?
@@ -129,28 +129,28 @@
 				$mysql = new Connect("localhost","sistemas","uCG1lysB9a4PGTkg7qeZ496u5063yHVW","coppeling");
 
 				require_once "columnas_coppeling.php"; // columnas configuradas de escuelas
-				$reporte= new Report("mdl_user","id","coppeling","","mdl_user.deleted = 0 and  (select mdl_user_info_data.data from mdl_user_info_data where mdl_user_info_data.fieldid = 1 and mdl_user_info_data.userid = mdl_user.id limit 1) = 'Alumno' AND (SELECT COUNT(*) FROM escolar.tb_alumnos WHERE id_plan_estudio = ".$_GET['bd']." AND idmoodle = mdl_user.id) = 1"); // intitialize with primary table and his primary key
+				$reporte= new Report("mdl_user","id","coppeling","","mdl_user.deleted = 0 and  (select mdl_user_info_data.data from mdl_user_info_data where mdl_user_info_data.fieldid = 1 and mdl_user_info_data.userid = mdl_user.id limit 1) = 'Alumno' AND (SELECT COUNT(*) FROM escolar.tb_alumnos WHERE id_plan_estudio = ".$_GET['bd']." AND idmoodle = mdl_user.id AND prueba = 0) = 1"); // intitialize with primary table and his primary key
 			break;
 			
 			case 51:
 				$mysql = new Connect("localhost","sistemas","uCG1lysB9a4PGTkg7qeZ496u5063yHVW","admisionesids");
 
 				require_once "columnas_coppelAdmisiones.php"; // columnas configuradas de escuelas
-				$reporte= new Report("mdl_user","id","admisionesids","","mdl_user.deleted = 0 and  (select mdl_user_info_data.data from mdl_user_info_data where mdl_user_info_data.fieldid = 1 and mdl_user_info_data.userid = mdl_user.id limit 1) = 'Alumno'"); // intitialize with primary table and his primary key
+				$reporte= new Report("mdl_user","id","admisionesids","","mdl_user.deleted = 0 and  (select mdl_user_info_data.data from mdl_user_info_data where mdl_user_info_data.fieldid = 1 and mdl_user_info_data.userid = mdl_user.id limit 1) = 'Alumno' AND (SELECT COUNT(*) FROM escolar.tb_alumnos WHERE id_plan_estudio = ".$_GET['bd']." AND idmoodle = mdl_user.id AND prueba = 0) = 1"); // intitialize with primary table and his primary key
 			break;
 			
 			case 50:
 				$mysql = new Connect("localhost","sistemas","uCG1lysB9a4PGTkg7qeZ496u5063yHVW","mdncoppel");
 
 				require_once "columnas_coppelmdn.php"; // columnas configuradas de escuelas
-				$reporte= new Report("mdl_user","id","mdncoppel","","mdl_user.deleted = 0 and  (select mdl_user_info_data.data from mdl_user_info_data where mdl_user_info_data.fieldid = 1 and mdl_user_info_data.userid = mdl_user.id limit 1) = 'Alumno'"); // intitialize with primary table and his primary key
+				$reporte= new Report("mdl_user","id","mdncoppel","","mdl_user.deleted = 0 and  (select mdl_user_info_data.data from mdl_user_info_data where mdl_user_info_data.fieldid = 1 and mdl_user_info_data.userid = mdl_user.id limit 1) = 'Alumno' AND (SELECT COUNT(*) FROM escolar.tb_alumnos WHERE id_plan_estudio = ".$_GET['bd']." AND idmoodle = mdl_user.id AND prueba = 0) = 1"); // intitialize with primary table and his primary key
 			break;	
 
 			case 22:
 				$mysql = new Connect("localhost","sistemas","uCG1lysB9a4PGTkg7qeZ496u5063yHVW","coppelic");
 
 				require_once "columnas_coppelic.php"; // columnas configuradas de escuelas
-				$reporte= new Report("mdl_user","id","coppelic","","mdl_user.deleted = 0 and  (select mdl_user_info_data.data from mdl_user_info_data where mdl_user_info_data.fieldid = 1 and mdl_user_info_data.userid = mdl_user.id limit 1) = 'Alumno'"); // intitialize with primary table and his primary key
+				$reporte= new Report("mdl_user","id","coppelic","","mdl_user.deleted = 0 and  (select mdl_user_info_data.data from mdl_user_info_data where mdl_user_info_data.fieldid = 1 and mdl_user_info_data.userid = mdl_user.id limit 1) = 'Alumno' AND (SELECT COUNT(*) FROM escolar.tb_alumnos WHERE id_plan_estudio = ".$_GET['bd']." AND idmoodle = mdl_user.id AND prueba = 0) = 1"); // intitialize with primary table and his primary key
 
 			break;
 
@@ -158,7 +158,7 @@
 				$mysql = new Connect("localhost","sistemas","uCG1lysB9a4PGTkg7qeZ496u5063yHVW","nlic");
 
 				require_once "columnas_coppeleg.php"; // columnas configuradas de escuelas
-				$reporte= new Report("mdl_user","id","coppeleg","","mdl_user.deleted = 0 and  (select mdl_user_info_data.data from mdl_user_info_data where mdl_user_info_data.fieldid = 1 and mdl_user_info_data.userid = mdl_user.id limit 1) = 'Alumno'"); // intitialize with primary table and his primary key
+				$reporte= new Report("mdl_user","id","coppeleg","","mdl_user.deleted = 0 and  (select mdl_user_info_data.data from mdl_user_info_data where mdl_user_info_data.fieldid = 1 and mdl_user_info_data.userid = mdl_user.id limit 1) = 'Alumno' AND (SELECT COUNT(*) FROM escolar.tb_alumnos WHERE id_plan_estudio = ".$_GET['bd']." AND idmoodle = mdl_user.id AND prueba = 0) = 1"); // intitialize with primary table and his primary key
 
 			break;
 
@@ -245,7 +245,14 @@
 				$query = "mdl_user.deleted = 0 and  (select mdl_user_info_data.data from mdl_user_info_data where mdl_user_info_data.fieldid = 1 and mdl_user_info_data.userid = mdl_user.id limit 1) = 'Alumno' AND (SELECT COUNT(*) FROM escolar.tb_alumnos WHERE id_plan_estudio = ".$_GET['bd']." AND idmoodle = mdl_user.id) = 1";
 				$reporte= new Report("mdl_user","id","prepaagcollege","",$query); // intitialize with primary table and his primary key
 			break;
+
+			case 75: // AG LICK  
+			$mysql = new Connect("localhost","sistemas","uCG1lysB9a4PGTkg7qeZ496u5063yHVW","aglar");
 				
+				require_once "columnas_aggrglic.php"; // columnas configuradas de toksuni
+				$reporte= new Report("mdl_user","id","aglar","","mdl_user.deleted = 0 and (select mdl_user_info_data.data from mdl_user_info_data where mdl_user_info_data.fieldid = 1 and mdl_user_info_data.userid = mdl_user.id limit 1) = 'Alumno' "); // intitialize with primary table and his primary key
+
+			break;				
 			default:
 				# code...
 			break;
